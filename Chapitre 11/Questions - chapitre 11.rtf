@@ -1,17 +1,21 @@
 {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
 {\*\generator Riched20 10.0.22621}\viewkind4\uc1 
-\pard\sa200\sl276\slmult1\f0\fs22\lang12  1. Which of the following can be inserted on line 8 to make this code\par
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 1. Which of the following can be inserted on line 8 to make this code\par
  compile? (Choose all that apply.)\par
+\par
  7: public void whatHappensNext() throws IOException \{\par
  8:    // INSERT CODE HERE\par
  9: \}\par
- A. System.out.println("it\rquote s ok");\par
- B. throw new Exception();\par
- C. throw new IllegalArgumentException();\par
- D. throw new java.io.IOException();\par
- E. throw new RuntimeException();\par
- F. None of the above\par
+\par
+A) System.out.println("it\rquote s ok");\par
+B) throw new Exception();\par
+C) throw new IllegalArgumentException();\par
+D) throw new java.io.IOException();\par
+E) throw new RuntimeException();\par
+F) None of the above\par
+\par
  2. Which statement about the following class is correct?\par
+\par
 1:  class Problem extends Exception \{\par
  2:     public Problem() \{\}\par
  3:  \}\par
@@ -26,27 +30,32 @@
  10:       connectToDatabase();\par
  11:    \}\par
  12: \}\par
- A. The code compiles and prints a stack trace for YesProblem at\par
+\par
+A) The code compiles and prints a stack trace for YesProblem at\par
  runtime.\par
- B. The code compiles and prints a stack trace for Problem at\par
+B) The code compiles and prints a stack trace for Problem at\par
  runtime.\par
- C. The code does not compile because Problem defines a\par
+C) The code does not compile because Problem defines a\par
  constructor.\par
- D. The code does not compile because YesProblem does not define a\par
+D) The code does not compile because YesProblem does not define a\par
  constructor.\par
- E. The code does not compile but would if Problem and YesProblem\par
+E) The code does not compile but would if Problem and YesProblem\par
  were switched on lines 6 and 7.\par
- F. None of the above.\par
+F) None of the above.\par
+\par
  3. Which of the following are common types to localize? (Choose all that\par
  apply.)\par
- A. Dates\par
- B. Lambda expressions\par
- C. Class names\par
- D. Currency\par
- E. Numbers\par
- F. Variable names\par
+\par
+A) Dates\par
+B) Lambda expressions\par
+C) Class names\par
+D) Currency\par
+E) Numbers\par
+F) Variable names\par
+\par
 4. What is the output of the following snippet, assuming a and b are both\par
  0?\par
+\par
  3:  try \{\par
  4:     System.out.print(a / b);\par
  5:  \} catch (RuntimeException e) \{\par
@@ -56,16 +65,19 @@
  9:  \} finally \{\par
  10:    System.out.print("done");\par
  11: \} \par
-A. -1\par
- B. 0\par
- C. done-1\par
- D. done0\par
- E. The code does not compile.\par
- F. An uncaught exception is thrown.\par
- G. None of the above.\par
+\par
+A) -1\par
+B) 0\par
+C) done-1\par
+D) done0\par
+E) The code does not compile.\par
+F) An uncaught exception is thrown.\par
+G) None of the above.\par
+\par
  5. Assuming the current locale uses dollars ($) and the following method\par
  is called with a double value of 100_102.2, which of the following\par
  values are printed? (Choose all that apply.)\par
+\par
  public void print(double t) \{\par
  System.out.print(NumberFormat.getCompactNumberInstance().fo\par
  rmat(t));\par
@@ -75,24 +87,30 @@ A. -1\par
  System.out.print(NumberFormat.getCurrencyInstance().format(\par
  t));\par
  \}\par
- A. 100\par
- B. $100,000.00\par
-C. 100K\par
- D. 100 thousand\par
- E. 100M\par
- F. $100,102.20\par
- G. None of the above\par
+\par
+A) 100\par
+B) $100,000.00\par
+C) 100K\par
+D) 100 thousand\par
+E) 100M\par
+F) $100,102.20\par
+G) None of the above\par
+\par
  6. What is the output of the following code?\par
+\par
  LocalDate date = LocalDate.parse("2025-04-30", \par
    DateTimeFormatter.ISO_LOCAL_DATE_TIME);\par
  System.out.println(date.getYear() + " " \par
    + date.getMonth() + " "+ date.getDayOfMonth());\par
- A. 2025 APRIL 2\par
- B. 2025 APRIL 30\par
- C. 2025 MAY 2\par
- D. The code does not compile.\par
- E. A runtime exception is thrown.\par
+\par
+A) 2025 APRIL 2\par
+B) 2025 APRIL 30\par
+C) 2025 MAY 2\par
+D) The code does not compile.\par
+E) A runtime exception is thrown.\par
+\par
  7. What does the following method print?\par
+\par
  11: public void tryAgain(String s) \{\par
  12:    try (FileReader r = null, p = new FileReader("")) \{\par
  13:       System.out.print("X");\par
@@ -104,61 +122,75 @@ C. 100K\par
  19:       System.out.print("O");\par
  20:    \}\par
  21: \}\par
- A. XAO\par
- B. XOA\par
- C. One line of this method contains a compiler error.\par
- D. Two lines of this method contain compiler errors.\par
-E. Three or more lines of this method contain compiler errors.\par
- F. The code compiles, but a NullPointerException is thrown at\par
+\par
+A) XAO\par
+B) XOA\par
+C) One line of this method contains a compiler error.\par
+D) Two lines of this method contain compiler errors.\par
+E) Three or more lines of this method contain compiler errors.\par
+F) The code compiles, but a NullPointerException is thrown at\par
  runtime.\par
- G. None of the above.\par
+G) None of the above.\par
+\par
  8. Assume that all of the files mentioned in the answer choices exist and\par
  define the same keys. Which one will be used to find the key in line 8?\par
+\par
  6: Locale.setDefault(Locale.of("en", "US"));\par
  7: var b = ResourceBundle.getBundle("Dolphins");\par
  8: System.out.println(b.getString("name"));\par
- A. Dolphins.properties\par
- B. Dolphins_US.properties\par
- C. Dolphins_en.properties\par
- D. Whales.properties\par
- E. Whales_en_US.properties\par
- F. The code does not compile.\par
+\par
+A) Dolphins.properties\par
+B) Dolphins_US.properties\par
+C) Dolphins_en.properties\par
+D) Whales.properties\par
+E) Whales_en_US.properties\par
+F) The code does not compile.\par
+\par
  9. For what value of pattern will the following print <005.21>\par
  <008.49> <1,234.0>?\par
+\par
  String pattern = "____________________";\par
  var message = DoubleStream.of(5.21, 8.49, 1234)\par
    .mapToObj(v -> new DecimalFormat(pattern).format(v))\par
    .collect(Collectors.joining("> <"));\par
  System.out.println("<"+message+">");\par
- A. ##.#\par
- B. 0,000.0#\par
- C. #,###.0\par
- D. #,###,000.0#\par
- E. The code does not compile regardless of what is placed in the\par
+\par
+A) ##.#\par
+B) 0,000.0#\par
+C) #,###.0\par
+D) #,###,000.0#\par
+E) The code does not compile regardless of what is placed in the\par
  blank.\par
- F. None of the above.\par
+F) None of the above.\par
+\par
  10. Which scenario is the best use of an exception?\par
-A. An element is not found when searching a list.\par
- B. An unexpected parameter is passed into a method.\par
- C. The computer caught fire.\par
- D. You want to loop through a list.\par
- E. You don\rquote t know how to code a method.\par
+\par
+A) An element is not found when searching a list.\par
+B) An unexpected parameter is passed into a method.\par
+C) The computer caught fire.\par
+D) You want to loop through a list.\par
+E) You don\rquote t know how to code a method.\par
+\par
  11. Which of the following exceptions must be handled or declared in the\par
  method in which they are thrown? (Choose all that apply.)\par
+\par
  class Apple extends RuntimeException \{\}\par
  class Orange extends Exception \{\}\par
  class Banana extends Error \{\}\par
  class Pear extends Apple \{\}\par
  class Tomato extends Orange \{\}\par
  class Peach extends Throwable \{\}\par
- A. Apple\par
- B. Orange\par
- C. Banana\par
- D. Pear\par
- E. Tomato\par
- F. Peach\par
+\par
+A) Apple\par
+B) Orange\par
+C) Banana\par
+D) Pear\par
+E) Tomato\par
+F) Peach\par
+\par
  12. Which of the following changes, when made independently, would\par
  make this code compile? (Choose all that apply.)\par
+\par
  1:  import java.io.*; \par
 2:  public class StuckTurkeyCage implements AutoCloseable \{\par
  3:     public void close() throws IOException \{\par
@@ -170,46 +202,54 @@ closed");\par
  8:           System.out.println("put turkeys in");\par
  9:        \}\par
  10:    \} \}\par
- A. Remove throws IOException from the declaration on line 3.\par
-B. Add throws Exception to the declaration on line 6.\par
- C. Change line 9 to \} catch (Exception e) \{\}.\par
- D. Change line 9 to \} finally \{\}.\par
- E. The code compiles as is.\par
- F. None of the above.\par
+\par
+A) Remove throws IOException from the declaration on line 3.\par
+B) Add throws Exception to the declaration on line 6.\par
+C) Change line 9 to \} catch (Exception e) \{\}.\par
+D) Change line 9 to \} finally \{\}.\par
+E) The code compiles as is.\par
+F) None of the above.\par
+\par
  13. Which of the following are true statements about exception handling in\par
  Java? (Choose all that apply.)\par
- A. A traditional try statement without a catch block requires a\par
+\par
+A) A traditional try statement without a catch block requires a\par
  finally block.\par
- B. A traditional try statement without a finally block requires a\par
+B) A traditional try statement without a finally block requires a\par
  catch block.\par
- C. A traditional try statement with only one statement can omit the\par
+C) A traditional try statement with only one statement can omit the\par
  \{\}.\par
- D. A try-with-resources statement without a catch block requires a\par
+D) A try-with-resources statement without a catch block requires a\par
  finally block.\par
- E. A try-with-resources statement without a finally block requires\par
+E) A try-with-resources statement without a finally block requires\par
  a catch block.\par
- F. A try-with-resources statement with only one statement can omit\par
+F) A try-with-resources statement with only one statement can omit\par
  the \{\}.\par
+\par
  14. Assuming -g:vars is used when the code is compiled to include debug\par
  information, what is the output of the following code snippet?\par
+\par
  var huey = (String)null;\par
  Integer dewey = null;\par
  Object louie = null;\par
  if(louie == huey.substring(dewey.intValue())) \{\par
    System.out.println("Quack!");\par
  \}\par
- A. A NullPointerException that does not include any variable\par
+\par
+A) A NullPointerException that does not include any variable\par
  names in the stack trace\par
- B. A NullPointerException naming huey in the stack trace\par
- C. A NullPointerException naming dewey in the stack trace\par
-D. A NullPointerException naming louie in the stack trace\par
- E. A NullPointerException naming huey and louie in the stack\par
+B) A NullPointerException naming huey in the stack trace\par
+C) A NullPointerException naming dewey in the stack trace\par
+D) A NullPointerException naming louie in the stack trace\par
+E) A NullPointerException naming huey and louie in the stack\par
  trace\par
- F. A NullPointerException naming huey and dewey in the stack\par
+F) A NullPointerException naming huey and dewey in the stack\par
  trace\par
- G. None of the above\par
+G) None of the above\par
+\par
  15. Which of the following, when inserted independently in the blank, use\par
  locale parameters that are properly formatted? (Choose all that apply.)\par
+\par
  import java.util.Locale;\par
  public class ReadMap implements AutoCloseable \{\par
    private Locale locale;\par
@@ -226,39 +266,47 @@ D. A NullPointerException naming louie in the stack trace\par
       // Implementation omitted\par
    \}\par
  \}\par
- A. Locale.of("xM")\par
- B. Locale.of("MQ", "ks")\par
- C. Locale.of("qw")\par
- D. Locale.of("wp", "VW")\par
- E. Locale.create("zp")\par
- F. new Locale.Builder().setLanguage("yw").setRegion("PM")\par
- G. The code does not compile regardless of what is placed in the\par
+\par
+A) Locale.of("xM")\par
+B) Locale.of("MQ", "ks")\par
+C) Locale.of("qw")\par
+D) Locale.of("wp", "VW")\par
+E) Locale.create("zp")\par
+F) new Locale.Builder().setLanguage("yw").setRegion("PM")\par
+G) The code does not compile regardless of what is placed in the\par
  blank.\par
+\par
  16. Which of the following can be inserted into the blank to allow the code\par
  to compile and run without throwing an exception?\par
+\par
 var f = DateTimeFormatter.ofPattern("hh o'clock");\par
  System.out.println(f.format(___________________.now()));\par
- A. ZonedTime\par
- B. LocalDate\par
- C. LocalTimestamp\par
- D. LocalTime\par
- E. The code does not compile regardless of what is placed in the\par
- blank.\par
- F. None of the above.\par
+\par
+A) ZonedTime\par
+B) LocalDate\par
+C) LocalTimestamp\par
+D) LocalTime\par
+E) The code does not compile regardless of what is placed in the\par
+blank.\par
+F) None of the above.\par
+\par
  17. Which of the following statements about resource bundles are correct?\par
  (Choose all that apply.)\par
- A. All keys must be in the same resource bundle to be used.\par
- B. A resource bundle is loaded by calling the new\par
- ResourceBundle() constructor.\par
- C. Resource bundle values are always read using the Properties\par
- class.\par
- D. Changing the default locale lasts for only a single run of the\par
- program.\par
- E. If a resource bundle for a specific locale is requested, then the\par
- resource bundle for the default locale will not be used.\par
- F. It is possible to use a resource bundle for a locale without\par
- specifying a default locale.\par
+\par
+A) All keys must be in the same resource bundle to be used.\par
+B) A resource bundle is loaded by calling the new\par
+ResourceBundle() constructor.\par
+C) Resource bundle values are always read using the Properties\par
+class.\par
+D) Changing the default locale lasts for only a single run of the\par
+program.\par
+E) If a resource bundle for a specific locale is requested, then the\par
+resource bundle for the default locale will not be used.\par
+F) It is possible to use a resource bundle for a locale without\par
+specifying a default locale.\par
+\par
  18. What is the output of the following code?\par
+\par
  import java.io.*;\par
  public class FamilyCar \{\par
    static class Door implements AutoCloseable \{\par
@@ -279,15 +327,18 @@ var f = DateTimeFormatter.ofPattern("hh o'clock");\par
       \} finally \{\par
          System.out.print("F");\par
       \} \} \}\par
- A. TWF\par
- B. TWDF\par
- C. TWDEF\par
- D. TWF followed by an exception\par
- E. TWDF followed by an exception\par
- F. TWEF followed by an exception\par
- G. The code does not compile.\par
+\par
+A) TWF\par
+B) TWDF\par
+C) TWDEF\par
+D) TWF followed by an exception\par
+E) TWDF followed by an exception\par
+F) TWEF followed by an exception\par
+G) The code does not compile.\par
+\par
  19. Suppose that we have the following three properties files and code.\par
  Which bundles are used on lines 8 and 9, respectively?\par
+\par
  Dolphins.properties \par
 name=The Dolphin\par
  age=0\par
@@ -301,14 +352,17 @@ name=Dolly\par
  7: var b = ResourceBundle.getBundle("Dolphins", fr);\par
  8: b.getString("name");\par
  9: b.getString("age");\par
- A. Dolphins.properties and Dolphins.properties\par
- B. Dolphins.properties and Dolphins_en.properties\par
-C. Dolphins_en.properties and Dolphins_en.properties\par
- D. Dolphins_fr.properties and Dolphins.properties\par
- E. Dolphins_fr.properties and Dolphins_en.properties\par
- F. The code does not compile.\par
- G. None of the above.\par
+\par
+A) Dolphins.properties and Dolphins.properties\par
+B) Dolphins.properties and Dolphins_en.properties\par
+C) Dolphins_en.properties and Dolphins_en.properties\par
+D) Dolphins_fr.properties and Dolphins.properties\par
+E) Dolphins_fr.properties and Dolphins_en.properties\par
+F) The code does not compile.\par
+G) None of the above.\par
+\par
  20. What is printed by the following program?\par
+\par
  1:  public class DriveBus \{\par
  2:     public void go() \{\par
  3:        System.out.print("A");\par
@@ -330,15 +384,18 @@ C. Dolphins_en.properties and Dolphins_en.properties\par
  19:    public static void main(String n[]) \{\par
  20:       new DriveBus().go();\par
  21:    \} \}\par
- A. AE\par
- B. AEBCD\par
- C. AEC\par
- D. AECD\par
- E. AE followed by a stack trace\par
- F. AEBCD followed by a stack trace\par
- G. AEC followed by a stack trace\par
- H. A stack trace with no other output\par
+\par
+A) AE\par
+B) AEBCD\par
+C) AEC\par
+D) AECD\par
+E) AE followed by a stack trace\par
+F) AEBCD followed by a stack trace\par
+G) AEC followed by a stack trace\par
+H) A stack trace with no other output\par
+\par
 21. Which change allows the following program to compile?\par
+\par
  1: public class AhChoo \{\par
  2:    static class SneezeException extends Exception \{\}\par
  3:    static class SniffleException extends SneezeException \par
@@ -349,14 +406,17 @@ C. Dolphins_en.properties and Dolphins_en.properties\par
  7:       \} catch (SneezeException | SniffleException e) \{\par
  8:       \} finally \{\}\par
  9:    \} \}\par
- A. Add throws SneezeException to the declaration on line 4.\par
- B. Add throws Throwable to the declaration on line 4.\par
- C. Change line 7 to \} catch (SneezeException e) \{.\par
- D. Change line 7 to \} catch (SniffleException e) \{.\par
- E. Remove line 7.\par
- F. The code compiles correctly as is.\par
- G. None of the above.\par
+\par
+A) Add throws SneezeException to the declaration on line 4.\par
+B) Add throws Throwable to the declaration on line 4.\par
+C) Change line 7 to \} catch (SneezeException e) \{.\par
+D) Change line 7 to \} catch (SniffleException e) \{.\par
+E) Remove line 7.\par
+F) The code compiles correctly as is.\par
+G) None of the above.\par
+\par
  22. What is the output of the following code?\par
+\par
  try \{\par
    LocalDateTime book = LocalDateTime.of(2025, 4, 5, 12, \par
 30, 20);\par
@@ -367,23 +427,28 @@ C. Dolphins_en.properties and Dolphins_en.properties\par
  System.out.print(DateTimeFormatter.ofPattern("y").format(bo\par
  ok));\par
  \} catch (Throwable e) \{\}\par
- A. 4\par
- B. 30\par
- C. 402\par
-D. 3002\par
- E. 3002025\par
- F. 402025\par
- G. None of the above\par
+\par
+A) 4\par
+B) 30\par
+C) 402\par
+D) 3002\par
+E) 3002025\par
+F) 402025\par
+G) None of the above\par
+\par
  23. Fill in the blank: A class that implements _________________ may be\par
  in a try-with-resources statement. (Choose all that apply.)\par
- A. AutoCloseable\par
- B. Resource\par
- C. Exception\par
- D. AutomaticResource\par
- E. Closeable\par
- F. RuntimeException\par
- G. Serializable\par
+\par
+A) AutoCloseable\par
+B) Resource\par
+C) Exception\par
+D) AutomaticResource\par
+E) Closeable\par
+F) RuntimeException\par
+G) Serializable\par
+\par
  24. What is the output of the following program?\par
+\par
  public class SnowStorm \{\par
    static class WalkToSchool implements AutoCloseable \{\par
       public void close() \{\par
@@ -400,15 +465,18 @@ D. 3002\par
       \}\par
       walk1 = null;\par
    \} \}\par
- A. blizzard 0\par
- B. blizzard 1\par
- C. blizzard 2\par
-D. flurry 0\par
- E. flurry 1\par
- F. flurry 2\par
- G. None of the above\par
+\par
+A) blizzard 0\par
+B) blizzard 1\par
+C) blizzard 2\par
+D) flurry 0\par
+E) flurry 1\par
+F) flurry 2\par
+G) None of the above\par
+\par
  25. Assuming U.S. currency is in dollars ($) and German currency is in\par
  euros (\'80), what is the output of the following program?\par
+\par
  import java.text.NumberFormat;\par
  import java.util.Locale;\par
  import java.util.Locale.Category;\par
@@ -428,13 +496,16 @@ NumberFormat.getCurrencyInstance(Locale.GERMANY)\par
    public static void main(String\'85 unused) \{\par
       new Wallet(2.4).printBalance();\par
    \} \}\par
- A. 2,40 \'80\par
- B. $2.40\par
- C. 2.4\par
- D. The code does not compile.\par
- E. None of the above.\par
+\par
+A) 2,40 \'80\par
+B) $2.40\par
+C) 2.4\par
+D) The code does not compile.\par
+E) None of the above.\par
+\par
  26. Which lines can fill in the blank to make the following code compile?\par
  (Choose all that apply.)\par
+\par
  void rollOut() throws ClassCastException \{\}\par
  public void transform(String c) \{\par
    try \{\par
@@ -443,13 +514,14 @@ NumberFormat.getCurrencyInstance(Locale.GERMANY)\par
 |________________________) \{\par
    \}\par
  \}\par
- A. IOException a\par
- B. Error b\par
- C. NullPointerException c\par
- D. RuntimeException d\par
- E. NumberFormatException e\par
- F. ClassCastException f\par
- G. None of the above. The code contains a compiler error regardless\par
- of what is inserted into the blank.\par
+\par
+A) IOException a\par
+B) Error b\par
+C) NullPointerException c\par
+D) RuntimeException d\par
+E) NumberFormatException e\par
+F) ClassCastException f\par
+G) None of the above. The code contains a compiler error regardless\par
+of what is inserted into the blank.\par
 }
  

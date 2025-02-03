@@ -5,13 +5,16 @@
  track, sorted by the natural order of the sale ID, and you need to retrieve the\par
  text of each. Which two of the following classes best suit your needs for each\par
  of these scenarios? (Choose two.)\par
- A. ArrayList\par
- B. HashMap\par
- C. HashSet\par
- D. LinkedList\par
- E. SequencedTreeSet\par
- F. TreeMap\par
+\par
+A) ArrayList\par
+B) HashMap\par
+C) HashSet\par
+D) LinkedList\par
+E) SequencedTreeSet\par
+F) TreeMap\par
+\par
  2. Which of the following are true? (Choose all that apply.)\par
+\par
  12: List<?> q = List.of("mouse", "parrot");\par
  13: var v = List.of("mouse", "parrot");\par
  14:\par
@@ -19,16 +22,19 @@
  16: q.removeIf(s -> s.length() == 4);\par
  17: v.removeIf(String::isEmpty);\par
  18: v.removeIf(s -> s.length() == 4);\par
- A. This code compiles and runs without error.\par
- B. Exactly one of these lines contains a compiler error.\par
- C. Exactly two of these lines contain a compiler error.\par
- D. Exactly three of these lines contain a compiler error.\par
- E. Exactly four of these lines contain a compiler error.\par
- F. If any lines with compiler errors are removed, this code runs without\par
- throwing an exception.\par
- G. If any lines with compiler errors are removed, this code throws an\par
- exception.\par
+\par
+A) This code compiles and runs without error.\par
+B) Exactly one of these lines contains a compiler error.\par
+C) Exactly two of these lines contain a compiler error.\par
+D) Exactly three of these lines contain a compiler error.\par
+E) Exactly four of these lines contain a compiler error.\par
+F) If any lines with compiler errors are removed, this code runs without\par
+throwing an exception.\par
+G) If any lines with compiler errors are removed, this code throws an\par
+exception.\par
+\par
  3. What is the result of the following statements?\par
+\par
  3:  var greetings = new ArrayDeque<String>();\par
  4:  greetings.offerLast("hello");\par
  5:  greetings.offerLast("hi");\par
@@ -37,22 +43,27 @@
  8:  greetings.peek();\par
 9:  while (greetings.peek() != null)\par
  10:    System.out.print(greetings.pop());\par
- A. hello\par
- B. hellohi\par
- C. hellohiola\par
- D. hiola\par
- E. The code does not compile.\par
- F. An exception is thrown.\par
+\par
+A) hello\par
+B) hellohi\par
+C) hellohiola\par
+D) hiola\par
+E) The code does not compile.\par
+F) An exception is thrown.\par
+\par
  4. Which of these statements compile? (Choose all that apply.)\par
- A. HashSet<Number> hs = new HashSet<Integer>();\par
- B. HashSet<? super ClassCastException> set = new\par
- HashSet<Exception>();\par
- C. List<> list = new ArrayList<String>();\par
- D. List<Object> values = new HashSet<Object>();\par
- E. List<Object> objects = new ArrayList<? extends Object>();\par
- F. Map<String, ? extends Number> hm = new HashMap<String,\par
+\par
+A) HashSet<Number> hs = new HashSet<Integer>();\par
+B) HashSet<? super ClassCastException> set = new\par
+HashSet<Exception>();\par
+C) List<> list = new ArrayList<String>();\par
+D) List<Object> values = new HashSet<Object>();\par
+E) List<Object> objects = new ArrayList<? extends Object>();\par
+F) Map<String, ? extends Number> hm = new HashMap<String,\par
  Integer>();\par
+\par
  5. What is the result of the following code?\par
+\par
  1: public record Hello<T>(T t) \{\par
  2:    public Hello(T t) \{ this.t = t; \}\par
  3:    private <T> void println(T message) \{\par
@@ -62,14 +73,17 @@
  7:       new Hello<String>("hi").println(1);\par
  8:       new Hello("hola").println(true);\par
  9:    \} \}\par
- A. hi followed by a runtime exception.\par
- B. hi-1hola-true\par
- C. The first compiler error is on line 1.\par
- D. The first compiler error is on line 3.\par
- E. The first compiler error is on line 8.\par
- F. The first compiler error is on another line.\par
+\par
+A) hi followed by a runtime exception.\par
+B) hi-1hola-true\par
+C) The first compiler error is on line 1.\par
+D) The first compiler error is on line 3.\par
+E) The first compiler error is on line 8.\par
+F) The first compiler error is on another line.\par
+\par
 6. Which of the following can fill in the blank to print [7, 5, 3]? (Choose all\par
  that apply.)\par
+\par
  8:  public record Platypus(String name, int beakLength) \{\par
  9:     @Override public String toString() \{return "" + \par
 beakLength;\}\par
@@ -87,55 +101,58 @@ Comparator.comparing_______________);\par
  20:       System.out.println(list);\par
  21:    \}\par
  22: \}\par
- A. \par
-B. \par
-C. \par
-D. \par
-E. \par
-F. \par
-(Platypus::beakLength)\par
- (Platypus::beakLength).reversed()\par
- (Platypus::name)\par
+\par
+A) (Platypus::beakLength)\par
+B)  (Platypus::beakLength).reversed()\par
+C)  (Platypus::name)\par
    .thenComparing(Platypus::beakLength)\par
- (Platypus::name)\par
+D) (Platypus::name)\par
    .thenComparing(\par
    Comparator.comparing(Platypus::beakLength)\par
    .reversed())\par
- (Platypus::name)\par
+E) (Platypus::name)\par
    .thenComparingNumber(Platypus::beakLength)\par
    .reversed()\par
- (Platypus::name)\par
+F) (Platypus::name)\par
    .thenComparingInt(Platypus::beakLength)\par
    .reversed()\par
+ \par
 7. Which of the following method signatures are valid overrides of the hairy()\par
  method in the Alpaca class? (Choose all that apply.)\par
- import java.util.*;\par
+ \par
+import java.util.*;\par
  public class Alpaca \{\par
    public List<String> hairy(List<String> list) \{ return null; \}\par
  \}\par
- A. public List<String> hairy(List<CharSequence> list) \{ return \par
+\par
+A) public List<String> hairy(List<CharSequence> list) \{ return \par
 null; \}\par
- B. public List<String> hairy(List<String> list) \{ return null; \}\par
- C. public List<String> hairy(List<Integer> list) \{ return null; \}\par
- D. public List<CharSequence> hairy(List<String> list) \{ return \par
+B) public List<String> hairy(List<String> list) \{ return null; \}\par
+C) public List<String> hairy(List<Integer> list) \{ return null; \}\par
+D) public List<CharSequence> hairy(List<String> list) \{ return \par
 null; \}\par
- E. public Object hairy(List<String> list) \{ return null; \}\par
- F. public ArrayList<String> hairy(List<String> list) \{ return \par
+E) public Object hairy(List<String> list) \{ return null; \}\par
+F) public ArrayList<String> hairy(List<String> list) \{ return \par
 null; \}\par
+\par
  8. Which of the following fills in the blank, allowing the code to compile and run\par
  without issue?\par
+\par
  11: SequencedCollection<String> animals = new _____________<>();\par
  12: animals.addFirst("lions");\par
  13: animals.addLast("tigers");\par
  14: for(var a : animals)\par
  15:    System.out.println(a);\par
  16: System.out.println(animals.get(0));\par
- A. HashSet\par
- B. LinkedList\par
- C. TreeSetMap\par
- D. HashMap\par
- E. None of the above\par
+\par
+A) HashSet\par
+B) LinkedList\par
+C) TreeSetMap\par
+D) HashMap\par
+E) None of the above\par
+\par
  9. What is the result of the following program?\par
+\par
  3:  public class MyComparator implements Comparator<String> \{\par
  4:     public int compare(String a, String b) \{\par
  5:        return b.toLowerCase().compareTo(a.toLowerCase());\par
@@ -147,14 +164,17 @@ null; \}\par
  11:          System.out.print(s + " ");\par
  12:    \}\par
  13: \}\par
- A. Abb aab 123\par
- B. aab Abb 123\par
- C. 123 Abb aab\par
- D. 123 aab Abb\par
- E. The code does not compile.\par
- F. A runtime exception is thrown.\par
+\par
+A) Abb aab 123\par
+B) aab Abb 123\par
+C) 123 Abb aab\par
+D) 123 aab Abb\par
+E) The code does not compile.\par
+F) A runtime exception is thrown.\par
+\par
  10. Which of these statements can fill in the blank so that the Helper class\par
  compiles successfully? (Choose all that apply.)\par
+\par
  2:  public class Helper \{\par
  3:     public static <U extends Exception>\par
  4:        void printException(U u) \{\par
@@ -164,27 +184,33 @@ null; \}\par
  8:     public static void main(String[] args) \{\par
  9:        Helper.____________________________________________;\par
  10:    \} \}\par
- A. printException(new FileNotFoundException("A"))\par
- B. printException(new Exception("B"))\par
- C. <Throwable>printException(new Exception("C"))\par
- D. <NullPointerException>printException(new NullPointerException\par
- ("D"))\par
- E. printException(new Throwable("E"))\par
+\par
+A) printException(new FileNotFoundException("A"))\par
+B) printException(new Exception("B"))\par
+C) <Throwable>printException(new Exception("C"))\par
+D) <NullPointerException>printException(new NullPointerException\par
+("D"))\par
+E) printException(new Throwable("E"))\par
+\par
  11. Which of the following will compile when filling in the blank? (Choose all that\par
  apply.)\par
+\par
  var list = List.of(1, 2, 3);\par
  var set = Set.of(1, 2, 3);\par
  var map = Map.of(1, 2, 3, 4);\par
  ____________.forEach(System.out::println);\par
- A. list\par
- B. set\par
-C. map\par
- D. map.keys()\par
- E. map.keySet()\par
- F. map.values()\par
- G. map.valueSet()\par
+\par
+A) list\par
+B) set\par
+C) map\par
+D) map.keys()\par
+E) map.keySet()\par
+F) map.values()\par
+G) map.valueSet()\par
+\par
  12. Which of these statements can fill in the blank so that the Wildcard class\par
  compiles successfully? (Choose all that apply.)\par
+\par
  3:  public class Wildcard \{\par
  4:     public void showSize(List<?> list) \{\par
  5:        System.out.println(list.size());\par
@@ -194,13 +220,16 @@ C. map\par
  9:        _________________________________________;\par
  10:       card.showSize(list);\par
  11:    \} \}\par
- A. List<?> list = new HashSet <String>()\par
- B. ArrayList<? super Date> list = new ArrayList<Date>()\par
- C. List<?> list = new ArrayList<?>()\par
- D. List<Exception> list = new LinkedList<java.io.IOException>()\par
- E. ArrayList <? extends Number> list = new ArrayList <Integer>()\par
- F. None of the above\par
+\par
+A) List<?> list = new HashSet <String>()\par
+B) ArrayList<? super Date> list = new ArrayList<Date>()\par
+C) List<?> list = new ArrayList<?>()\par
+D) List<Exception> list = new LinkedList<java.io.IOException>()\par
+E) ArrayList <? extends Number> list = new ArrayList <Integer>()\par
+F) None of the above\par
+\par
  13. What is the result of the following program?\par
+\par
  3:  public record Sorted(int num, String text)\par
  4:     implements Comparable<Sorted>, Comparator<Sorted> \{\par
  5:\par
@@ -220,13 +249,16 @@ C. map\par
  19:       t2.add(s1); t2.add(s2);\par
 20:       System.out.println(t1 + " " + t2);\par
  21:    \} \}\par
- A. [55, 88] [55, 88]\par
- B. [55, 88] [88, 55]\par
- C. [88, 55] [55, 88]\par
- D. [88, 55] [88, 55]\par
- E. The code does not compile.\par
- F. A runtime exception is thrown.\par
+\par
+A) [55, 88] [55, 88]\par
+B) [55, 88] [88, 55]\par
+C) [88, 55] [55, 88]\par
+D) [88, 55] [88, 55]\par
+E) The code does not compile.\par
+F) A runtime exception is thrown.\par
+\par
  14. What is the result of the following code?\par
+\par
  Comparator<Integer> c1 = (o1, o2) -> o2 - o1;\par
  Comparator<Integer> c2 = Comparator.naturalOrder();\par
  Comparator<Integer> c3 = Comparator.reverseOrder();\par
@@ -235,53 +267,65 @@ C. map\par
  Collections.reverse(list);\par
  Collections.reverse(list);\par
  System.out.println(Collections.binarySearch(list, 2));\par
- A. One or more of the comparators can fill in the blank so that the code prints\par
- 0.\par
- B. One or more of the comparators can fill in the blank so that the code prints\par
- 1.\par
- C. One or more of the comparators can fill in the blank so that the code prints\par
- 2.\par
- D. The result is undefined regardless of which comparator is used.\par
- E. A runtime exception is thrown regardless of which comparator is used.\par
- F. The code does not compile.\par
+\par
+A) One or more of the comparators can fill in the blank so that the code prints\par
+0.\par
+B) One or more of the comparators can fill in the blank so that the code prints\par
+1.\par
+C) One or more of the comparators can fill in the blank so that the code prints\par
+2.\par
+D) The result is undefined regardless of which comparator is used.\par
+E) A runtime exception is thrown regardless of which comparator is used.\par
+F) The code does not compile.\par
+\par
  15. Which of the following lines can be inserted to make the code compile?\par
  (Choose all that apply.)\par
+\par
  class W \{\}\par
  class X extends W \{\}\par
  class Y extends X \{\}\par
  class Z<Y> \{\par
    // INSERT CODE HERE\par
  \}\par
- A. W w1 = new W();\par
-B. W w2 = new X();\par
- C. W w3 = new Y();\par
- D. Y y1 = new W();\par
- E. Y y2 = new X();\par
- F. Y y3 = new Y();\par
+\par
+A) W w1 = new W();\par
+B) W w2 = new X();\par
+C) W w3 = new Y();\par
+D) Y y1 = new W();\par
+E) Y y2 = new X();\par
+F) Y y3 = new Y();\par
+\par
  16. Which options are true of the following code? (Choose all that apply.)\par
+\par
  _____________ q = new LinkedList<>();\par
  var u = Collections.unmodifiableCollection(q);\par
  q.add(10);\par
  q.add(12);\par
  q.remove(1);\par
  System.out.print(u);\par
- A. If we fill in the blank with List<Integer>, the output is [10].\par
- B. If we fill in the blank with Queue<Integer>, the output is [10].\par
- C. If we fill in the blank with var, the output is [10].\par
- D. One or more of the scenarios does not compile.\par
- E. One or more of the scenarios throws a runtime exception.\par
+\par
+A) If we fill in the blank with List<Integer>, the output is [10].\par
+B) If we fill in the blank with Queue<Integer>, the output is [10].\par
+C) If we fill in the blank with var, the output is [10].\par
+D) One or more of the scenarios does not compile.\par
+E) One or more of the scenarios throws a runtime exception.\par
+\par
  17. What is the result of the following code?\par
+\par
  4: Map m = new HashMap();\par
  5: m.put(123, "456");\par
  6: m.put("abc", "def");\par
  7: System.out.println(m.contains("123"));\par
- A. false\par
- B. true\par
- C. Compiler error on line 4.\par
- D. Compiler error on line 5.\par
- E. Compiler error on line 7.\par
- F. A runtime exception is thrown.\par
+\par
+A) false\par
+B) true\par
+C) Compiler error on line 4.\par
+D) Compiler error on line 5.\par
+E) Compiler error on line 7.\par
+F) A runtime exception is thrown.\par
+\par
  18. What is the result of the following code? (Choose all that apply.)\par
+\par
  48: var map = Map.of(1,2, 3, 6);\par
  49: var list = List.copyOf(map.entrySet());\par
  50:\par
@@ -295,27 +339,33 @@ B. W w2 = new X();\par
  58: thirdCopy.replaceAll(x -> x * 2);\par
  59:\par
  60: System.out.println(thirdCopy);\par
- A. One line fails to compile.\par
- B. Two lines fail to compile.\par
- C. Three lines fail to compile.\par
- D. The code compiles but throws an exception at runtime.\par
- E. If any lines with compiler errors are removed, the code throws an\par
- exception at runtime.\par
- F. If any lines with compiler errors are removed, the code prints [16, 32,\par
- 4].\par
- G. The code compiles and prints [16, 32, 4] without any changes.\par
+\par
+A) One line fails to compile.\par
+B) Two lines fail to compile.\par
+C) Three lines fail to compile.\par
+D) The code compiles but throws an exception at runtime.\par
+E) If any lines with compiler errors are removed, the code throws an\par
+exception at runtime.\par
+F) If any lines with compiler errors are removed, the code prints [16, 32,\par
+4].\par
+G) The code compiles and prints [16, 32, 4] without any changes.\par
+\par
  19. What code change is needed to make the method compile, assuming there is no\par
  class named T?\par
+\par
  public static T identity(T t) \{\par
    return t;\par
  \}\par
- A. Add <T> after the public keyword.\par
- B. Add <T> after the static keyword.\par
- C. Add <T> after T.\par
- D. Add <?> after the public keyword.\par
- E. Add <?> after the static keyword.\par
- F. No change is required. The code already compiles.\par
+\par
+A) Add <T> after the public keyword.\par
+B) Add <T> after the static keyword.\par
+C) Add <T> after T.\par
+D) Add <?> after the public keyword.\par
+E) Add <?> after the static keyword.\par
+F) No change is required. The code already compiles.\par
+\par
  20. Assuming keys are printed in order, what is the result of the following?\par
+\par
  var map = new HashMap<Integer, Integer>();\par
  map.put(1, 10);\par
  map.put(2, 20);\par
@@ -323,22 +373,27 @@ B. W w2 = new X();\par
  map.merge(1, 3, (a,b) -> a + b);\par
  map.merge(3, 3, (a,b) -> a + b);\par
  System.out.println(map);\par
-A. \{1=10, 2=20\}\par
- B. \{1=10, 2=20, 3=null\}\par
- C. \{1=10, 2=20, 3=3\}\par
- D. \{1=13, 2=20\}\par
- E. \{1=13, 2=20, 3=null\}\par
- F. \{1=13, 2=20, 3=3\}\par
- G. The code does not compile.\par
- H. An exception is thrown.\par
+\par
+A) \{1=10, 2=20\}\par
+B) \{1=10, 2=20, 3=null\}\par
+C) \{1=10, 2=20, 3=3\}\par
+D) \{1=13, 2=20\}\par
+E) \{1=13, 2=20, 3=null\}\par
+F) \{1=13, 2=20, 3=3\}\par
+G) The code does not compile.\par
+H) An exception is thrown.\par
+\par
  21. Which of the following statements are true? (Choose all that apply.)\par
- A. Comparable is in the java.util package.\par
- B. Comparator is in the java.util package.\par
- C. compare() is in the Comparable interface.\par
- D. compare() is in the Comparator interface.\par
- E. compare() takes one method parameter.\par
- F. compare() takes two method parameters.\par
+\par
+A) Comparable is in the java.util package.\par
+B) Comparator is in the java.util package.\par
+C) compare() is in the Comparable interface.\par
+D) compare() is in the Comparator interface.\par
+E) compare() takes one method parameter.\par
+F) compare() takes two method parameters.\par
+\par
  22. What is the output of the following code snippet?\par
+\par
  21: SequencedMap<Integer, String> cats = new TreeMap<>();\par
  22: cats.put(3, "Snowball");\par
  23: cats.put(2, "Sugar");\par
@@ -347,25 +402,29 @@ A. \{1=10, 2=20\}\par
  26: var id = cats.lastEntry().getKey();\par
  27: cats.pollFirstEntry();\par
  28: System.out.print(cats.firstEntry().getValue());\par
- A. Minnie Mouse\par
- B. Snowball\par
- C. Sugar\par
- D. The code does not compile.\par
- E. The code compiles, but an exception is thrown at runtime.\par
+\par
+A) Minnie Mouse\par
+B) Snowball\par
+C) Sugar\par
+D) The code does not compile.\par
+E) The code compiles, but an exception is thrown at runtime.\par
+\par
  23. What is the output of the following code snippet?\par
+\par
  var fishes = new TreeSet<String>();\par
  fishes.add("Koi");\par
  fishes.addFirst("clown");\par
 fishes.add("carp");\par
  for(var fish : fishes)\par
    System.out.print(fish + ", ");\par
- A. carp, clown, Koi,\par
- B. carp, Koi, clown,\par
- C. clown, carp, Koi,\par
- D. clown, Koi, carp,\par
- E. Koi, carp, clown,\par
- F. Koi, clown, carp,\par
- G. The code does not compile.\par
- H. The code compiles but throws an exception at runtime.\par
+\par
+A) carp, clown, Koi,\par
+B) carp, Koi, clown,\par
+C) clown, carp, Koi,\par
+D) clown, Koi, carp,\par
+E) Koi, carp, clown,\par
+F) Koi, clown, carp,\par
+G) The code does not compile.\par
+H) The code compiles but throws an exception at runtime.\par
 }
  

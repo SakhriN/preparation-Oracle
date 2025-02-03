@@ -1,6 +1,7 @@
 {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
 {\*\generator Riched20 10.0.22621}\viewkind4\uc1 
-\pard\sa200\sl276\slmult1\f0\fs22\lang12  1. What is the result of the following class?\par
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 1. What is the result of the following class?\par
+\par
  1:  import java.util.function.*;\par
  2:\par
  3:  public class Panda \{\par
@@ -16,13 +17,16 @@
  13:          pred.test(panda) ? "match" : "not match";\par
  14:       System.out.print(result);\par
  15: \} \}\par
- A. match\par
- B. not match\par
- C. Compiler error on line 8\par
- D. Compiler error on lines 10 and 11\par
- E. Compiler error on lines 12 and 13\par
- F. A runtime exception\par
+\par
+A. match\par
+B. not match\par
+C. Compiler error on line 8\par
+D. Compiler error on lines 10 and 11\par
+E. Compiler error on lines 12 and 13\par
+F. A runtime exception\par
+\par
  2. What is the result of the following code?\par
+\par
  1:  interface Climb \{\par
  2:     boolean isTooHigh(int height, int limit);\par
  3:  \}\par
@@ -38,25 +42,30 @@
  13:          System.out.println("ok");\par
  14:    \}\par
  15: \}\par
- A. ok\par
- B. too high\par
- C. Compiler error on line 7.\par
- D. Compiler error on line 10.\par
- E. Compiler error on a different line.\par
- F. A runtime exception is thrown.\par
+\par
+A. ok\par
+B. too high\par
+C. Compiler error on line 7.\par
+D. Compiler error on line 10.\par
+E. Compiler error on a different line.\par
+F. A runtime exception is thrown.\par
+\par
  3. Which statements about functional interfaces are true? (Choose all that\par
  apply.)\par
- A. A functional interface can contain default and private methods.\par
- B. A functional interface can be defined as a class or an interface.\par
- C. Abstract methods with signatures that are contained in public\par
- methods of java.lang.Object do not count toward the abstract\par
- method count for a functional interface.\par
- D. A functional interface cannot contain static or private static\par
- methods.\par
- E. A functional interface must be marked with the\par
- @FunctionalInterface annotation.\par
+\par
+A. A functional interface can contain default and private methods.\par
+B. A functional interface can be defined as a class or an interface.\par
+C. Abstract methods with signatures that are contained in public\par
+methods of java.lang.Object do not count toward the abstract\par
+method count for a functional interface.\par
+D. A functional interface cannot contain static or private static\par
+methods.\par
+E. A functional interface must be marked with the\par
+@FunctionalInterface annotation.\par
+\par
  4. Which lambda can replace the MySecret class to return the same\par
  value? (Choose all that apply.)\par
+\par
  interface Secret \{\par
    String magic(double d);\par
  \}\par
@@ -64,72 +73,90 @@
    public String magic(double d) \{\par
       return "Poof";\par
    \} \}\par
- A. (e) -> "Poof"\par
- B. (e) -> \{"Poof"\}\par
- C. (e) -> \{ String e = ""; "Poof" \}\par
- D. (e) -> \{ String e = ""; return "Poof"; \}\par
- E. (e) -> \{ String e = ""; return "Poof" \}\par
- F. (e) -> \{ String f = ""; return "Poof"; \}\par
+\par
+A. (e) -> "Poof"\par
+B. (e) -> \{"Poof"\}\par
+C. (e) -> \{ String e = ""; "Poof" \}\par
+D. (e) -> \{ String e = ""; return "Poof"; \}\par
+E. (e) -> \{ String e = ""; return "Poof" \}\par
+F. (e) -> \{ String f = ""; return "Poof"; \}\par
+\par
  5. Which of the following functional interfaces contain an abstract\par
  method that returns a primitive value? (Choose all that apply.)\par
- A. BooleanSupplier\par
- B. CharSupplier\par
- C. DoubleSupplier\par
- D. FloatSupplier\par
- E. IntSupplier\par
- F. StringSupplier\par
+\par
+A. BooleanSupplier\par
+B. CharSupplier\par
+C. DoubleSupplier\par
+D. FloatSupplier\par
+E. IntSupplier\par
+F. StringSupplier\par
+\par
  6. Which of the following lambda expressions can be passed to a function\par
  of Predicate<String> type? (Choose all that apply.)\par
- A. s -> s.isEmpty()\par
- B. s --> s.isEmpty()\par
- C. (String s) -> s.isEmpty()\par
- D. (String s) --> s.isEmpty()\par
- E. (StringBuilder s) -> s.isEmpty()\par
- F. (StringBuilder s) --> s.isEmpty()\par
+\par
+A. s -> s.isEmpty()\par
+B. s --> s.isEmpty()\par
+C. (String s) -> s.isEmpty()\par
+D. (String s) --> s.isEmpty()\par
+E. (StringBuilder s) -> s.isEmpty()\par
+F. (StringBuilder s) --> s.isEmpty()\par
+\par
  7. Which of these statements is true about the following code?\par
+\par
  public void method() \{\par
    x((var x) -> \{\}, (var x, var y) -> false);\par
  \}\par
 public void x(Consumer<String> x, BinaryOperator<Boolean> \par
 y) \{\}\par
- A. The code does not compile because of one of the variables named\par
- x.\par
- B. The code does not compile because of one of the variables named\par
- y.\par
- C. The code does not compile for another reason.\par
- D. The code compiles, and the x in each lambda refers to the same\par
- type.\par
- E. The code compiles, and the x in each lambda refers to a different\par
- type.\par
+\par
+A. The code does not compile because of one of the variables named\par
+x.\par
+B. The code does not compile because of one of the variables named\par
+y.\par
+C. The code does not compile for another reason.\par
+D. The code compiles, and the x in each lambda refers to the same\par
+type.\par
+E. The code compiles, and the x in each lambda refers to a different\par
+type.\par
+\par
  8. Which of the following is equivalent to this code?\par
+\par
  UnaryOperator<Integer> u = x -> x * x;\par
- A. BiFunction<Integer> f = x -> x*x;\par
- B. BiFunction<Integer, Integer> f = x -> x*x;\par
- C. BinaryOperator<Integer, Integer> f = x -> x*x;\par
- D. Function<Integer> f = x -> x*x;\par
- E. Function<Integer, Integer> f = x -> x*x;\par
- F. None of the above\par
+\par
+A. BiFunction<Integer> f = x -> x*x;\par
+B. BiFunction<Integer, Integer> f = x -> x*x;\par
+C. BinaryOperator<Integer, Integer> f = x -> x*x;\par
+D. Function<Integer> f = x -> x*x;\par
+E. Function<Integer, Integer> f = x -> x*x;\par
+F. None of the above\par
+\par
  9. Which statements are true? (Choose all that apply.)\par
- A. The Consumer interface is good for printing out an existing value.\par
- B. The Supplier interface is good for printing out an existing value.\par
- C. The IntegerSupplier interface returns an int.\par
- D. The Predicate interface returns an int.\par
- E. The Function interface has a method named test().\par
- F. The Predicate interface has a method named test().\par
+\par
+A. The Consumer interface is good for printing out an existing value.\par
+B. The Supplier interface is good for printing out an existing value.\par
+C. The IntegerSupplier interface returns an int.\par
+D. The Predicate interface returns an int.\par
+E. The Function interface has a method named test().\par
+F. The Predicate interface has a method named test().\par
+\par
  10. Which of the following can be inserted without causing a compilation\par
  error? (Choose all that apply.)\par
+\par
 public void remove(List<Character> chars) \{\par
    char end = 'z';\par
    Predicate<Character> predicate = c -> \{\par
       char start = 'a'; return start <= c && c <= end; \};\par
    // INSERT LINE HERE\par
  \}\par
- A. char start = \rquote a\rquote ;\par
- B. char c = \rquote x\rquote ;\par
- C. chars = null;\par
- D. end = \rquote 1\rquote ;\par
- E. None of the above\par
+\par
+A. char start = \rquote a\rquote ;\par
+B. char c = \rquote x\rquote ;\par
+C. chars = null;\par
+D. end = \rquote 1\rquote ;\par
+E. None of the above\par
+\par
  11. How many times is true printed out by this code?\par
+\par
  import java.util.function.Predicate;\par
  public class Fantasy \{\par
    public static void scary(String animal) \{\par
@@ -144,23 +171,29 @@ public void remove(List<Character> chars) \{\par
       scary("unicorn");\par
    \}\par
  \}\par
- A. One.\par
- B. Two.\par
- C. Three.\par
- D. The code does not compile.\par
- E. A runtime exception is thrown.\par
+\par
+A. One.\par
+B. Two.\par
+C. Three.\par
+D. The code does not compile.\par
+E. A runtime exception is thrown.\par
+\par
  12. What does the following code output?\par
+\par
  Function<Integer, Integer> s = a -> a + 4;\par
  Function<Integer, Integer> t = a -> a * 3;\par
 Function<Integer, Integer> c = s.compose(t);\par
  System.out.print(c.apply(1));\par
- A. 7\par
- B. 15\par
- C. The code does not compile because of the data types in the\par
- lambda expressions.\par
- D. The code does not compile because of the compose() call.\par
- E. The code does not compile for another reason.\par
+\par
+A. 7\par
+B. 15\par
+C. The code does not compile because of the data types in the\par
+lambda expressions.\par
+D. The code does not compile because of the compose() call.\par
+E. The code does not compile for another reason.\par
+\par
  13. Which is true of the following code?\par
+\par
  int length = 3;\par
  for (int i = 0; i<3; i++) \{\par
    if (i%2 == 0) \{\par
@@ -172,23 +205,28 @@ Function<Integer, Integer> c = s.compose(t);\par
       System.out.println(supplier.get());        // D\par
    \}\par
  \}\par
- A. The first compiler error is on line A.\par
- B. The first compiler error is on line B.\par
- C. The first compiler error is on line C.\par
- D. The first compiler error is on line D.\par
- E. The code compiles successfully.\par
+\par
+A. The first compiler error is on line A.\par
+B. The first compiler error is on line B.\par
+C. The first compiler error is on line C.\par
+D. The first compiler error is on line D.\par
+E. The code compiles successfully.\par
+\par
  14. Which of the following are valid lambda expressions? (Choose all that\par
  apply.)\par
- A. (Wolf w, var c) -> 39\par
- B. (final Camel c) -> \{\}\par
- C. (a,b,c) -> \{int b = 3; return 2;\}\par
- D. (x,y) -> new RuntimeException()\par
+\par
+A. (Wolf w, var c) -> 39\par
+B. (final Camel c) -> \{\}\par
+C. (a,b,c) -> \{int b = 3; return 2;\}\par
+D. (x,y) -> new RuntimeException()\par
 E. (var y) -> return 0;\par
- F. () -> \{float r\}\par
- G. (Cat a, b) -> \{\}\par
+F. () -> \{float r\}\par
+G. (Cat a, b) -> \{\}\par
+\par
  15. Which lambda expression, when entered into the blank line in the\par
  following code, causes the program to print hahaha? (Choose all that\par
  apply.)\par
+\par
  import java.util.function.Predicate;\par
  public class Hyena \{\par
    private int age = 1;\par
@@ -205,13 +243,15 @@ joke) \{\par
       System.out.print(r);\par
    \}\par
  \}\par
- A. var -> p.age <= 10\par
- B. shenzi -> age==1\par
- C. p -> true\par
- D. age==1\par
- E. shenzi -> age==2\par
- F. h -> h.age < 5\par
- G. None of the above, as the code does not compile\par
+\par
+A. var -> p.age <= 10\par
+B. shenzi -> age==1\par
+C. p -> true\par
+D. age==1\par
+E. shenzi -> age==2\par
+F. h -> h.age < 5\par
+G. None of the above, as the code does not compile\par
+\par
  16. Which of the following can be inserted without causing a compilation\par
  error?\par
  public void remove(List<Character> chars) \{\par
@@ -220,12 +260,15 @@ joke) \{\par
    Predicate<Character> predicate =  c -> \{\par
       char start = 'a'; return start <= c && c <= end; \};\par
  \}\par
- A. char start = \rquote a\rquote ;\par
- B. char c = \rquote x\rquote ;\par
- C. chars = null;\par
- D. end = \rquote 1\rquote ;\par
- E. None of the above\par
+\par
+A. char start = \rquote a\rquote ;\par
+B. char c = \rquote x\rquote ;\par
+C. chars = null;\par
+D. end = \rquote 1\rquote ;\par
+E. None of the above\par
+\par
  17. What is the result of running the following class?\par
+\par
  1:  import java.util.function.*;\par
  2:\par
  3:  public class Panda \{\par
@@ -241,39 +284,48 @@ joke) \{\par
  13:          ? "match" : "not match";\par
  14:       System.out.print(result);\par
  15: \} \}\par
- A. match\par
- B. not match\par
- C. Compiler error on line 8.\par
- D. Compiler error on line 10.\par
- E. Compiler error on line 12.\par
- F. A runtime exception is thrown.\par
+\par
+A. match\par
+B. not match\par
+C. Compiler error on line 8.\par
+D. Compiler error on line 10.\par
+E. Compiler error on line 12.\par
+F. A runtime exception is thrown.\par
+\par
  18. Which functional interfaces complete the following code? For line 7,\par
  assume m and n are instances of functional interfaces that exist and\par
  have the same type as y. (Choose three.)\par
+\par
 6:  _____________ x = String::new;\par
  7:  _____________ y = m.andThen(n);\par
  8:  _____________ z = a -> a + a;\par
- A. BinaryConsumer<String, String>\par
- B. BiConsumer<String, String>\par
- C. BinaryFunction<String, String>\par
- D. BiFunction<String, String>\par
- E. Predicate<String>\par
- F. Supplier<String>\par
- G. UnaryOperator<String>\par
- H. UnaryOperator<String, String>\par
+\par
+A. BinaryConsumer<String, String>\par
+B. BiConsumer<String, String>\par
+C. BinaryFunction<String, String>\par
+D. BiFunction<String, String>\par
+E. Predicate<String>\par
+F. Supplier<String>\par
+G. UnaryOperator<String>\par
+H. UnaryOperator<String, String>\par
+\par
  19. Which of the following compiles and prints out the entire set?\par
  Set<?> set = Set.of("lion", "tiger", "bear");\par
+\par
  var s = Set.copyOf(set);\par
  Consumer<Object> consumer =  ________________;\par
  s.forEach(consumer);\par
- A. () -> System.out.println(s)\par
- B. s -> System.out.println(s)\par
- C. (s) -> System.out.println(s)\par
- D. System.out.println(s)\par
- E. System::out::println\par
- F. System.out::println\par
+\par
+A. () -> System.out.println(s)\par
+B. s -> System.out.println(s)\par
+C. (s) -> System.out.println(s)\par
+D. System.out.println(s)\par
+E. System::out::println\par
+F. System.out::println\par
+\par
  20. Which lambda can replace the new Sloth() call in the main() method\par
  and produce the same output at runtime?\par
+\par
  import java.util.List;\par
  interface Yawn \{\par
    String yawn(double d, List<Integer> time);\par
@@ -289,15 +341,18 @@ joke) \{\par
    public static void main(String\'85 unused) \{\par
       System.out.print(takeNap(new Sloth()));\par
    \} \}\par
- A. (z,f) -> \{ String x = ""; return "Sleep: " + x \}\par
- B. (t,s) -> \{ String t = ""; return "Sleep: " + t; \}\par
- C. (w,q) -> \{"Sleep: " + w\}\par
- D. (e,u) -> \{ String g = ""; "Sleep: " + e \}\par
- E. (a,b) -> "Sleep: " + (double)(b==null ? a : a)\par
- F. (r,k) -> \{ String g = ""; return "Sleep:"; \}\par
- G. None of the above, as the program does not compile\par
+\par
+A. (z,f) -> \{ String x = ""; return "Sleep: " + x \}\par
+B. (t,s) -> \{ String t = ""; return "Sleep: " + t; \}\par
+C. (w,q) -> \{"Sleep: " + w\}\par
+D. (e,u) -> \{ String g = ""; "Sleep: " + e \}\par
+E. (a,b) -> "Sleep: " + (double)(b==null ? a : a)\par
+F. (r,k) -> \{ String g = ""; return "Sleep:"; \}\par
+G. None of the above, as the program does not compile\par
+\par
  21. Which of the following are valid functional interfaces? (Choose all\par
  that apply.)\par
+\par
  public interface Transport \{\par
    public int go();\par
    public boolean equals(Object o);\par
@@ -316,12 +371,13 @@ joke) \{\par
    int hashCode();\par
    int hashCode(String input);\par
  \}\par
- A. Boat\par
- B. Car\par
- C. Locomotive\par
- D. Spaceship\par
- E. Transport\par
- F. Train\par
- G. None of these is a valid functional interface.\par
+\par
+A. Boat\par
+B. Car\par
+C. Locomotive\par
+D. Spaceship\par
+E. Transport\par
+F. Train\par
+G. None of these is a valid functional interface.\par
 }
  
