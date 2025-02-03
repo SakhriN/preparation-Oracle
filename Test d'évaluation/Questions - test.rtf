@@ -1,6 +1,7 @@
 {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
 {\*\generator Riched20 10.0.22621}\viewkind4\uc1 
-\pard\sa200\sl276\slmult1\f0\fs22\lang12  1. What is the result of executing the following code snippet?\par
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 1. What is the result of executing the following code snippet?\par
+\par
  41: final int score1 = 8, score2 = 3;\par
  42: Integer myScore = 7;\par
  43: var goal = switch (myScore) \{\par
@@ -11,38 +12,46 @@
  48:    case null -> "nope";    \par
 49: \};\par
  50: System.out.print(goal);\par
- 1. good\par
- 2. better\par
- 3. best\par
- 4. unknown\par
- 5. nope\par
- 6. Line 44 does not compile.\par
- 7. Line 45 does not compile.\par
- 8. Line 46 does not compile.\par
- 9. Line 47 does not compile.\par
- 10. Line 48 does not compile.\par
- 2. What is the output of the following code snippet?\par
+\par
+A) good\par
+B) better\par
+C) best\par
+D) unknown\par
+E) nope\par
+F) Line 44 does not compile.\par
+G) Line 45 does not compile.\par
+H) Line 46 does not compile.\par
+I) Line 47 does not compile.\par
+J) Line 48 does not compile.\par
+\par
+2. What is the output of the following code snippet?\par
+\par
  int moon = 9, star = 2 + 2 * 3;\par
  float sun = star > 10 ? 1 : 3;\par
  double jupiter = (sun + moon) - 1.0f;\par
  int mars = --moon <= 8 ? 2 : 3;\par
  System.out.println(sun + ", " + jupiter + ", " + mars);\par
- 1. 1, 11, 2\par
- 2. 3.0, 11.0, 2\par
- 3. 1.0, 11.0, 3\par
- 4. 3.0, 13.0, 3\par
- 5. 3.0f, 12, 2\par
-6. The code does not compile because one of the assignments requires an\par
+\par
+A) 1, 11, 2\par
+B) 3.0, 11.0, 2\par
+C) 1.0, 11.0, 3\par
+D) 3.0, 13.0, 3\par
+E) 3.0f, 12, 2\par
+F) The code does not compile because one of the assignments requires an\par
  explicit numeric cast.\par
- 3. Which APIs exist for creating or working with virtual threads? (Choose all that\par
+ \par
+3. Which APIs exist for creating or working with virtual threads? (Choose all that\par
  apply.)\par
- 1. Executors.newVirtualThread()\par
- 2. Executors.newVirtualThreadExecutor()\par
- 3. Executors.newVirtualThreadPerTaskExecutor()\par
- 4. new VirtualThread()\par
- 5. Thread.ofVirtual()\par
- 6. Thread.ofVirtualThread()\par
- 4. What is the output of this code?\par
+\par
+A) Executors.newVirtualThread()\par
+B) Executors.newVirtualThreadExecutor()\par
+C) Executors.newVirtualThreadPerTaskExecutor()\par
+D) new VirtualThread()\par
+E) Thread.ofVirtual()\par
+F) Thread.ofVirtualThread()\par
+\par
+4. What is the output of this code?\par
+\par
  20: Predicate<String> empty = String::isEmpty;\par
  21: Predicate<String> notEmpty = empty.negate();\par
  22:\par
@@ -55,12 +64,15 @@
  29:    .flatMap(Collection::stream)\par
  30:    .collect(Collectors.partitioningBy(notEmpty));\par
  31: System.out.println(result);\par
- 1. It outputs \{\}.\par
- 2. It outputs \{false=[], true=[]\}.\par
- 3. The code does not compile.\par
- 4. The code does not terminate.\par
- 5. What is the result of the following program?\par
- 1: public class MathFunctions \{\par
+\par
+A) It outputs \{\}.\par
+B) It outputs \{false=[], true=[]\}.\par
+C) The code does not compile.\par
+D) The code does not terminate.\par
+\par
+5. What is the result of the following program?\par
+\par
+1: public class MathFunctions \{\par
  2:    public static void addToInt(int x, int amountToAdd) \{\par
  3:       x = x + amountToAdd % -5;\par
  4:    \}\par
@@ -69,14 +81,17 @@
  7:       var b = 10;\par
  8:       MathFunctions.addToInt(a, b);\par
  9:       System.out.println(a);   \} \}\par
- 1. 10\par
- 2. 15\par
- 3. 25\par
- 4. Compiler error on line 3\par
- 5. Compiler error on line 8\par
- 6. None of the above\par
+\par
+A) 10\par
+B) 15\par
+C) 25\par
+D) Compiler error on line 3\par
+E) Compiler error on line 8\par
+F) None of the above\par
+\par
 6. Suppose that we have the following property files and code. What values are\par
  printed on lines 8 and 9, respectively?\par
+\par
  Penguin.properties \par
 name=Billy\par
  age=1\par
@@ -93,48 +108,60 @@ name=Willy\par
  7: var b = ResourceBundle.getBundle("Penguin", fr);\par
  8: System.out.println(b.getString("name"));\par
  9: System.out.println(b.getString("age"));\par
- 1. Billy and 1\par
- 2. Billy and null\par
- 3. Willy and 1\par
- 4. Willy and null\par
- 5. Chilly and null\par
- 6. The code does not compile.\par
- 7. What is guaranteed to be printed by the following code? (Choose all that apply.)\par
+\par
+A) Billy and 1\par
+B) Billy and null\par
+C) Willy and 1\par
+D) Willy and null\par
+E) Chilly and null\par
+F) The code does not compile.\par
+\par
+7. What is guaranteed to be printed by the following code? (Choose all that apply.)\par
+\par
  int[] array = \{6, 9, 8\};\par
  System.out.println("B" + Arrays.binarySearch(array,9));\par
  System.out.println("C" + Arrays.compare(array,\par
   new int[] \{6, 9, 8\}));\par
  System.out.println("M" + Arrays.mismatch(array,\par
   new int[] \{6, 9, 8\}));\par
- 1. B1\par
- 2. B2\par
- 3. C-1\par
- 4. C0\par
- 5. M-1\par
- 6. M0\par
- 7. The code does not compile.\par
- 8. Which functional interfaces complete the following code, presuming variable r\par
+\par
+A) B1\par
+B) B2\par
+C) C-1\par
+D) C0\par
+E) M-1\par
+F) M0\par
+G) The code does not compile.\par
+\par
+8. Which functional interfaces complete the following code, presuming variable r\par
  exists? (Choose all that apply.)\par
+\par
  6:  _____ x = r.negate();\par
  7:  _____ y = () -> System.out.println();\par
  8:  _____ z = (a, b) -> a - b;\par
-1. BinaryPredicate<Integer, Integer>\par
- 2. Comparable<Integer>\par
- 3. Comparator<Integer>\par
- 4. Consumer<Integer>\par
- 5. Predicate<Integer>\par
- 6. Runnable\par
- 7. Runnable<Integer>\par
- 9. Suppose you have a module named com.vet. Where could you place the\par
+\par
+A) BinaryPredicate<Integer, Integer>\par
+B) Comparable<Integer>\par
+C) Comparator<Integer>\par
+D) Consumer<Integer>\par
+E) Predicate<Integer>\par
+F) Runnable\par
+G) Runnable<Integer>\par
+\par
+9. Suppose you have a module named com.vet. Where could you place the\par
  following module-info.java file to create a valid module?\par
+\par
  public module com.vet \{\par
    exports com.vet;\par
  \}\par
- 1. At the same level as the com folder\par
- 2. At the same level as the vet folder\par
- 3. Inside the vet folder\par
- 4. None of the above\par
- 10. What is the output of the following program? (Choose all that apply.)\par
+\par
+A) At the same level as the com folder\par
+B) At the same level as the vet folder\par
+C) Inside the vet folder\par
+D) None of the above\par
+\par
+10. What is the output of the following program? (Choose all that apply.)\par
+\par
  15: interface HasTail \{ default int getTailLength() \{ return 2; \} \}\par
  16: abstract class Puma implements HasTail \{\par
  17:    int getTailLength() \{ return 4; \} \}\par
@@ -151,23 +178,27 @@ name=Willy\par
  28:       \} \}\par
  29:    public int getTailLength(int length) \{ return 2; \}\par
  30: \}\par
- 1. 2\par
- 2. 4\par
- 3. 10\par
- 4. Line 15 does not compile.\par
- 5. Line 16 does not compile.\par
- 6. Line 17 does not compile.\par
- 7. Line 20 does not compile.\par
- 8. Lines 22\f1\endash 24 do not compile.\par
- 9. Line 27 does not compile.\par
- 10. None of the above.\par
+\par
+A) 2\par
+B) 4\par
+C) 10\par
+D) Line 15 does not compile.\par
+E) Line 16 does not compile.\par
+F) Line 17 does not compile.\par
+G) Line 20 does not compile.\par
+H) Lines 22\f1\endash 24 do not compile.\par
+\f0 I)\f1  Line 27 does not compile.\par
+\f0 J)\f1  None of the above.\par
+\par
 11. Which lines in Tadpole.java give a compiler error? (Choose all that apply.)\par
+\par
  // Frog.java\par
  1:  package animal;\par
  2:  public class Frog \{\par
  3:     protected void ribbit() \{ \}\par
  4:     void jump() \{ \}\par
  5:  \}\par
+\par
  // Tadpole.java\par
  1:  package other;\par
  2:  import animal.*;\par
@@ -180,25 +211,31 @@ name=Willy\par
  9:        f.ribbit();\par
  10:       f.jump();\par
  11:    \} \}\par
- 1. Line 5.\par
- 2. Line 6.\par
- 3. Line 7.\par
- 4. Line 8.\par
- 5. Line 9.\par
- 6. Line 10.\par
- 7. All of the lines compile.\par
- 12. Which of the following statements can fill in the blank to make the code\par
+\par
+\f0 A)\f1  Line 5.\par
+\f0 B)\f1  Line 6.\par
+\f0 C)\f1  Line 7.\par
+\f0 D)\f1  Line 8.\par
+\f0 E)\f1  Line 9.\par
+\f0 F)\f1  Line 10.\par
+\f0 G)\f1  All of the lines compile.\par
+\par
+12. Which of the following statements can fill in the blank to make the code\par
  compile successfully? (Choose all that apply.)\par
+\par
  Set<? extends RuntimeException> mySet = new  _______________ ();\par
- 1. HashSet<? extends RuntimeException>\par
- 2. HashSet<Exception>\par
- 3. TreeSet<RuntimeException>\par
- 4. TreeSet<NullPointerException>\par
- 5. LinkedHashSet<>\par
- 6. LinkedHashSet<?>\par
- 7. None of the above\par
- 13. Assume that birds.ser exists, is accessible, and contains data for a Bird object.\par
+\par
+\f0 A)\f1  HashSet<? extends RuntimeException>\par
+\f0 B)\f1  HashSet<Exception>\par
+\f0 C)\f1  TreeSet<RuntimeException>\par
+\f0 D)\f1  TreeSet<NullPointerException>\par
+\f0 E)\f1  LinkedHashSet<>\par
+\f0 F)\f1  LinkedHashSet<?>\par
+\f0 G)\f1  None of the above\par
+\par
+13. Assume that birds.ser exists, is accessible, and contains data for a Bird object.\par
  What is the result of executing the following code? (Choose all that apply.)\par
+\par
  1:  import java.io.*;\par
  2:  public class Bird \{\par
  3:     private String name;\par
@@ -213,14 +250,17 @@ name=Willy\par
  12:          Bird b = is.readObject();\par
  13:          System.out.println(b.age);\par
  14:       \} \} \}\par
- 1. It compiles and prints 0 at runtime.\par
- 2. It compiles and prints null at runtime.\par
- 3. It compiles and prints a number at runtime.\par
- 4. The code will not compile because of lines 9\endash 11.\par
- 5. The code will not compile because of line 12.\par
- 6. It compiles but throws an exception at runtime.\par
- 14. How many of the following declarations (lines 14\endash 19) are valid instance\par
+\par
+\f0 A)\f1  It compiles and prints 0 at runtime.\par
+\f0 B)\f1  It compiles and prints null at runtime.\par
+\f0 C)\f1  It compiles and prints a number at runtime.\par
+\f0 D)\f1  The code will not compile because of lines 9\endash 11.\par
+\f0 E)\f1  The code will not compile because of line 12.\par
+\f0 F)\f1  It compiles but throws an exception at runtime.\par
+\par
+14. How many of the following declarations (lines 14\endash 19) are valid instance\par
  members of a class?\par
+\par
  13: public class Zoo \{\par
  14:    var var = 3;\par
  15:    Var case = new Var();\par
@@ -229,38 +269,47 @@ name=Willy\par
  18:    String new = "var";\par
  19:    var var() \{ return null; \}\par
  20: \}\par
- 1. 0\par
- 2. 1\par
- 3. 2\par
- 4. 3\par
- 5. 4\par
- 6. 5\par
- 15. Which is true if the contents of path1 start with the text Howdy? (Choose two.)\par
+\par
+\f0 A)\f1  0\par
+\f0 B)\f1  1\par
+\f0 C)\f1  2\par
+\f0 D)\f1  3\par
+\f0 E)\f1  4\par
+\f0 F)\f1  5\par
+\par
+15. Which is true if the contents of path1 start with the text Howdy? (Choose two.)\par
+\par
  System.out.println(Files.mismatch(path1,path2));\par
- 1. If path2 doesn\rquote t exist, the code prints -1.\par
- 2. If path2 doesn\rquote t exist, the code prints 0.\par
- 3. If path2 doesn\rquote t exist, the code throws an exception.\par
- 4. If the contents of path2 start with Hello, the code prints -1.\par
- 5. If the contents of path2 start with Hello, the code prints 0.\par
- 6. If the contents of path2 start with Hello, the code prints 1.\par
- 16. Which of the following is the best type to insert into the blank to allow the\par
+\par
+\f0 A)\f1  If path2 doesn\rquote t exist, the code prints -1.\par
+\f0 B)\f1  If path2 doesn\rquote t exist, the code prints 0.\par
+\f0 C)\f1  If path2 doesn\rquote t exist, the code throws an exception.\par
+\f0 D)\f1  If the contents of path2 start with Hello, the code prints -1.\par
+\f0 E)\f1  If the contents of path2 start with Hello, the code prints 0.\par
+\f0 F)\f1  If the contents of path2 start with Hello, the code prints 1.\par
+\par
+16. Which of the following is the best type to insert into the blank to allow the\par
  program to compile successfully?\par
-1: import java.util.*;\par
+\par
+\f0\lang1036  \f1\lang12 1: import java.util.*;\par
  2: final class Amphibian \{\}\par
  3: abstract class Tadpole extends Amphibian \{\}\par
  4: public class FindAllTadpoles \{\par
- 5:    public static void main(String\'85 args) \{\par
+\f0  5:    public static void main(String\'85 args) \{\f1\par
  6:       var tadpoles = new ArrayList<Tadpole>();\par
  7:       for (var amphibian : tadpoles) \{\par
  8:             ______________ tadpole = amphibian;\par
  9: \} \} \}\par
- 1. List<Tadpole>\par
- 2. Boolean\par
- 3. Amphibian\par
- 4. Tadpole\par
- 5. Object\par
- 6. None of the above\par
- 17. What is the result of compiling and executing the following program?\par
+\par
+\f0 A)\f1  List<Tadpole>\par
+\f0 B)\f1  Boolean\par
+\f0 C)\f1  Amphibian\par
+\f0 D)\f1  Tadpole\par
+\f0 E)\f1  Object\par
+\f0 F)\f1  None of the above\par
+\par
+17. What is the result of compiling and executing the following program?\par
+\par
  1:  public class FeedingSchedule \{\par
  2:     public static void main(String[] args) \{\par
  3:        var x = 5;\par
@@ -275,35 +324,42 @@ name=Willy\par
  12:          \} while (j <= 2);\par
  13:       System.out.println(x);\par
  14: \} \}\par
- 1. 10\par
- 2. 11\par
- 3. 12\par
- 4. 17\par
- 5. The code will not compile because of line 5.\par
- 6. The code will not compile because of line 6.\par
- 18. When printed, which String gives the same value as this text block?\par
+\par
+\f0 A)\f1  10\par
+\f0 B)\f1  11\par
+\f0 C)\f1  12\par
+\f0 D)\f1  17\par
+\f0 E)\f1  The code will not compile because of line 5.\par
+\f0 F)\f1  The code will not compile because of line 6.\par
+\par
+18. When printed, which String gives the same value as this text block?\par
+\par
  var pooh = """\par
    "Oh, bother." -Pooh\par
    """.indent(1);\par
  System.out.print(pooh);\par
- 1. "\\n\\"Oh, bother.\\" -Pooh\\n"\par
- 2. "\\n \\"Oh, bother.\\" -Pooh\\n"\par
- 3. " \\"Oh, bother.\\" -Pooh\\n"\par
-4. "\\n\\"Oh, bother.\\" -Pooh"\par
- 5. "\\n \\"Oh, bother.\\" -Pooh"\par
- 6. " \\"Oh, bother.\\" -Pooh"\par
- 7. None of the above\par
- 19. A(n) _________________ module always contains a module-info.java file,\par
+\par
+\f0 A)\f1  "\\n\\"Oh, bother.\\" -Pooh\\n"\par
+\f0 B)\f1  "\\n \\"Oh, bother.\\" -Pooh\\n"\par
+\f0 C)\f1  " \\"Oh, bother.\\" -Pooh\\n"\par
+\f0 D)\f1  "\\n\\"Oh, bother.\\" -Pooh"\par
+\f0 E)\f1  "\\n \\"Oh, bother.\\" -Pooh"\par
+\f0 F)\f1  " \\"Oh, bother.\\" -Pooh"\par
+\f0 G)\f1  None of the above\par
+\par
+19. A(n) _________________ module always contains a module-info.java file,\par
  while a(n) _____________ module always exports all its packages to other\par
- modules.\par
- 1. automatic, named\par
- 2. automatic, unnamed\par
- 3. named, automatic\par
- 4. named, unnamed\par
- 5. unnamed, automatic\par
- 6. unnamed, named\par
- 7. None of the above\par
- 20. What is the result of the following code?\par
+modules.\par
+\par
+\f0 A)\f1  automatic, named\par
+\f0 B)\f1  automatic, unnamed\par
+\f0 C)\f1  named, automatic\par
+\f0 D)\f1  named, unnamed\par
+\f0 E)\f1  unnamed, automatic\par
+\f0 F)\f1  unnamed, named\par
+\f0 G)\f1  None of the above\par
+\par
+20. What is the result of the following code?\par
  22: SequencedMap<Character,Integer> t = new TreeMap<>();\par
  23: t.put('k', 1);\par
  24: t.put('m', 2);\par
@@ -316,30 +372,36 @@ name=Willy\par
  31:    .stream()\par
  32:    .map(e -> e.getValue())\par
  33:    .forEach(System.out::print);\par
- 1. 145\par
- 2. 125\par
- 3. 135\par
- 4. 2468\par
- 5. 2810\par
- 6. 2410\par
- 7. The code does not compile.\par
- 8. The code compiles but line 26 throws an exception at runtime.\par
- 9. None of the above.\par
- 21. Which of the following lines can fill in the blank to print true? (Choose all that\par
+\par
+\f0 A)\f1  145\par
+\f0 B)\f1  125\par
+\f0 C)\f1  135\par
+\f0 D)\f1  2468\par
+\f0 E)\f1  2810\par
+\f0 F)\f1  2410\par
+\f0 G)\f1  The code does not compile.\par
+\f0 H)\f1  The code compiles but line 26 throws an exception at runtime.\par
+\f0 I)\f1  None of the above.\par
+\par
+21. Which of the following lines can fill in the blank to print true? (Choose all that\par
  apply.)\par
+\par
  10: public static void main(String[] args) \{\par
  11:    System.out.println(test(__________________________________));\par
  12: \}\par
  13: private static boolean test(Function<Integer, Boolean> b) \{\par
  14:    return b.apply(5);\par
  15: \}\par
-1. i::equals(5)\par
- 2. i -> \{i == 5;\}\par
- 3. (i) -> i == 5\par
- 4. (int i) -> i == 5\par
- 5. (int i) -> \{return i == 5;\}\par
- 6. (i) -> \{return i == 5;\}\par
- 22. How many times is the word true printed?\par
+\par
+\f0 A)\f1  i::equals(5)\par
+\f0 B)\f1  i -> \{i == 5;\}\par
+\f0 C)\f1  (i) -> i == 5\par
+\f0 D)\f1  (int i) -> i == 5\par
+\f0 E)\f1  (int i) -> \{return i == 5;\}\par
+\f0 F)\f1  (i) -> \{return i == 5;\}\par
+\par
+22. How many times is the word true printed?\par
+\par
  var s1 = "Java";\par
  var s2 = "Java";\par
  var s3 = s1.indent(1).strip();\par
@@ -352,13 +414,16 @@ name=Willy\par
  System.out.println(s1 == s4);\par
  System.out.println(sb1.toString() == s1);\par
  System.out.println(sb1.toString().equals(s1));\par
- 1. Once.\par
- 2. Twice.\par
- 3. Three times.\par
- 4. Four times.\par
- 5. Five times.\par
- 6. The code does not compile.\par
- 23. What is the output of the following program?\par
+\par
+\f0 A)\f1  Once.\par
+\f0 B)\f1  Twice.\par
+\f0 C)\f1  Three times.\par
+\f0 D)\f1  Four times.\par
+\f0 E)\f1  Five times.\par
+\f0 F)\f1  The code does not compile.\par
+\par
+23. What is the output of the following program?\par
+\par
  1:  class Deer \{\par
  2:     public Deer() \{System.out.print("Deer");\}\par
  3:     public Deer(int age) \{System.out.print("DeerAge");\}\par
@@ -371,34 +436,40 @@ name=Willy\par
  10:       Deer deer = new Reindeer(5);\par
  11:       System.out.println("," + deer.hasHorns());\par
  12: \} \}\par
- 1. ReindeerDeer,false\par
- 2. DeerAgeReindeer,true\par
- 3. DeerReindeer,true\par
- 4. DeerReindeer,false\par
- 5. ReindeerDeer,true\par
-6. DeerAgeReindeer,false\par
- 7. The code will not compile because of line 4.\par
- 8. The code will not compile because of line 11.\par
- 24. Which of the following are true? (Choose all that apply.)\par
- private static void magic(Stream<Integer> s) \{\par
+\par
+\f0 A)\f1  ReindeerDeer,false\par
+\f0 B)\f1  DeerAgeReindeer,true\par
+\f0 C)\f1  DeerReindeer,true\par
+\f0 D)\f1  DeerReindeer,false\par
+\f0 E)\f1  ReindeerDeer,true\par
+\f0 F)\f1  DeerAgeReindeer,false\par
+\f0 G)\f1  The code will not compile because of line 4.\par
+\f0 H)\f1  The code will not compile because of line 11.\par
+\par
+24. Which of the following are true? (Choose all that apply.)\par
+\par
+private static void magic(Stream<Integer> s) \{\par
    Optional o = s\par
       .filter(x -> x < 5)\par
       .limit(3)\par
       .max((x, y) -> x - y);\par
    System.out.println(o.get());\par
  \}\par
- 1. magic(Stream.empty()); runs infinitely.\par
- 2. magic(Stream.empty()); throws an exception.\par
- 3. magic(Stream.iterate(1, x -> x++)); runs infinitely.\par
- 4. magic(Stream.iterate(1, x -> x++)); throws an exception.\par
- 5. magic(Stream.of(5, 10)); runs infinitely.\par
- 6. magic(Stream.of(5, 10)); throws an exception.\par
- 7. The method does not compile.\par
- 25. Assuming the following declarations are top-level types declared in the same\par
+\f0 A)\f1  magic(Stream.empty()); runs infinitely.\par
+\f0 B)\f1  magic(Stream.empty()); throws an exception.\par
+\f0 C)\f1  magic(Stream.iterate(1, x -> x++)); runs infinitely.\par
+\f0 D)\f1  magic(Stream.iterate(1, x -> x++)); throws an exception.\par
+\f0 E)\f1  magic(Stream.of(5, 10)); runs infinitely.\par
+\f0 F)\f1  magic(Stream.of(5, 10)); throws an exception.\par
+\f0 G)\f1  The method does not compile.\par
+\par
+25. Assuming the following declarations are top-level types declared in the same\par
  file, which successfully compile? (Choose all that apply.)\par
+\par
  record Music(List<String> tempo) \{\par
    final int score = 10;\par
  \}\par
+\par
  record Song(String lyrics, Music m) \{\par
    Song \{\par
       this.lyrics = lyrics + "Never gonna give you up"; \par
@@ -421,23 +492,28 @@ name=Willy\par
    \}\par
  \}\par
  abstract class NewDance extends Ballet \{\}\par
- 1. Music\par
-2. Song\par
- 3. Dance\par
- 4. March\par
- 5. Ballet\par
- 6. NewDance\par
- 7. None of them compile.\par
- 26. Which of the following expressions compile without error? (Choose all that\par
+\par
+\f0 A)\f1  Music\par
+\f0 B)\f1  Song\par
+\f0 C)\f1  Dance\par
+\f0 D)\f1  March\par
+\f0 E)\f1  Ballet\par
+\f0 F)\f1  NewDance\par
+\f0 G)\f1  None of them compile.\par
+\par
+26. Which of the following expressions compile without error? (Choose all that\par
  apply.)\par
- 1. int monday = 3 + 2.0;\par
- 2. double tuesday = 5_6L;\par
- 3. boolean wednesday = 1 > 2 ? !true;\par
- 4. short thursday = (short)Integer.MAX_VALUE;\par
- 5. long friday = 8.0L;\par
- 6. var saturday = 2_.0;\par
- 7. None of the above\par
- 27. What is the result of executing the following application?\par
+\par
+\f0 A)\f1  int monday = 3 + 2.0;\par
+\f0 B)\f1  double tuesday = 5_6L;\par
+\f0 C)\f1  boolean wednesday = 1 > 2 ? !true;\par
+\f0 D)\f1  short thursday = (short)Integer.MAX_VALUE;\par
+\f0 E)\f1  long friday = 8.0L;\par
+\f0 F)\f1  var saturday = 2_.0;\par
+\f0 G)\f1  None of the above\par
+\par
+27. What is the result of executing the following application?\par
+\par
  final var cb = new CyclicBarrier(3, \par
    () -> System.out.println("Clean!"));  // u1 \par
 try (var service = Executors.newSingleThreadExecutor()) \{\par
@@ -446,14 +522,17 @@ try (var service = Executors.newSingleThreadExecutor()) \{\par
       .parallel()\par
       .forEach(i -> service.submit(() -> cb.await()));  // u2\par
  \}\par
- 1. It outputs Clean! at least once.\par
- 2. It outputs Clean! exactly four times.\par
- 3. The code will not compile because of line u1.\par
- 4. The code will not compile because of line u2.\par
- 5. It compiles but throws an exception at runtime.\par
- 6. It compiles but waits forever at runtime.\par
- 28. Which statement about the following method is true?\par
- 5:  public static void main(String\'85 unused) \{\par
+\par
+\f0 A)\f1  It outputs Clean! at least once.\par
+\f0 B)\f1  It outputs Clean! exactly four times.\par
+\f0 C)\f1  The code will not compile because of line u1.\par
+\f0 D)\f1  The code will not compile because of line u2.\par
+\f0 E)\f1  It compiles but throws an exception at runtime.\par
+\f0 F)\f1  It compiles but waits forever at runtime.\par
+\par
+28. Which statement about the following method is true?\par
+\f0\par
+ 5:  public static void main(String\'85 unused) \{\f1\par
  6:     System.out.print("a");\par
  7:     try (StringBuilder reader = new StringBuilder()) \{\par
  8:        System.out.print("b");\par
@@ -464,12 +543,13 @@ try (var service = Executors.newSingleThreadExecutor()) \{\par
  13:    \} finally \{\par
  14:       System.out.print("d");\par
  15: \} \}\par
- 1. It compiles and prints abc.\par
-2. It compiles and prints abd.\par
- 3. It compiles and prints abcd.\par
- 4. One line contains a compiler error.\par
- 5. Two lines contain a compiler error.\par
- 6. Three lines contain a compiler error.\par
- 7. It compiles but prints an exception at runtime.\f0\par
+\par
+\f0 A)\f1  It compiles and prints abc.\par
+\f0 B)\f1  It compiles and prints abd.\par
+\f0 C)\f1  It compiles and prints abcd.\par
+\f0 D)\f1  One line contains a compiler error.\par
+\f0 E)\f1  Two lines contain a compiler error.\par
+\f0 F)\f1  Three lines contain a compiler error.\par
+\f0 G)\f1  It compiles but prints an exception at runtime.\f0\par
 }
  
