@@ -1,0 +1,509 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 1. What is the output of the following code snippet?\par
+ 32: Object skips = 10;\par
+ 33: switch (skips) \{\par
+ 34:    case a when a < 10  -> System.out.print(2);\par
+ 35:    case b when b>= 10 -> System.out.print(4);\par
+ 36:    case null -> System.out.print(6);\par
+37:    default   -> System.out.print(8);\par
+ 38: \}\par
+ A. 2\par
+ B. 4\par
+ C. 6\par
+ D. 8\par
+ E. Exactly one line does not compile.\par
+ F. Exactly two lines do not compile.\par
+ G. None of the above.\par
+ 2. Which of the following data types can be used in a switch expression?\par
+ (Choose all that apply.)\par
+ A. enum\par
+ B. int\par
+ C. Byte\par
+ D. long\par
+ E. boolean\par
+ F. double\par
+ 3. What is the output of the following code snippet?\par
+ 3: int temperature = 4;\par
+ 4: long humidity = -temperature + temperature * 3;\par
+ 5: if (temperature>=4)\par
+ 6: if (humidity < 6) System.out.println("Too Low");\par
+ 7: else System.out.println("Just Right");\par
+ 8: else System.out.println("Too High");\par
+ A. Too Low\par
+ B. Just Right\par
+ C. Too High\par
+ D. A NullPointerException is thrown at runtime.\par
+ E. The code will not compile because of line 7.\par
+F. The code will not compile because of line 8.\par
+ 4. Which of the following data types are permitted on the right side of a\par
+ for-each expression? (Choose all that apply.)\par
+ A. Double[][]\par
+ B. Object\par
+ C. Map\par
+ D. List\par
+ E. String\par
+ F. char[]\par
+ G. Exception\par
+ 5. What is the output of calling printReptile(6)?\par
+ void printReptile(int category) \{\par
+   var type = switch (category) \{\par
+      case 1,2 -> "Snake";\par
+      case 3,4 -> "Lizard";\par
+      case 5,6 -> "Turtle";\par
+      case 7,8 -> "Alligator";\par
+   \};\par
+   System.out.print(type);\par
+ \}\par
+ A. Snake\par
+ B. Lizard\par
+ C. Turtle\par
+ D. Alligator\par
+ E. TurtleAlligator\par
+ F. None of the above\par
+ 6. What is the output of the following code snippet? \par
+List<Integer> myFavoriteNumbers = new ArrayList<>();\par
+ myFavoriteNumbers.add(10);\par
+ myFavoriteNumbers.add(14);\par
+ for (var a : myFavoriteNumbers) \{\par
+   System.out.print(a + ", ");\par
+   break;\par
+ \}\par
+ for (int b : myFavoriteNumbers) \{\par
+   continue;\par
+   System.out.print(b + ", ");\par
+ \}\par
+ for (Object c : myFavoriteNumbers)\par
+   System.out.print(c + ", ");\par
+ A. It compiles and runs without issue but does not produce any\par
+ output.\par
+ B. 10, 14,\par
+ C. 10, 10, 14,\par
+ D. 10, 10, 14, 10, 14,\par
+ E. Exactly one line of code does not compile.\par
+ F. Exactly two lines of code do not compile.\par
+ G. Three or more lines of code do not compile.\par
+ H. The code contains an infinite loop and does not terminate.\par
+ 7. Assuming weather is a well-formed nonempty array, which code\par
+ snippet, when inserted independently into the blank in the following\par
+ code, prints all of the elements of weather? (Choose all that apply.)\par
+ private void print(int[] weather) \{\par
+   for () \{\par
+      System.out.println(weather[i]);\par
+   \}\par
+ \}\par
+ A. int i=weather.length; i>0; i-\par
+B. int i=0; i<=weather.length-1; ++i\par
+ C. var w : weather\par
+ D. int i=weather.length-1; i>=0; i-\par
+E. int i=0, int j=3; i<weather.length; ++i\par
+ F. int i=0; ++i<10 && i<weather.length;\par
+G. None of the above\par
+ 8. What is the output of calling printType(11)?\par
+ 31: void printType(Object o) \{\par
+ 32:    if (o instanceof Integer bat) \{\par
+ 33:       System.out.print("int");\par
+ 34:    \} else if (o instanceof Integer bat && bat < 10) \{\par
+ 35:       System.out.print("small int");\par
+ 36:    \} else if (o instanceof Long bat || bat <= 20) \{\par
+ 37:       System.out.print("long");\par
+ 38:    \} default \{\par
+ 39:       System.out.print("unknown");\par
+ 40:    \}\par
+ 41: \}\par
+ A. int\par
+ B. small int\par
+ C. long\par
+ D. unknown\par
+ E. Nothing is printed.\par
+ F. The code contains one line that does not compile.\par
+ G. The code contains two lines that do not compile.\par
+ H. None of the above.\par
+ 9. Which statements, when inserted independently into the following\par
+ blank, will cause the code to print 2 at runtime? (Choose all that\par
+ apply.)\par
+ int count = 0;\par
+ BUNNY: for (int row = 1; row <=3; row++)\par
+   RABBIT: for (int col = 0; col <3 ; col++) \{\par
+      if ((col + row) % 2 == 0)\par
+         ;\par
+      count++;\par
+   \}\par
+ System.out.println(count);\par
+ A. break BUNNY\par
+B. break RABBIT\par
+ C. continue BUNNY\par
+ D. continue RABBIT\par
+ E. break\par
+ F. continue\par
+ G. None of the above, as the code contains a compiler error\par
+ 10. Given the following method, how many lines contain compilation\par
+ errors?\par
+ 8:  enum DayOfWeek \{\par
+ 9:     SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, \par
+FRIDAY, SATURDAY;\par
+ 10:    private DayOfWeek getWeekDay(int day, final int \par
+thursday) \{\par
+ 11:       int otherDay = day;\par
+ 12:       int Sunday = 0;\par
+ 13:       switch (otherDay) \{\par
+ 14:          default:\par
+ 15:          case 1: continue; \par
+16:          case thursday: return DayOfWeek.THURSDAY;\par
+ 17:          case 2,10: break;\par
+ 18:          case Sunday: return DayOfWeek.SUNDAY;\par
+ 19:          case DayOfWeek.MONDAY: return \par
+DayOfWeek.MONDAY;\par
+ 20:       \}\par
+ 21:       return DayOfWeek.FRIDAY;\par
+ 22:    \} \}\par
+ A. None, the code compiles and runs without issue.\par
+ B. 1.\par
+ C. 2.\par
+ D. 3.\par
+ E. 4.\par
+ F. 5.\par
+ G. 6.\par
+ H. The code compiles but may produce an error at runtime.\par
+11. What is the output of calling printLocation(Animal.MAMMAL)?\par
+ 10: class Zoo \{\par
+ 11:    enum Animal \{BIRD, FISH, MAMMAL\}\par
+ 12:    void printLocation(Animal a) \{\par
+ 13:       long type = switch (a) \{\par
+ 14:          case BIRD -> 1;\par
+ 15:          case FISH -> 2;\par
+ 16:          case MAMMAL -> 3;\par
+ 17:          default -> 4;\par
+ 18:       \};\par
+ 19:       System.out.print(type);\par
+ 20:    \} \}\par
+ A. 3\par
+ B. 4\par
+ C. 34\par
+ D. The code does not compile because of line 13.\par
+ E. The code does not compile because of line 17.\par
+ F. None of the above.\par
+ 12. What is the result of the following code snippet?\par
+ 3: int sing = 8, squawk = 2, notes = 0;\par
+ 4: while (sing> squawk) \{\par
+ 5:    sing--;\par
+ 6:    squawk += 2;\par
+ 7:    notes += sing + squawk;\par
+ 8: \}\par
+ 9: System.out.println(notes);\par
+ A. 11\par
+ B. 13\par
+ C. 23\par
+ D. 33\par
+ E. 50\par
+ F. The code will not compile because of line 7.\par
+13. What is the result of calling getHatSize(9f) on the following code\par
+ snippet?\par
+ 10: int getHatSize(Number measurement) \{\par
+ 11:    return switch (measurement) \{\par
+ 12:       case Double d -> 1 + d.intValue();\par
+ 13:       case null     -> 11;\par
+ 14:       case !(Number n) -> 3 + n.intValue(); \par
+15:       case Float f when f < 10 -> 4 + f.intValue();\par
+ 16:    \};\par
+ 17: \}\par
+ A. 10\par
+ B. 11\par
+ C. 12\par
+ D. 13\par
+ E. The code does not compile because it is missing a default\par
+ clause.\par
+ F. The code does not compile for a different reason.\par
+ 14. What is the output of the following code snippet?\par
+ 2: boolean keepGoing = true;\par
+ 3: int result = 15, meters = 10;\par
+ 4: do \{\par
+ 5:    meters--;\par
+ 6:    if (meters==8) keepGoing = false;\par
+ 7:    result -= 2;\par
+ 8: \} while keepGoing;\par
+ 9: System.out.println(result);\par
+ A. 7\par
+ B. 9\par
+ C. 10\par
+ D. 11\par
+ E. 15\par
+ F. The code will not compile because of line 6.\par
+ G. The code does not compile for a different reason.\par
+15. Which statements about the following code snippet are correct?\par
+ (Choose all that apply.)\par
+ for (var penguin : new int[2])\par
+   System.out.println(penguin);\par
+ var ostrich = new Character[3];\par
+ for (var emu : ostrich)\par
+   System.out.println(emu);\par
+ List<Integer> parrots = new ArrayList<Integer>();\par
+ for (var macaw  : parrots)\par
+   System.out.println(macaw);\par
+ A. The data type of penguin is Integer.\par
+ B. The data type of penguin is int.\par
+ C. The data type of emu is undefined.\par
+ D. The data type of emu is Character.\par
+ E. The data type of macaw is List.\par
+ F. The data type of macaw is Integer.\par
+ G. None of the above, as the code does not compile.\par
+ 16. What is the result of the following code snippet?\par
+ final char a = 'A', e = 'E';\par
+ char grade = 'B';\par
+ switch (grade) \{\par
+   default:\par
+   case a:\par
+   case 'B': 'C': System.out.print("great ");\par
+   case 'D':      System.out.print("good "); break;\par
+   case e:\par
+   case 'F':      System.out.print("not good ");\par
+ \}\par
+ A. great\par
+ B. great good\par
+ C. good\par
+ D. not good\par
+E. The code does not compile because the data type of one or more\par
+ case clauses does not match the data type of the switch variable.\par
+ F. None of the above.\par
+ 17. Given the following array, which code snippets print the elements in\par
+ reverse order from how they are declared? (Choose all that apply.)\par
+ char[] wolf = \{'W', 'e', 'b', 'b', 'y'\};\par
+ A. int q = wolf.length;\par
+ for ( ; ; ) \{\par
+   System.out.print(wolf[--q]);\par
+   if (q==0) break;\par
+ \}\par
+ B. for (int m=wolf.length-1; m>=0; --m)\par
+   System.out.print(wolf[m]);\par
+ C. for (int z=0; z<wolf.length; z++)\par
+   System.out.print(wolf[wolf.length-z]);\par
+ D. int x = wolf.length-1;\par
+ for (int j=0; x>=0 && j==0; x--)\par
+   System.out.print(wolf[x]);\par
+ E. final int r = wolf.length;\par
+ for (int w = r-1; r>-1; w = r-1)\par
+   System.out.print(wolf[w]);\par
+ F. for (int i=wolf.length; i>0; --i)\par
+   System.out.print(wolf[i]);\par
+ G. None of the above\par
+ 18. What distinct numbers are printed when the following method is\par
+ executed? (Choose all that apply.)\par
+ private void countAttendees() \{\par
+   int participants = 4, animals = 2, performers = -1;\par
+   while ((participants = participants + 1) < 10) \{\}\par
+   do \{\} while (animals++ <= 1);\par
+   for ( ; performers < 2; performers += 2) \{\}\par
+   System.out.println(participants);\par
+   System.out.println(animals);\par
+   System.out.println(performers);\par
+ \}\par
+ A. 6\par
+ B. 3\par
+ C. 4\par
+ D. 5\par
+ E. 10\par
+ F. 9\par
+ G. The code does not compile.\par
+ H. None of the above.\par
+ 19. What is the output of the following code snippet?\par
+ 2: double iguana = 0;\par
+ 3: do \{\par
+ 4:    int snake = 1;\par
+ 5:    System.out.print(snake++ + " ");\par
+ 6:    iguana--;\par
+ 7: \} while (snake <= 5);\par
+ 8: System.out.println(iguana);\par
+ A. 1 2 3 4 -4.0\par
+ B. 1 2 3 4 -5.0\par
+ C. 1 2 3 4 5 -4.0\par
+ D. 0 1 2 3 4 5 -5.0\par
+ E. The code does not compile.\par
+ F. The code compiles but produces an infinite loop at runtime.\par
+ G. None of the above.\par
+ 20. Which statements, when inserted into the following blanks, allow the\par
+ code to compile and run without entering an infinite loop? (Choose all\par
+ that apply.)\par
+4:  int height = 1;\par
+ 5:  L1: while (height++ <10) \{\par
+ 6:     long humidity = 12;\par
+ 7:     L2: do \{\par
+ 8:        if (humidity-- % 12 == 0) ;\par
+ 9:        int temperature = 30;\par
+ 10:       L3: for ( ; ; ) \{\par
+ 11:          temperature++;\par
+ 12:          if (temperature>50) ;\par
+ 13:       \}\par
+ 14:    \} while (humidity> 4);\par
+ 15: \}\par
+ A. break L2 on line 8; continue L2 on line 12\par
+ B. continue on line 8; continue on line 12\par
+ C. break L3 on line 8; break L1 on line 12\par
+ D. continue L2 on line 8; continue L3 on line 12\par
+ E. continue L2 on line 8; continue L2 on line 12\par
+ F. None of the above, as the code contains a compiler error\par
+ 21. A minimum of how many lines need to be corrected before the\par
+ following method will compile?\par
+ 21: void findZookeeper(Integer id) \{\par
+ 22:    System.out.print(switch (id) \{\par
+ 23:       case 10 -> \{"Jane";\}\par
+ 24:       case 20 -> \{yield "Lisa";\};\par
+ 25:       case 30 -> "Kelly";\par
+ 26:       case 30 -> "Sarah";\par
+ 27:       default -> "Unassigned";\par
+ 28:    \});\par
+ 29: \}\par
+ A. Zero\par
+ B. One\par
+ C. Two\par
+ D. Three\par
+ E. Four\par
+ F. Five\par
+22. What is the output of the following code snippet?\par
+ 2: var tailFeathers = 3;\par
+ 3: final var one = 1;\par
+ 4: switch (tailFeathers) \{\par
+ 5:    case one: System.out.print(3 + " ");\par
+ 6:    default: case 3: System.out.print(5 + " ");\par
+ 7: \}\par
+ 8: while (tailFeathers> 1) \{\par
+ 9:    System.out.print(--tailFeathers + " "); \}\par
+ A. 3\par
+ B. 5 1\par
+ C. 5 2\par
+ D. 3 5 1\par
+ E. 5 2 1\par
+ F. The code will not compile because of lines 3\f1\endash 5.\par
+ G. The code will not compile because of line 6.\par
+ 23. What is the output of the following code snippet?\par
+ 15: int penguin = 50, turtle = 75;\par
+ 16: boolean older = penguin>= turtle;\par
+ 17: if (older = true) System.out.println("Success");\par
+ 18: else System.out.println("Failure");\par
+ 19: else if (penguin != 50) System.out.println("Other");\par
+ A. Success\par
+ B. Failure\par
+ C. Other\par
+ D. The code will not compile because of line 17.\par
+ E. The code compiles but throws an exception at runtime.\par
+ F. None of the above.\par
+ 24. What is the output of the following code snippet?\par
+ 22: String zooStatus = "Closed";\par
+ 23: int visitors = switch (zooStatus) \{\par
+24:    case String s when s.equals("Open") -> 10;\par
+ 25:    case Object s when s != null && !s.equals("") -> 20;\par
+ 26:    case null -> \{yield 30;\}\par
+ 27:    default -> 40;\par
+ 28: \};\par
+ 29: System.out.print(visitors);\par
+ A. 10\par
+ B. 20\par
+ C. 30\par
+ D. 40\par
+ E. Exactly one line does not compile.\par
+ F. Exactly two lines do not compile.\par
+ G. Three or more lines do not compile.\par
+ 25. What is the output of the following code snippet?\par
+ 6:  String instrument = "violin";\par
+ 7:  final String CELLO = "cello";\par
+ 8:  String viola = "viola";\par
+ 9:  int p = -1;\par
+ 10: switch (instrument) \{\par
+ 11:    case "bass" : break;\par
+ 12:    case CELLO : p++;\par
+ 13:    default: p++;\par
+ 14:    case "VIOLIN": p++;\par
+ 15:    case "viola" : ++p; break;\par
+ 16: \}\par
+ 17: System.out.print(p);\par
+ A. -1\par
+ B. 0\par
+ C. 1\par
+ D. 2\par
+ E. 3\par
+ F. The code does not compile.\par
+ 26. What is the output of the following code snippet?\par
+9:  int w = 0, r = 1;\par
+ 10: String name = "";\par
+ 11: while (w < 2) \{\par
+ 12:    name += "A";\par
+ 13:    do \{\par
+ 14:       name += "B";\par
+ 15:       if (name.length()>0) name += "C";\par
+ 16:       else break;\par
+ 17:    \} while (r <=1);\par
+ 18:    r++; w++; \}\par
+ 19: System.out.println(name);\par
+ A. ABC\par
+ B. ABCABC\par
+ C. ABCABCABC\par
+ D. Line 15 contains a compilation error.\par
+ E. Line 18 contains a compilation error.\par
+ F. The code compiles but never terminates at runtime.\par
+ G. The code compiles but throws a NullPointerException at\par
+ runtime.\par
+ 27. What is printed by the following code snippet?\par
+ 23: byte amphibian = 2;\par
+ 24: String name = "Salamander";\par
+ 25: String color = switch (amphibian) \{\par
+ 26:    case 1 -> \{ yield "Red"; \} \par
+27:    case 2 -> \{ if (name.equals("Frog")) yield "Green"; \par
+28:                yield "Blue"; \}\par
+ 29:    case 3 -> \{ yield "Purple"; \}\par
+ 30:    default -> throw new RuntimeException();\par
+ 31: \};\par
+ 32: System.out.print(color);\par
+ A. Red\par
+ B. Green\par
+ C. Purple\par
+ D. Blue\par
+ E. The code does not compile.\par
+F. An exception is thrown at runtime.\par
+ 28. What is the output of calling getFish("goldie")?\par
+ 40: void getFish(Object fish) \{\par
+ 41:    if (!(fish instanceof String guppy))\par
+ 42:       System.out.print("Eat!");\par
+ 43:    else if (!(fish instanceof String guppy)) \{\par
+ 44:       throw new RuntimeException();\par
+ 45:    \}\par
+ 46:    System.out.print("Swim!");\par
+ 47: \}\par
+ A. Eat!\par
+ B. Swim!\par
+ C. Eat! followed by an exception\par
+ D. Eat!Swim!\par
+ E. An exception is printed\par
+ F. None of the above\par
+ 29. What is the result of the following code?\par
+ 1: public class PrintIntegers \{\par
+ 2:    public static void main(String[] args) \{\par
+ 3:       int y = -2;\par
+ 4:       do System.out.print(++y + " "); \par
+5:       while (y <= 5);\par
+ 6: \} \}\par
+ A. -2 -1 0 1 2 3 4 5\par
+ B. -2 -1 0 1 2 3 4\par
+ C. -1 0 1 2 3 4 5 6\par
+ D. -1 0 1 2 3 4 5\par
+ E. The code will not compile because of line 5.\par
+ F. The code contains an infinite loop and does not terminate.\par
+ 30. What is the minimum number of lines that would need to be changed\par
+ or removed for the following code to compile and return a value when\par
+ called with dance(10)?\par
+41: double dance(Object speed) \{\par
+ 42:    return switch (speed) \{\par
+ 43:       case 5 -> \{yield 4\};\par
+ 44:       case 10 -> 8;\par
+ 45:       case 15,20 -> 12;\par
+ 46:       default -> 20;\par
+ 47:       case null -> 16;\par
+ 48:    \}\par
+ 49: \}\par
+ A. Zero, the code compiles and runs without issue\par
+ B. One\par
+ C. Two\par
+ D. Three\par
+ E. Four\par
+ F. Five\par
+ G. Six\f0\par
+}
+ 

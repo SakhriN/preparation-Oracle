@@ -1,0 +1,231 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12  1. Which of the following Java operators can be used with boolean variables? (Choose\par
+ all that apply.)\par
+ 1. ==\par
+ 2. +\par
+ 3. -\par
+4. !\par
+ 5. %\par
+ 6. \par
+7. Cast with (boolean)\par
+ 2. What data type (or types) will allow the following code snippet to compile? (Choose\par
+ all that apply.)\par
+ byte apples = 5;\par
+ short oranges = 10;\par
+ ____ bananas = apples + oranges;\par
+ 1. int\par
+ 2. long\par
+ 3. boolean\par
+ 4. double\par
+ 5. short\par
+ 6. byte\par
+ 3. What change, when applied independently, would allow the following code snippet\par
+ to compile? (Choose all that apply.)\par
+ 3: long ear = 10;\par
+ 4: int hearing = 2 * ear;\par
+ 1. No change; it compiles as is.\par
+ 2. Cast ear on line 4 to int.\par
+ 3. Change the data type of ear on line 3 to short.\par
+ 4. Cast 2 * ear on line 4 to int.\par
+ 5. Change the data type of hearing on line 4 to short.\par
+ 6. Change the data type of hearing on line 4 to long.\par
+ 4. What is the output of the following code snippet?\par
+ 3: boolean canine = true, wolf = true;\par
+ 4: int teeth = 20;\par
+ 5: canine = (teeth != 10) ^ (wolf=false);\par
+ 6: System.out.println(canine+", "+teeth+", "+wolf);\par
+1. true, 20, true\par
+ 2. true, 20, false\par
+ 3. false, 10, true\par
+ 4. false, 20, false\par
+ 5. The code will not compile because of line 5.\par
+ 6. None of the above.\par
+ 5. Which of the following operators are ranked in increasing or the same order of\par
+ precedence? Assume the + operator is binary addition, not the unary form. (Choose\par
+ all that apply.)\par
+ 1. +, *, %, -\par
+2. ++, (int), *\par
+ 3. =, ==, !\par
+ 4. (short), =, !, *\par
+ 5. *, /, %, +, ==\par
+ 6. !, ||, &\par
+ 7. ^, +, =, +=\par
+ 6. What is the output of the following program?\par
+ 1: public class CandyCounter \{\par
+ 2:    static long addCandy(double fruit, float vegetables) \{\par
+ 3:       return (int)fruit+vegetables;\par
+ 4:    \}\par
+ 5:    \par
+6:    public static void main(String[] args) \{\par
+ 7:       System.out.print(addCandy(1.4, 2.4f) + ", ");\par
+ 8:       System.out.print(addCandy(1.9, (float)4) + ", ");\par
+ 9:       System.out.print(addCandy((long)(int)(short)2, (float)4)); \} \}\par
+ 1. 4, 6, 6.0\par
+ 2. 3, 5, 6\par
+ 3. 3, 6, 6\par
+ 4. 4, 5, 6\par
+ 5. The code does not compile because of line 9.\par
+ 6. None of the above.\par
+ 7. What is the output of the following code snippet?\par
+ int ph = 7, vis = 2;\par
+ boolean clear = vis> 1 & (vis < 9 || ph < 2);\par
+ boolean safe = (vis> 2) && (ph++> 1);\par
+ boolean tasty = 7 <= --ph;\par
+ System.out.println(clear + "-" + safe + "-" + tasty);\par
+ 1. true-true-true\par
+ 2. true-true-false\par
+ 3. true-false-true\par
+ 4. true-false-false\par
+ 5. false-true-true\par
+ 6. false-true-false\par
+7. false-false-true\par
+ 8. false-false-false\par
+ 8. What is the output of the following code snippet?\par
+ 4: int pig = (short)4;\par
+ 5: pig = pig++;\par
+ 6: long goat = (int)2;\par
+ 7: goat -= 1.0;\par
+ 8: System.out.print(pig + " - " + goat);\par
+ 1. 4 - 1\par
+ 2. 4 - 2\par
+ 3. 5 - 1\par
+ 4. 5 - 2\par
+ 5. The code does not compile due to line 7.\par
+ 6. None of the above.\par
+ 9. What are the unique outputs of the following code snippet? (Choose all that apply.)\par
+ int a = 2, b = 4, c = 2;\par
+ System.out.println(a> 2 ? --c : b++);\par
+ System.out.println(b = (a!=c ? a : b++));\par
+ System.out.println(a> b ? b < c ? b : 2 : 1);\par
+ 1. 1\par
+ 2. 2\par
+ 3. 3\par
+ 4. 4\par
+ 5. 5\par
+ 6. 6\par
+ 7. The code does not compile.\par
+ 10. Which is not an output of the following code snippet?\par
+ short height = 1, weight = 3;\par
+ short zebra = (byte) weight * (byte) height;\par
+ double ox = 1 + height * 2 + weight;\par
+ long giraffe = 1 + 9 % height + 1;\par
+ System.out.println(zebra);\par
+ System.out.println(ox);\par
+ System.out.println(giraffe);\par
+ 1. 2\par
+ 2. 3\par
+ 3. 6\par
+ 4. 6.0\par
+ 5. The code does not compile.\par
+ 11. What is the output of the following code?\par
+ 11: int sample1 = (2 * 4) % 3;\par
+ 12: int sample2 = 3 * 2 % -3;\par
+13: int sample3 = 5 * (1 % 2);\par
+ 14: System.out.println(sample1 + ", " + sample2 + ", " + sample3);\par
+ 1. 0, 0, 5\par
+ 2. 1, 2, 10\par
+ 3. 2, 1, 5\par
+ 4. 2, 0, 5\par
+ 5. 3, 1, 10\par
+ 6. 3, 2, 6\par
+ 7. The code does not compile.\par
+ 12. The _________ operator increases a value and returns the original value, while the\par
+ _______ operator decreases a value and returns the new value.\par
+ 1. post-increment, post-increment\par
+ 2. pre-decrement, post-decrement\par
+ 3. post-increment, post-decrement\par
+ 4. post-increment, pre-decrement\par
+ 5. pre-increment, pre-decrement\par
+ 6. pre-increment, post-decrement\par
+ 13. What is the output of the following code snippet?\par
+ boolean sunny = true, raining = false, sunday = true;\par
+ boolean goingToTheStore = sunny & raining ^ sunday;\par
+ boolean goingToTheZoo = sunday && !raining;\par
+ boolean stayingHome = !(goingToTheStore && goingToTheZoo);\par
+ System.out.println(goingToTheStore + "-" + goingToTheZoo \par
+   + "-" +stayingHome);\par
+ 1. true-false-false\par
+ 2. false-true-false\par
+ 3. true-true-true\par
+ 4. false-true-true\par
+ 5. false-false-false\par
+ 6. true-true-false\par
+ 7. None of the above\par
+ 14. Which of the following statements are correct? (Choose all that apply.)\par
+ 1. The return value of an assignment operation expression can be void.\par
+ 2. The inequality operator (!=) can be used to compare objects.\par
+ 3. The equality operator (==) can be used to compare a boolean value with a\par
+ numeric value.\par
+ 4. During runtime, the & and | operators may cause only the left side of the\par
+ expression to be evaluated.\par
+ 5. The return value of an assignment operation expression is the value of the\par
+ newly assigned variable.\par
+ 6. In Java, 0 and false may be used interchangeably.\par
+ 7. The logical complement operator (!) cannot be used to flip numeric values.\par
+ 15. Which operator takes three operands or values?\par
+ 1. =\par
+2. &&\par
+ 3. *=\par
+ 4. ? :\par
+ 5. &\par
+ 6. ++\par
+ 7. /\par
+ 16. How many lines of the following code contain compiler errors?\par
+ int note = 1 * 2 + (long)3;\par
+ short melody = (byte)(double)(note *= 2);\par
+ double song = melody;\par
+ float symphony = (float)((song == 1_000f) ? song * 2L : song);\par
+ 1. 0\par
+ 2. 1\par
+ 3. 2\par
+ 4. 3\par
+ 5. 4\par
+ 17. Given the following code snippet, what are the values of the variables after it is\par
+ executed? (Choose all that apply.)\par
+ int ticketsTaken = 1;\par
+ int ticketsSold = 3;\par
+ ticketsSold += 1 + ticketsTaken++;\par
+ ticketsTaken *= 2;\par
+ ticketsSold += (long)1;\par
+ 1. ticketsSold is 8.\par
+ 2. ticketsTaken is 2.\par
+ 3. ticketsSold is 6.\par
+ 4. ticketsTaken is 6.\par
+ 5. ticketsSold is 7.\par
+ 6. ticketsTaken is 4.\par
+ 7. The code does not compile.\par
+ 18. Which of the following can be used to change the order of operation in an\par
+ expression?\par
+ 1. [ ]\par
+ 2. < >\par
+ 3. ( )\par
+ 4. \\ /\par
+ 5. \{ \}\par
+ 6. " "\par
+ 19. What is the result of executing the following code snippet? (Choose all that apply.)\par
+ 3: int start = 7;\par
+ 4: int end = 4;\par
+ 5: end += ++start;\par
+ 6: start = (byte)(Byte.MAX_VALUE + 1);\par
+1. start is 0.\par
+ 2. start is -128.\par
+ 3. start is 127.\par
+ 4. end is 8.\par
+ 5. end is 11.\par
+ 6. end is 12.\par
+ 7. The code does not compile.\par
+ 8. The code compiles but throws an exception at runtime.\par
+ 20. Which of the following statements about unary operators are true? (Choose all that\par
+ apply.)\par
+ 1. Unary operators are always executed before any surrounding numeric binary or\par
+ ternary operators.\par
+ 2. The - operator can be used to flip a boolean value.\par
+ 3. The pre-increment operator (++) returns the value of the variable before the\par
+ increment is applied.\par
+ 4. The post-decrement operator (--) returns the value of the variable before the\par
+ decrement is applied.\par
+ 5. The ! operator cannot be used on numeric values.\par
+ 6. None of the above.\par
+}
+ 

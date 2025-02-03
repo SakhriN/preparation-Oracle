@@ -1,0 +1,176 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 1. A, F. Option E is incorrect for both scenarios, as SequencedTreeSet\par
+ does not exist. For the first scenario, the answer needs to implement\par
+ List because the scenario allows duplicates, narrowing it down to\par
+ options A and D. Option A is a better answer than option D because\par
+ LinkedList is both a List and a Queue, and you just need a regular\par
+ List. For the second scenario, the answer needs to implement Map\par
+ because you are dealing with key/value pairs per the unique id field.\par
+ This narrows it down to options B and F. Since the question talks about\par
+ ordering, you need the TreeMap. Therefore, the answer is option F.\par
+ 2. C, G. Line 12 creates a List<?>, which means it is treated as if all the\par
+ elements are of type Object rather than String. Lines 15 and 16 do\par
+ not compile since they call the String methods isEmpty() and\par
+ length(), which are not defined on Object. Line 13 creates a\par
+ List<String> because var uses the type that it deduces from the\par
+ context. Lines 17 and 18 do compile. However, List.of() creates an\par
+ immutable list, so both of those lines would throw an\par
+ UnsupportedOperationException if run. Therefore, options C and G\par
+ are correct.\par
+ 3. B. This is a double-ended queue. On lines 4 and 5, we add to the back,\par
+ giving us [hello, hi]. On line 6, we add to the front and have [ola,\par
+ hello, hi]. On line 7, we remove the first element, which is "ola".\par
+ On line 8, we look at the new first element ("hello") but don\rquote t remove\par
+ it. On lines 9 and 10, we remove each element in turn until no\par
+ elements are left, printing hello and hi together, which makes option\par
+ B the answer.\par
+ 4. B, F. Option A does not compile because the generic types are not\par
+ compatible. We could say HashSet<? extends Number> hs2 = new\par
+ HashSet<Integer>();. Option B uses a lower bound, so it allows\par
+ superclass generic types. Option C does not compile because the\par
+ diamond operator is allowed only on the right side. Option D does not\par
+ compile because a Set is not a List. Option E does not compile\par
+ because upper bounds are not allowed when instantiating the type.\par
+Finally, option F does compile because the upper bound is on the\par
+ correct side of the =.\par
+ 5. B. The record compiles and runs without issue. Line 8 gives a\par
+ compiler warning for not using generics but not a compiler error. Line\par
+ 7 creates the Hello class with the generic type String. It also passes\par
+ an int to the println() method, which gets autoboxed into an\par
+ Integer. While the println() method takes a generic parameter of\par
+ type T, it is not the same <T> defined for the class on line 1. Instead, it\par
+ is a different T defined as part of the method declaration on line 3.\par
+ Therefore, the String argument on line 7 applies only to the class. The\par
+ method can take any object as a parameter, including autoboxed\par
+ primitives. Line 8 creates the Hello class with the generic type Object\par
+ since no type is specified for that instance. It passes a boolean to\par
+ println(), which gets autoboxed into a Boolean. The result is that hi\par
+1hola-true is printed, making option B correct.\par
+ 6. B, F. We\rquote re looking for a Comparator definition that sorts in\par
+ descending order by beakLength. Option A is incorrect because it sorts\par
+ in ascending order by beakLength. Similarly, option C is incorrect\par
+ because it sorts by beakLength in ascending order within those\par
+ matches that have the same name. Option E is incorrect because there\par
+ is no thenComparingNumber() method.\par
+ Option B is a correct answer, as it sorts by beakLength in descending\par
+ order. Options D and F are trickier. First, notice that we can call either\par
+ thenComparing() or thenComparingInt() because the former will\par
+ simply autobox the int into an Integer. Then observe what\par
+ reversed() applies to. Option D is incorrect because it sorts by name\par
+ in ascending order and only reverses the beak length of those with the\par
+ same name. Option F creates a comparator that sorts by name in\par
+ ascending order and then by beak size in ascending order. Finally, it\par
+ reverses the result. This is just what we want, so option F is correct.\par
+ 7. B, F. A valid override of a method with generic arguments must have a\par
+ return type that is covariant, with matching generic type parameters.\par
+ Options D and E are incorrect because the return type is too broad.\par
+ Additionally, the generic arguments must have the same signature with\par
+the same generic types. This eliminates options A and C. The\par
+ remaining options are correct, making the answer options B and F.\par
+ 8. E. There is no get(int) method defined in SequencedCollection,\par
+ meaning line 16 does not compile, regardless of what is placed in the\par
+ blank. For this reason, option E is correct. If line 16 was removed or\par
+ corrected to use getFirst(), then LinkedList would be the correct\par
+ answer.\par
+ 9. A. The array is sorted using MyComparator, which sorts the elements in\par
+ reverse alphabetical order in a case-insensitive fashion. Normally,\par
+ numbers sort before letters. This code reverses that by calling the\par
+ compareTo() method on b instead of a. Therefore, option A is correct.\par
+ 10. A, B, D. The generic type must be Exception or a subclass of\par
+ Exception since this is an upper bound, making options A and B\par
+ correct. Options C and E are wrong because Throwable is a superclass\par
+ of Exception. Additionally, option D is correct despite the odd syntax\par
+ by explicitly listing the type. You should still be able to recognize it as\par
+ acceptable.\par
+ 11. A, B, E, F. The forEach() method works with a Collection, such as\par
+ List or a Set. Therefore, options A and B are correct. Additionally,\par
+ options E and F return a Set and Collection, respectively, and can be\par
+ used as well. Options D and G refer to methods that do not exist.\par
+ Option C is tricky because a Map does have a forEach() method.\par
+ However, it uses two lambda parameters rather than one. Since there is\par
+ no matching System.out.println method, it does not compile.\par
+ 12. B, E. The showSize() method can take any type of List since it uses\par
+ an unbounded wildcard. Option A is incorrect because it is a Set and\par
+ not a List. Option C is incorrect because the wildcard is not allowed\par
+ to be on the right side of an assignment. Option D is incorrect because\par
+ the generic types are not compatible.\par
+ Option B is correct because a lower-bounded wildcard allows that\par
+ same type to be the generic. Option E is correct because Integer is a\par
+ subclass of Number.\par
+ 13. C. This question is difficult because it defines both Comparable and\par
+ Comparator on the same object. The t1 object doesn\rquote t specify a\par
+Comparator, so it uses the Comparable object\rquote s compareTo() method.\par
+ This sorts by the text instance variable. The t2 object does specify a\par
+ Comparator when calling the constructor, so it uses the compare()\par
+ method, which sorts by the int. This gives us option C as the answer.\par
+ Note that the SequencedSet reference on line 16 does not change the\par
+ ordering, as the underlying object is still a TreeSet.\par
+ 14. A. When using binarySearch(), the List must be sorted in the same\par
+ order that the Comparator uses. Since the binarySearch() method\par
+ does not specify a Comparator explicitly, the default sort order is used.\par
+ Only c2 uses that sort order and correctly identifies that the value 2 is\par
+ at index 0. Therefore, option A is correct. The other two comparators\par
+ sort in descending order. Therefore, the precondition for\par
+ binarySearch() is not met, and the result is undefined for those two.\par
+ The two calls to reverse() are just there to distract you; they cancel\par
+ each other out.\par
+ 15. A, B. Y is both a class and a type parameter. This means that within the\par
+ class Z, when we refer to Y, it uses the type parameter. All of the\par
+ choices that mention class Y are incorrect because it no longer means\par
+ the class Y. Only options A and B are correct.\par
+ 16. A, C. A LinkedList implements both List and Queue. The List\par
+ interface has a method to remove by index. Since this method exists,\par
+ Java does not autobox to call the other method, making the output\par
+ [10] and option A correct. Similarly, option C is correct because the\par
+ method to remove an element by index is available on a\par
+ LinkedList<Object> (which is what var represents here). By contrast,\par
+ Queue has only the remove by object method, so Java does autobox\par
+ there. Since the number 1 is not in the list, Java does not remove\par
+ anything for the Queue, and the output is [10, 12]. The\par
+ unmodifiableCollection() call is a distractor as it is an unmodifiable\par
+ view and the underlying connection can be changed.\par
+ 17. E. This question looks like it is about generics, but it\rquote s not. It is trying\par
+ to see whether you noticed that Map does not have a contains()\par
+ method. It has containsKey() and containsValue() instead, making\par
+ option E the answer. If containsKey() were called, the answer would\par
+be false because 123 is an Integer key in the Map, rather than a\par
+ String.\par
+ 18. A, E. The key to this question is keeping track of the types. Line 48 is\par
+ a Map<Integer, Integer>. Line 49 builds a List out of a Set of\par
+ Entry objects, giving us List<Entry<Integer, Integer>>. This\par
+ causes a compiler error on line 56 since we can\rquote t multiply an Entry\par
+ object by two.\par
+ Lines 51\f1\endash 54 are all of type List<Integer>. The first three are\par
+ immutable, and the one on line 54 is mutable. This means line 57\par
+ throws an UnsupportedOperationException since we attempt to\par
+ modify the list. Line 58 would work if we could get to it. Since there is\par
+ one compiler error and one runtime error, options A and E are correct.\par
+ 19. B. When using generic types in a method, the generic specification\par
+ goes before the return type, so option B is correct.\par
+ 20. F. The first call to merge() calls the mapping function and adds the\par
+ numbers to get 13. It then updates the map. The second call to merge()\par
+ sees that the map currently has a null value for that key. It does not\par
+ call the mapping function but instead replaces it with the new value of\par
+ 3. Therefore, option F is correct.\par
+ 21. B, D, F. The java.lang.Comparable interface is implemented on the\par
+ object to compare. It specifies the compareTo() method, which takes\par
+ one parameter. The java.util.Comparator interface specifies the\par
+ compare() method, which takes two parameters. This gives us options\par
+ B, D, and F as the answers.\par
+ 22. B. The code compiles and runs without issue, so options D and E are\par
+ incorrect. A TreeMap sorts its items in the natural order of keys (not the\par
+ values). Therefore, lines 25 and 27 remove [1, Minnie Mouse] and\par
+ [2, Sugar], respectively. Line 26 has no impact on the map. On line\par
+ 28, Snowball is printed, making option B correct. If line 26 were\par
+ changed to use pollLastEntry(), then the map would be empty and\par
+ line 28 would throw a NullPointerException trying to call\par
+ getValue().\par
+ 23. H. TreeSet is a SequencedSet, so it does have an addFirst() method.\par
+ For this reason, the code does compile. Unfortunately, addFirst() is\par
+not supported at runtime, as inserting an element at the front of the\par
+ TreeSet could violate the Comparator of the TreeSet. For this reason,\par
+ the code program throws an UnsupportedOperationException on the\par
+ third line.\f0\par
+}
+ 

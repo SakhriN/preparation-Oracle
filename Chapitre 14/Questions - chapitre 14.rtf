@@ -1,0 +1,411 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12  1. Which class would be best to use to read a binary file into a Java\par
+ object?\par
+ A. BufferedStream\par
+ B. FileReader\par
+ C. ObjectInputStream\par
+ D. ObjectReader\par
+ E. ObjectOutputStream\par
+ F. ObjectWriter\par
+ G. None of the above\par
+ 2. Assuming that / is the root directory within the file system, which of\par
+ the following are true statements? (Choose all that apply.)\par
+ A. /home/parrot is an absolute path.\par
+ B. /home/parrot is a directory.\par
+ C. /home/parrot is a relative path.\par
+D. new File("/home") will throw an exception if /home does not\par
+ exist.\par
+ E. new File("/home").delete() will throw an exception if /home\par
+ does not exist.\par
+ F. A Reader offers character encoding, making it more useful when\par
+ working with String data than an InputStream.\par
+ G. A Reader offers multithreading support, making it more useful\par
+ than an InputStream.\par
+ 3. What are possible results of executing the following code? (Choose all\par
+ that apply.)\par
+ public static void main(String[] args) throws IOException \{\par
+   String line;\par
+   var c = System.console();\par
+   Writer w = c.writer();\par
+   try (w) \{\par
+      if ((line = c.readLine("Enter your name: ")) != null)\par
+         w.append(line);\par
+       w.flush();\par
+   \}\par
+ \}\par
+ A. The code runs, but nothing is printed.\par
+ B. The code prints what was entered by the user.\par
+ C. The code behaves the same if throws IOException is removed.\par
+ D. A NullPointerException may be thrown.\par
+ E. A NullPointerException will always be thrown.\par
+ F. A NullPointerException will never be thrown.\par
+ G. The code does not compile.\par
+ 4. For which value of path sent to this method would it be guaranteed for\par
+ the following code to output Success?\par
+ public void removeBadFile(Path path) \{\par
+   if(Files.isDirectory(path))\par
+      System.out.println(Files.deleteIfExists(path)\par
+         ? "Success": "Try Again");\par
+ \}\par
+ A. path refers to a regular file in the file system.\par
+ B. path refers to a symbolic link in the file system.\par
+ C. path refers to an empty directory in the file system.\par
+ D. path refers to a directory with content in the file system.\par
+ E. path does not refer to a record that exists within the file system.\par
+ F. The code does not compile.\par
+ 5. Assume that the directory /animals exists and is empty. What is the\par
+ result of executing the following code?\par
+ Path path = Path.of("/animals");\par
+ try (var z = Files.walk(path)) \{\par
+   boolean b = z\par
+      .filter((p,a) -> a.isDirectory() && !path.equals(p)) \par
+// x\par
+      .findFirst().isPresent();  // y\par
+   System.out.print(b ? "No Sub": "Has Sub");\par
+ \}\par
+ A. It prints No Sub.\par
+ B. It prints Has Sub.\par
+ C. The code will not compile because of line x.\par
+ D. The code will not compile because of line y.\par
+ E. The output cannot be determined.\par
+ F. It produces an infinite loop at runtime.\par
+ 6. What would be the value of name if the instance of Eagle created in the\par
+ main() method were serialized and then deserialized?\par
+ import java.io.Serializable;\par
+ class Bird \{\par
+   protected transient String name;\par
+   public void setName(String name) \{ this.name = name; \}\par
+   public String getName() \{ return name; \}\par
+   public Bird() \{\par
+      this.name = "Matt";\par
+   \}\par
+ \}\par
+ public class Eagle extends Bird implements Serializable \{\par
+   \{ this.name = "Olivia"; \}\par
+   public Eagle() \{\par
+      this.name = "Bridget";\par
+   \}\par
+   public static void main(String[] args) \{\par
+      var e = new Eagle();\par
+      e.name = "Adeline";\par
+   \}\par
+ \}\par
+ A. Adeline\par
+ B. Bridget\par
+ C. Matt\par
+ D. Olivia\par
+ E. null\par
+ F. The code does not compile.\par
+ G. The code compiles but throws an exception at runtime.\par
+ 7. Assume that /kang exists as a symbolic link to the directory\par
+ /mammal/kangaroo within the file system. Which of the following\par
+ statements are correct about this code snippet? (Choose all that apply.)\par
+ var path = Path.of("/kang");\par
+ if(Files.isDirectory(path) && Files.isSymbolicLink(path))\par
+   Files.createDirectory(path.resolve("joey"));\par
+ A. A new directory will always be created.\par
+ B. A new directory may be created.\par
+ C. If the code creates a directory, it will be reachable at /kang/joey.\par
+ D. If the code creates a directory, it will be reachable at\par
+ /mammal/joey.\par
+ E. The code does not compile.\par
+ F. The code will compile but will always throw an exception at\par
+ runtime.\par
+8. Assuming that the /fox/food-schedule.csv file exists with the\par
+ specified contents, what is the expected output of calling printData()\par
+ on it?\par
+ /fox/food-schedule.csv \par
+6am,Breakfast\par
+ 9am,SecondBreakfast\par
+ 12pm,Lunch\par
+ 6pm,Dinner\par
+ void printData(Path path) throws IOException \{\par
+   Files.readAllLines(path) // r1\par
+      .flatMap(p -> Stream.of(p.split(","))) // r2\par
+       .map(q -> q.toUpperCase())  // r3\par
+       .forEach(System.out::println);\par
+ \}\par
+ A. The code will not compile because of line r1.\par
+ B. The code will not compile because of line r2.\par
+ C. The code will not compile because of line r3.\par
+ D. It throws an exception at runtime.\par
+ E. It does not print anything at runtime.\par
+ F. None of the above.\par
+ 9. Given the following method and file1 data, which statements are\par
+ correct? (Choose all that apply.)\par
+ // file1 data\par
+ ABCDEF\par
+ public void copyFile(File file1, File file2) throws \par
+Exception \{\par
+   var reader = new InputStreamReader(new \par
+FileInputStream(file1));\par
+   try (var writer = new FileWriter(file2)) \{\par
+      char[] buffer = new char[5];\par
+      while(reader.read(buffer) != -1) \{\par
+          writer.write(buffer);\par
+          // n1\par
+      \}\par
+   \}\par
+ \}\par
+A. The code does not compile because reader is not a buffered\par
+ stream.\par
+ B. The code does not compile because writer is not a buffered\par
+ stream.\par
+ C. The contents of the copied file are: ABCDEF\par
+ D. The contents of the copied file are: ABCDEFBCDE\par
+ E. The contents of the copied file cannot be determined.\par
+ F. If we check file2 on line n1 within the file system after five\par
+ iterations of the while loop, it may be empty.\par
+ G. If we check file2 on line n1 within the file system after five\par
+ iterations, it will contain exactly 50 characters.\par
+ H. This method contains a resource leak.\par
+ 10. Which of the following correctly create Path instances? (Choose all\par
+ that apply.)\par
+ A. new Path("jaguar.txt")\par
+ B. Path.get("cats","lynx.txt")\par
+ C. new java.io.File("tiger.txt").toPath()\par
+ D. Paths.get("ocelot.txt")\par
+ E. Path.of(".")\par
+ 11. Which classes will allow the following to compile? (Choose all that\par
+ apply.)\par
+ var is = new BufferedInputStream(new \par
+FileInputStream("z.txt"));\par
+ InputStream wrapper = new \par
+____________________________________________ (is);\par
+ try (wrapper) \{\}\par
+ A. BufferedInputStream\par
+ B. BufferedReader\par
+ C. BufferedWriter\par
+D. FileInputStream\par
+ E. ObjectInputStream\par
+ F. ObjectOutputStream\par
+ G. None of the above, as the first line does not compile\par
+ 12. What is the result of executing the following code? (Choose all that\par
+ apply.)\par
+ 4: var p = Path.of("sloth.schedule");\par
+ 5: var a = Files.readAttributes(p, \par
+BasicFileAttributes.class);\par
+ 6: Files.mkdir(p.resolve(".backup"));\par
+ 7: if(a.size()>0 && a.isDirectory()) \{\par
+ 8:    a.setTimes(null,null,null);\par
+ 9: \}\par
+ A. It compiles and runs without issue.\par
+ B. The code will not compile because of line 5.\par
+ C. The code will not compile because of line 6.\par
+ D. The code will not compile because of line 7.\par
+ E. The code will not compile because of line 8.\par
+ F. None of the above.\par
+ 13. Which of the following are true statements about serialization in Java?\par
+ (Choose all that apply.)\par
+ A. All non-null instance members of the class must be serializable\par
+ or marked transient.\par
+ B. Records are automatically serializable.\par
+ C. Serialization involves converting data into Java objects.\par
+ D. Serializable is a functional interface.\par
+ E. The class must declare a static serialVersionUID variable.\par
+ F. The class must extend the Serializable class.\par
+ G. The class must implement the Serializable interface.\par
+14. What is the output of the following code? (Choose three.)\par
+ 22: var p1 = Path.of("/zoo/./bear","../food.txt");\par
+ 23: p1.normalize().relativize(Path.of("/lion"));\par
+ 24: System.out.println(p1);\par
+ 25:\par
+ 26: var p2 = Path.of("/zoo/animals/bear/koala/food.txt");\par
+ 27: System.out.println(p2.subpath(1,3).getName(1));\par
+ 28:\par
+ 29: var p3 = Path.of("/pets/../cat.txt");\par
+ 30: var p4 = Path.of("./dog.txt");\par
+ 31: System.out.println(p4.resolve(p3));\par
+ A. ../../lion\par
+ B. /zoo/./bear/../food.txt\par
+ C. animal\par
+ D. bear\par
+ E. /pets/../cat.txt\par
+ F. /pets/../cat.txt/./dog.txt\par
+ 15. Suppose that the working directory is /weather and the absolute path\par
+ /weather/winter/snow.dat represents a file that exists within the file\par
+ system. Which of the following lines of code create an object that\par
+ represents the file? (Choose all that apply.)\par
+ A. new File("/weather", "winter", "snow.dat")\par
+ B. new File("/weather/winter/snow.dat")\par
+ C. new File("/weather/winter", new File("snow.dat"))\par
+ D. new File("weather", "/winter/snow.dat")\par
+ E. new File(new File("/weather/winter"), "snow.dat")\par
+ F. Path.of("/weather/winter/snow.dat").toFile()\par
+ G. None of the above\par
+ 16. Assuming zoo-data.txt exists and is not empty, what statements\par
+ about the following method are correct? (Choose all that apply.)\par
+ private void echo() throws IOException \{\par
+   var o = new FileWriter("new-zoo.txt");\par
+   try (var f = new FileReader("zoo-data.txt");\par
+      var b = new BufferedReader(f); o) \{\par
+      o.write(b.readLine());\par
+   \}\par
+   o.write("");\par
+ \}\par
+ A. When run, the method creates a new file with one line of text in\par
+ it.\par
+ B. When run, the method creates a new file with two lines of text in\par
+ it.\par
+ C. When run, the method creates a new file with the same number of\par
+ lines as the original file.\par
+ D. The method compiles but will produce an exception at runtime.\par
+ E. The method does not compile.\par
+ F. The method uses byte stream classes.\par
+ 17. Which are true statements? (Choose all that apply.)\par
+ A. NIO.2 includes a method to delete an entire directory tree.\par
+ B. NIO.2 includes a method to traverse a directory tree.\par
+ C. NIO.2 includes methods that are aware of symbolic links.\par
+ D. Files.readAttributes() cannot access file system dependent\par
+ attributes.\par
+ E. Files.readAttributes() is often more performant since it reads\par
+ multiple attributes rather than accessing individual attributes.\par
+ F. Files.readAttributes() works with the File object.\par
+ 18. Assume that reader is a valid stream whose next characters are\par
+ PEACOCKS. Which is true about the output of the following code\par
+ snippet?\par
+ var sb = new StringBuilder();\par
+ sb.append((char)reader.read());\par
+ reader.mark(10);\par
+ for(int i=0; i<2; i++) \{\par
+   sb.append((char)reader.read());\par
+   reader.skip(2);\par
+ \}\par
+ reader.reset();\par
+ reader.skip(0);\par
+ sb.append((char)reader.read());\par
+ System.out.println(sb.toString());\par
+ A. The code may print PEAE.\par
+ B. The code may print PEOA.\par
+ C. The code may print PEOE.\par
+ D. The code may print PEOS.\par
+ E. The code will always print PEAE.\par
+ F. The code will always print PEOA.\par
+ G. The code will always print PEOE.\par
+ H. The code will always print PEOS.\par
+ 19. Assuming that the directories and files referenced exist and are not\par
+ symbolic links, what is the result of executing the following code?\par
+ var p1 = \par
+Path.of("/lizard",".").resolve(Path.of("walking.txt"));\par
+ var p2 = new \par
+File("/lizard/././actions/../walking.txt").toPath();\par
+ System.out.print(Files.isSameFile(p1,p2));\par
+ System.out.print(" ");\par
+ System.out.print(p1.equals(p2));\par
+ System.out.print(" ");\par
+ System.out.print(Files.mismatch(p1,p2));\par
+ A. true true -1\par
+ B. true true 0\par
+ C. true false -1\par
+ D. true false 0\par
+ E. false true -1\par
+ F. false true 0\par
+ G. The code does not compile.\par
+H. The result cannot be determined.\par
+ 20. Assume that monkey.txt is a file that exists in the current working\par
+ directory. Which statement about the following code snippet is\par
+ correct?\par
+ Files.move(Path.of("monkey.txt"), Path.of("/animals"),\par
+   StandardCopyOption.ATOMIC_MOVE);\par
+ A. If /animals/monkey.txt exists, it will be overwritten at runtime.\par
+ B. If /animals exists as an empty directory, /animals/monkey.txt\par
+ will be the new location of the file.\par
+ C. If the move is successful and another process is monitoring the\par
+ file system, it will not see an incomplete file at runtime.\par
+ D. None of the above.\par
+ 21. Assume that /monkeys exists as a directory containing multiple files,\par
+ symbolic links, and subdirectories. Which statement about the\par
+ following code is correct?\par
+ var f = Path.of("/monkeys");\par
+ try (var m =\par
+   Files.find(f, 0, (p,a) -> a.isSymbolicLink())) \{ // y1\par
+      m.map(s -> s.toString())\par
+         .collect(Collectors.toList())\par
+         .stream()\par
+         .filter(s -> s.toString().endsWith(".txt")) // y2\par
+         .forEach(System.out::println);\par
+ \}\par
+ A. It will print all symbolic links in the directory tree ending in .txt.\par
+ B. It will print the target of all symbolic links in the directory ending\par
+ in .txt.\par
+ C. It will print nothing.\par
+ D. It does not compile because of line y1.\par
+ E. It does not compile because of line y2.\par
+ F. It compiles but throws an exception at runtime.\par
+22. Which of the following fields will be null after an instance of the\par
+ class created on line 17 is serialized and then deserialized using\par
+ ObjectOutputStream and ObjectInputStream?\par
+ 1:  import java.io.Serializable;\par
+ 2:  import java.util.List;\par
+ 3:  public class Zebra implements Serializable \{\par
+ 4:     private transient String name = "George";\par
+ 5:     private static String birthPlace = "Africa";\par
+ 6:     private transient Integer age;\par
+ 7:     List<Zebra> friends = new java.util.ArrayList<>();\par
+ 8:     private Object stripes = new Object();\par
+ 9:     \{ age = 10;\}\par
+ 10:    public Zebra() \{\par
+ 11:       this.name = "Sophia";\par
+ 12:    \}\par
+ 13:    static Zebra writeAndRead(Zebra z) \{\par
+ 14:       // Implementation omitted\par
+ 15:    \}\par
+ 16:    public static void main(String[] args) \{\par
+ 17:       var zebra = new Zebra();\par
+ 18:       zebra = writeAndRead(zebra);\par
+ 19:    \} \}\par
+ A. age\par
+ B. birthplace\par
+ C. friends\par
+ D. name\par
+ E. stripes\par
+ F. The code does not compile.\par
+ G. The code compiles but throws an exception at runtime.\par
+ 23. What are some possible results of executing the following code?\par
+ (Choose all that apply.)\par
+ var x = Path.of("/animals/fluffy/..");\par
+ Files.walk(x.toRealPath().getParent())      // u1\par
+   .map(p -> p.toAbsolutePath().toString()) // u2\par
+   .filter(s -> s.endsWith(".java")) \par
+   .forEach(System.out::println);\par
+A. It prints some files in the root directory.\par
+ B. It prints all files in the root directory.\par
+ C. FileSystemLoopException is thrown at runtime.\par
+ D. Another exception is thrown at runtime.\par
+ E. The code will not compile because of line u1.\par
+ F. The code will not compile because of line u2.\par
+ 24. Assume that the source instance passed to the following method\par
+ represents a file that exists. Also assume that /flip/sounds.txt exists\par
+ as a file prior to executing this method. When this method is executed,\par
+ which statement correctly copies the file to the path specified by\par
+ /flip/sounds.txt?\par
+ void copyIntoFlipDirectory(Path source) throws IOException \par
+\{\par
+   var dolphinDir = Path.of("/flip");\par
+   dolphinDir = Files.createDirectories(dolphinDir);\par
+   var n = Path.of("sounds.txt");\par
+ Files.copy(source,_________________________________________\par
+ ___);\par
+ \}\par
+ A. dolphinDir\par
+ B. dolphinDir.resolve(n),\par
+ StandardCopyOption.REPLACE_EXISTING\par
+ C. dolphinDir, StandardCopyOption.REPLACE_EXISTING\par
+ D. dolphinDir.resolve(n)\par
+ E. The method does not compile, regardless of what is placed in the\par
+ blank.\par
+ F. The method compiles but throws an exception at runtime,\par
+ regardless of what is placed in the blank.\par
+ 25. Suppose that you need to read text data from a file and want the data to\par
+ be performant on large files. Which two java.io stream classes can be\par
+ chained together to best achieve this result? (Choose two.)\par
+A. BufferedInputStream\par
+ B. BufferedReader\par
+ C. FileInputStream\par
+ D. FileReader\par
+ E. PrintInputStream\par
+ F. ObjectInputStream\par
+ G. PrintReader\par
+}
+ 

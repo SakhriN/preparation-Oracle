@@ -1,0 +1,278 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12  1. Which statement is true of the following module?\par
+ |---zoo\par
+   |-- staff\par
+      |-- Vet.java\par
+ A. The directory structure shown is a valid module.\par
+B. The directory structure would be a valid module if module.java\par
+ were added directly underneath zoo/staff.\par
+ C. The directory structure would be a valid module if module.java\par
+ were added directly underneath zoo.\par
+ D. The directory structure would be a valid module if module\par
+info.java were added directly underneath zoo/staff.\par
+ E. The directory structure would be a valid module if module\par
+info.java were added directly underneath zoo.\par
+ F. None of these changes would make this directory structure a valid\par
+ module.\par
+ 2. Suppose module puppy depends on module dog and module dog\par
+ depends on module animal. Fill in the blank so that code in module\par
+ dog can access the animal.behavior package in module animal.\par
+ module animal \{\par
+    _________ animal.behavior;\par
+ \}\par
+ A. export\par
+ B. exports\par
+ C. require\par
+ D. requires\par
+ E. require transitive\par
+ F. requires transitive\par
+ G. None of the above\par
+ 3. Fill in the blanks so this command to run the program is correct:\par
+ java\par
+ _________ modules\par
+ _________ zoo.animal.talks/zoo/animal/talks/Peacocks\par
+ A. -d and -m\par
+ B. -d and \f1\endash p\par
+ C. -m and -d\par
+D. -m and -p\par
+ E. -p and -d\par
+ F. -p and -m\par
+ G. None of the above\par
+ 4. Which of the following pairs make up a service?\par
+ A. Consumer and service locator\par
+ B. Consumer and service provider interface\par
+ C. Service locator and service provider\par
+ D. Service locator and service provider interface\par
+ E. Service provider and service provider interface\par
+ 5. A(n) _____________ module is on the classpath while a(n)\par
+ _____________ module is on the module path. (Choose all that apply.)\par
+ A. automatic, named\par
+ B. automatic, unnamed\par
+ C. named, automatic\par
+ D. named, unnamed\par
+ E. unnamed, automatic\par
+ F. unnamed, named\par
+ G. None of the above\par
+ 6. Which of the following statements are true in a module-info.java\par
+ file? (Choose all that apply.)\par
+ A. The opens directive allows the use of reflection.\par
+ B. The opens directive declares that an API is called.\par
+ C. The use directive allows the use of reflection.\par
+ D. The use directive declares that an API is called.\par
+ E. The uses directive allows the use of reflection.\par
+ F. The uses directive declares that an API is called.\par
+7. An automatic module name is generated if one is not supplied. Which\par
+ of the following JAR filenames and generated automatic module name\par
+ pairs are correct? (Choose all that apply.)\par
+ A. emily-1.0.0.jar and emily\par
+ B. emily-1.0.0-SNAPSHOT.jar and emily\par
+ C. emily_the_cat-1.0.0.jar and emily_the_cat\par
+ D. emily_the_cat-1.0.0.jar and emily-the-cat\par
+ E. emily.$.jar and emily\par
+ F. emily.$.jar and emily.\par
+ G. emily.$.jar and emily..\par
+ 8. Which of the following statements are true? (Choose all that apply.)\par
+ A. Modules with cyclic dependencies will not compile.\par
+ B. Packages with a cyclic dependency will not compile.\par
+ C. A cyclic dependency always involves exactly two modules.\par
+ D. A cyclic dependency always involves at least two requires\par
+ statements.\par
+ E. An unnamed module can be involved in a cyclic dependency with\par
+ an automatic module.\par
+ 9. Suppose you are creating a service provider that contains the following\par
+ class. Which line of code needs to be in your module-info.java?\par
+ package dragon;\par
+ import magic.*;\par
+ public class Dragon implements Magic \{\par
+   public String getPower() \{\par
+     return "breathe fire";\par
+   \}\par
+ \}\par
+ A. provides dragon.Dragon by magic.Magic;\par
+ B. provides dragon.Dragon using magic.Magic;\par
+ C. provides dragon.Dragon with magic.Magic;\par
+D. provides magic.Magic by dragon.Dragon;\par
+ E. provides magic.Magic using dragon.Dragon;\par
+ F. provides magic.Magic with dragon.Dragon;\par
+ 10. What is true of a module containing a file named module-info.java\par
+ with the following contents? (Choose all that apply.)\par
+ module com.food.supplier \{\}\par
+ A. All packages inside the module are automatically exported.\par
+ B. No packages inside the module are automatically exported.\par
+ C. A main method inside the module can be run.\par
+ D. A main method inside the module cannot be run since the class is\par
+ not exposed.\par
+ E. The module-info.java file contains a compiler error.\par
+ F. The module-info.java filename is incorrect.\par
+ 11. Suppose module puppy depends on module dog and module dog\par
+ depends on module animal. Which lines allow module puppy to access\par
+ the animal.behavior package in module animal? (Choose all that\par
+ apply.)\par
+ module animal \{\par
+   exports animal.behavior;\par
+ \}\par
+ module dog \{\par
+     _____________ animal;  // line S\par
+ \}\par
+ module puppy \{\par
+     _____________ dog;     // line T\par
+ \}\par
+ A. require on line S\par
+ B. require on line T\par
+ C. requires on line S\par
+ D. requires on line T\par
+ E. require transitive on line S\par
+F. require transitive on line T\par
+ G. requires transitive on line S\par
+ H. requires transitive on line T\par
+ 12. Which of the following modules are provided by the JDK? (Choose all\par
+ that apply.)\par
+ A. java.base\par
+ B. java.desktop\par
+ C. java.logging\par
+ D. java.util\par
+ E. jdk.base\par
+ F. jdk.compiler\par
+ G. jdk.xerces\par
+ 13. Which of the following compiles and is equivalent to this loop?\par
+ List<Unicorn> all  = new ArrayList<>();\par
+ for (Unicorn current : ServiceLoader.load(Unicorn.class))\par
+   all.add(current);\par
+ A. \par
+B. \par
+C. \par
+List<Unicorn> all = ServiceLoader.load(Unicorn.class)\par
+ .getStream()\par
+ .toList();\par
+ List<Unicorn> all = ServiceLoader.load(Unicorn.class)\par
+ .stream()\par
+ .toList();\par
+ List<Unicorn> all = ServiceLoader.load(Unicorn.class)\par
+ .getStream()\par
+ .map(Provider::get)\par
+ .toList();\par
+ D. \par
+List<Unicorn> all = ServiceLoader.load(Unicorn.class)\par
+ .stream()\par
+ .map(Provider::get)\par
+ .toList();\par
+ E. None of the above\par
+ 14. Which of the following is a legal command to run a modular program\par
+ where n is the module name and c is the fully qualified class name?\par
+ A. java --module-path x -m n.c\par
+ B. java --module-path x -p n.c\par
+ C. java --module-path x-x -m n/c\par
+ D. java --module-path x -p n/c\par
+ E. java --module-path x-x -m n-c\par
+ F. java --module-path x -p n-c\par
+ G. None of the above\par
+ 15. For a top-down migration, all modules other than named modules are\par
+ _____________ modules and are on the _____________.\par
+ A. automatic, classpath\par
+ B. automatic, module path\par
+ C. unnamed, classpath\par
+ D. unnamed, module path\par
+ E. None of the above\par
+ 16. Suppose you have separate modules for a service provider interface,\par
+ service provider, service locator, and consumer. If you add a second\par
+ service provider module, how many of the existing modules do you\par
+ need to recompile?\par
+ A. Zero\par
+ B. One\par
+ C. Two\par
+ D. Three\par
+E. Four\par
+ 17. Suppose we have a JAR file named cat-1.2.3-RC1.jar, and\par
+ Automatic-Module-Name in the MANIFEST.MF is set to dog. What\par
+ should an unnamed module referencing this automatic module include\par
+ in module-info.java?\par
+ A. requires cat;\par
+ B. requires cat.RC;\par
+ C. requires cat-RC;\par
+ D. requires dog;\par
+ E. None of the above\par
+ 18. Two commands create artifacts that include smaller versions of the\par
+ JDK. Which are used to create an .exe file and a directory,\par
+ respectively?\par
+ A. jimage and jlink\par
+ B. jimage and jpackage\par
+ C. jlink and jimage\par
+ D. jlink and jpackage\par
+ E. jpackage and jimage\par
+ F. jpackage and jlink\par
+ 19. Which is a true statement about the following module?\par
+ class dragon \{\par
+   exports com.dragon.fire;\par
+   exports com.dragon.scales to castle;\par
+ \}\par
+ A. All modules can reference the com.dragon.fire package.\par
+ B. All modules can reference the com.dragon.scales package.\par
+ C. Only the castle module can reference the com.dragon.fire\par
+ package.\par
+D. Only the castle module can reference the com.dragon.scales\par
+ package.\par
+ E. None of the above.\par
+ 20. Which would you expect to see when describing any module?\par
+ A. requires java.base mandated\par
+ B. requires java.core mandated\par
+ C. requires java.lang mandated\par
+ D. requires mandated java.base\par
+ E. requires mandated java.core\par
+ F. requires mandated java.lang\par
+ G. None of the above\par
+ 21. Suppose you have separate modules for a service provider interface,\par
+ service provider, service locator, and consumer. Which module(s) need\par
+ to specify a requires directive on the service provider?\par
+ A. Service locator\par
+ B. Service provider interface\par
+ C. Consumer\par
+ D. Consumer and service locator\par
+ E. Consumer and service provider\par
+ F. Service locator and service provider interface\par
+ G. Consumer, service locator, and service provider interface\par
+ H. None of the above\par
+ 22. Which are true statements? (Choose all that apply.)\par
+ A. An automatic module exports all packages to named modules.\par
+ B. An automatic module exports only the specified packages to\par
+ named modules.\par
+ C. An automatic module exports no packages to named modules.\par
+D. An unnamed module exports only the named packages to named\par
+ modules.\par
+ E. An unnamed module exports all packages to named modules.\par
+ F. An unnamed module exports no packages to named modules.\par
+ 23. Which is the first line to contain a compiler error?\par
+ 1: module snake \{\par
+ 2:    exports com.snake.tail;\par
+ 3:    exports com.snake.fangs to bird;\par
+ 4:    requires skin;\par
+ 5:    requires transitive skin;\par
+ 6: \}\par
+ A. Line 1.\par
+ B. Line 2.\par
+ C. Line 3.\par
+ D. Line 4.\par
+ E. Line 5.\par
+ F. The code does not contain any compiler errors.\par
+ 24. Which is a true statement about a package in a JAR on the classpath\par
+ containing a module-info.java file?\par
+ A. It is possible to make the package available to all other modules\par
+ on the classpath.\par
+ B. It is possible to make the package available to all other modules\par
+ on the module path.\par
+ C. It is possible to make the package available to exactly one other\par
+ specific module on the classpath.\par
+ D. It is possible to make the package available to exactly one other\par
+ specific module on the module path.\par
+ E. It is possible to make sure the package is not available to any\par
+ other modules on the classpath.\par
+25. Suppose you have separate modules for a service provider interface,\par
+ service provider, service locator, and consumer. Which statements are\par
+ true about the directives you need to specify? (Choose all that apply.)\par
+ A. The consumer must use the requires directive.\par
+ B. The consumer must use the uses directive.\par
+ C. The service locator must use the requires directive.\par
+ D. The service locator must use the uses directive.\par
+ E. None of the above.\f0\par
+}
+ 

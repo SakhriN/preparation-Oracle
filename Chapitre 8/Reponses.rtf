@@ -1,0 +1,153 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12  1. A. This code is correct. Line 8 creates a lambda expression that checks\par
+ whether the age is less than 5, making option A correct. Since there is\par
+ only one parameter and it does not specify a type, the parentheses\par
+ around the parameter are optional. Lines 11 and 13 use the Predicate\par
+ interface, which declares a test() method.\par
+ 2. C. The interface takes two int parameters. The code on line 7 attempts\par
+ to use them as if h is a StringBuilder, making option C correct. It is\par
+ tricky to use types in a lambda when they are implicitly specified.\par
+ Remember to check the interface for the real type.\par
+ 3. A, C. A functional interface can contain any number of nonabstract\par
+ methods, including default, private, static, and private static.\par
+ For this reason, option A is correct, and option D is incorrect. Option\par
+ B is incorrect, as classes are never considered functional interfaces. A\par
+ functional interface contains exactly one abstract method, although\par
+ methods that have matching signatures as public methods in\par
+ java.lang.Object do not count toward the single method test. For\par
+ these reasons, option C is correct. Finally, option E is incorrect. While\par
+ a functional interface can be marked with the @FunctionalInterface\par
+ annotation, it is not required.\par
+ 4. A, F. Option B is incorrect because it does not use the return\par
+ keyword. Options C, D, and E are incorrect because the variable e is\par
+ already in use from the lambda and cannot be redefined. Additionally,\par
+ option C is missing the return keyword, and option E is missing the\par
+ semicolon. Therefore, options A and F are correct.\par
+ 5. A, C, E. Java includes support for three primitive streams, along with\par
+ numerous functional interfaces to go with them: int, double, and\par
+ long. For this reason, options C and E are correct. Additionally, there\par
+ is a BooleanSupplier functional interface, making option A correct.\par
+ Java does not include primitive streams or related functional interfaces\par
+ for other numeric data types, making options B and D incorrect.\par
+ Option F is incorrect because String is not a primitive but an object.\par
+ Only primitives have custom suppliers.\par
+6. A, C. Predicate<String> takes a parameter list of one parameter\par
+ using the specified type. Options E and F are incorrect because they\par
+ specify the wrong type. Options B, D, and F are incorrect because they\par
+ use the wrong syntax for the arrow operator. This leaves us with\par
+ options A and C as the answers.\par
+ 7. E. While there appears to have been a variable name shortage when\par
+ this code was written, it does compile. Lambda variables and method\par
+ names are allowed to be the same. The x lambda parameter is scoped\par
+ to within each lambda, so it is allowed to be reused. The type is\par
+ inferred by the method it calls. The first lambda maps x to a String\par
+ and the second to a Boolean. Therefore, option E is correct.\par
+ 8. E. The question starts with a UnaryOperator<Integer>, which takes\par
+ one parameter and returns a value of the same type. Therefore, option\par
+ E is correct, as UnaryOperator extends Function. Notice that other\par
+ options don\rquote t even compile because they have the wrong number of\par
+ generic types for the functional interface provided. You should know\par
+ that a BiFunction<T,U,R> takes three generic arguments, a\par
+ BinaryOperator<T> takes one generic argument, and a Function<T,R>\par
+ takes two generic arguments.\par
+ 9. A, F. Option A is correct, and option B is incorrect because a Supplier\par
+ returns a value while a Consumer takes one and acts on it. Option C is\par
+ tricky. IntSupplier does return an int. However, the option asks\par
+ about IntegerSupplier, which doesn\rquote t exist. Option D is incorrect\par
+ because a Predicate returns a boolean. It does have a method named\par
+ test(), making option F correct. Finally, option E is incorrect because\par
+ Function has an apply() method.\par
+ 10. A, B, C. Since the scope of start and c is within the lambda, the\par
+ variables can be declared or updated after it without issue, making\par
+ options A, B, and C correct. Option D is incorrect because setting end\par
+ prevents it from being effectively final.\par
+ 11. D. The code does not compile because the lambdas are assigned to\par
+ var. The compiler does not have enough information to determine they\par
+ are of type Predicate<String>. Therefore, option D is correct.\par
+12. A. The a.compose(b) method calls the Function parameter b before\par
+ the reference Function variable a. In this case, that means we multiply\par
+ by 3 before adding 4. This gives a result of 7, making option A correct.\par
+ 13. E. Lambdas are only allowed to reference final or effectively final\par
+ variables. You can tell the variable j is effectively final because adding\par
+ a final keyword before it wouldn\rquote t introduce a compiler error. Each\par
+ time the else statement is executed, the variable is redeclared and goes\par
+ out of scope. Therefore, it is not reassigned. Similarly, length is\par
+ effectively final. There are no compiler errors, and option E is correct.\par
+ 14. B, D. Option B is a valid functional interface, one that could be\par
+ assigned to a Consumer<Camel> reference. Notice that the final\par
+ modifier is permitted on variables in the parameter list. Option D is\par
+ correct, as the exception is being returned as an object and not thrown.\par
+ This would be compatible with a BiFunction that included\par
+ RuntimeException as its return type.\par
+ Options A and G are incorrect because they mix format types for the\par
+ parameters. Option C is invalid because the variable b is used twice.\par
+ Option E is incorrect, as a return statement is permitted only inside\par
+ braces (\{\}). Option F is incorrect because the variable declaration\par
+ requires a semicolon (;) after it.\par
+ 15. A, F. Option A is a valid lambda expression. While main() is a static\par
+ method, it can access age since it is using a reference to an instance of\par
+ Hyena, which is effectively final in this method. Since var is not a\par
+ reserved word, it may be used for variable names. Option F is also\par
+ correct, with the lambda variable being a reference to a Hyena object.\par
+ The variable is processed using deferred execution in the testLaugh()\par
+ method.\par
+ Options B and E are incorrect; since the local variable age is not\par
+ effectively final, this would lead to a compilation error. Option C\par
+ would also cause a compilation error, since the expression uses the\par
+ variable name p, which is already declared within the method. Finally,\par
+ option D is incorrect, as this is not even a lambda expression.\par
+ 16. C. Lambdas are not allowed to redeclare local variables, making\par
+ options A and B incorrect. Option D is incorrect because setting end\par
+prevents it from being effectively final. Lambdas are only allowed to\par
+ reference final or effectively final variables. Option C compiles since\par
+ chars is not used.\par
+ 17. C. Line 8 uses braces around the body. This means the return\par
+ keyword and semicolon are required. Since the code doesn\rquote t compile,\par
+ option C is the answer.\par
+ 18. B, F, G. We can eliminate four choices right away. Options A and C\par
+ are there to mislead you; these interfaces don\rquote t exist. Option D is\par
+ incorrect because a BiFunction<T,U,R> takes three generic arguments,\par
+ not two. Option E is incorrect because none of the examples returns a\par
+ boolean.\par
+ The declaration on line 6 doesn\rquote t take any parameters, and it returns a\par
+ String, so a Supplier<String> can fill in the blank, making option F\par
+ correct. The declaration on line 7 requires you to recognize that\par
+ Consumer and Function, along with their binary equivalents, have an\par
+ andThen() method. This makes option B correct. Finally, line 8 takes a\par
+ single parameter, and it returns the same type, which is a\par
+ UnaryOperator. Since the types are the same, only one generic\par
+ parameter is needed, making option G correct.\par
+ 19. F. While there is a lot in this question trying to confuse you, note that\par
+ there are no options about the code not compiling. This allows you to\par
+ focus on the lambdas and method references. Option A is incorrect\par
+ because a Consumer requires one parameter. Options B and C are close.\par
+ The syntax for the lambda is correct. However, s is already defined as\par
+ a local variable, and therefore the lambda can\rquote t redefine it. Options D\par
+ and E use incorrect syntax for a method reference. Option F is correct.\par
+ 20. E. Option A does not compile because the second statement within the\par
+ block is missing a semicolon (;) at the end. Option B is an invalid\par
+ lambda expression because t is defined twice: in the parameter list and\par
+ within the lambda expression. Options C and D are both missing a\par
+ return statement and semicolon. Options E and F are both valid\par
+ lambda expressions, although only option E matches the behavior of\par
+ the Sloth class. In particular, option F only prints Sleep:, not Sleep:\par
+ 10.0.\par
+21. A, E, F. A valid functional interface is one that contains a single\par
+ abstract method, excluding any public methods that are already\par
+ defined in the java.lang.Object class. Transport and Boat are valid\par
+ functional interfaces, as they each contain a single abstract method:\par
+ go() and hashCode(String), respectively. This gives us options A and\par
+ E. Since the other methods are part of Object, they do not count as\par
+ abstract methods. Train is also a functional interface since it extends\par
+ Transport and does not define any additional abstract methods. This\par
+ adds option F as the final correct answer.\par
+ Car is not a functional interface because it is an abstract class.\par
+ Locomotive is not a functional interface because it includes two\par
+ abstract methods, one of which is inherited. Finally, Spaceship is not a\par
+ valid interface, let alone a functional interface, because a default\par
+ method must provide a body. A quick way to test whether an interface\par
+ is a functional interface is to apply the @FunctionalInterface\par
+ annotation and check if the code still compiles.\par
+}
+ 

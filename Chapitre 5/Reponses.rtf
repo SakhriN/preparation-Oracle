@@ -1,0 +1,157 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12  1. A, E. Instance and static variables can be marked final, making\par
+ option A correct. Effectively final means a local variable is not marked\par
+ final but whose value does not change after it is set, making option B\par
+ incorrect. Option C is incorrect, as final refers only to the reference to\par
+ an object, not its contents. Option D is incorrect, as var and final can\par
+ be used together. Finally, option E is correct: once a primitive is\par
+ marked final, it cannot be modified.\par
+ 2. B, C. The keyword void is a return type. Only the access modifier or\par
+ optional specifiers are allowed before the return type. Option C is\par
+ correct, creating a method with private access. Option B is also\par
+ correct, creating a method with package access and the optional\par
+ specifier final. Since package access does not use a modifier, we get\par
+ to jump right to final. Option A is incorrect because package access\par
+ omits the access modifier rather than specifying default. Option D is\par
+ incorrect because Java is case sensitive. It would have been correct if\par
+ public were the choice. Option E is incorrect because the method\par
+ already has a void return type. Option F is incorrect because labels are\par
+ not allowed for methods.\par
+ 3. A, D. Options A and D are correct because the optional specifiers are\par
+ allowed in any order. Options B and C are incorrect because they each\par
+ have two return types. Options E and F are incorrect because the return\par
+ type is before the optional specifier and access modifier, respectively.\par
+ 4. A, B, C, E. The value 6 can be implicitly promoted to any of the\par
+ primitive types, making options A, C, and E correct. It can also be\par
+ autoboxed to Integer, making option B correct. It cannot be both\par
+ promoted and autoboxed, making options D and F incorrect.\par
+ 5. A, C, D. Options A and C are correct because a void method is\par
+ optionally allowed to have a return statement as long as it doesn\rquote t try\par
+ to return a value. Option B does not compile because null requires a\par
+ reference object as the return type. Since int is primitive, it is not a\par
+ reference object. Option D is correct because it returns an int value.\par
+ Option E does not compile because it tries to return a double when the\par
+ return type is int. Since a double cannot be assigned to an int, it\par
+cannot be returned as one either. Option F does not compile because no\par
+ value is actually returned.\par
+ 6. A, B, F. Options A and B are correct because the single varargs\par
+ parameter is the last parameter declared. Option F is correct because it\par
+ doesn\rquote t use any varargs parameters. Option C is incorrect because the\par
+ varargs parameter is not last. Option D is incorrect because two\par
+ varargs parameters are not allowed in the same method. Option E is\par
+ incorrect because the \'85 for a varargs must be after the type, not before\par
+ it.\par
+ 7. D, F. Options D and F are correct. Option D passes the initial\par
+ parameter plus two more to turn into a varargs array of size 2. Option\par
+ F passes the initial parameter plus an array of size 2. Option A does\par
+ not compile because it does not pass the initial parameter. Option E\par
+ does not compile because it does not declare an array properly. It\par
+ should be new boolean[] \{true, true\}. Option B creates a varargs\par
+ array of size 0, and option C creates a varargs array of size 1.\par
+ 8. D. Option D is correct. A common practice is to set all fields to be\par
+ private and all methods to be public. Option A is incorrect because\par
+ protected access allows everything that package access allows and\par
+ additionally allows subclasses access. Option B is incorrect because\par
+ the class is public. This means that other classes can see the class.\par
+ However, they cannot call any of the methods or read any of the fields.\par
+ It is essentially a useless class. Option C is incorrect because package\par
+ access applies to the whole package. Option E is incorrect because\par
+ Java has no such wildcard access capability.\par
+ 9. B, C, D, F. The two classes are in different packages, which means\par
+ private access and package access will not compile. This causes\par
+ compiler errors on lines 5, 6, and 7, making options B, C, and D\par
+ correct answers. Additionally, protected access will not compile since\par
+ School does not inherit from Classroom. This causes the compiler\par
+ error on line 9, making option F a correct answer as well.\par
+ 10. B. Rope runs line 3, setting LENGTH to 5, and then immediately after\par
+ that runs the static initializer, which sets it to 10. Line 5 in the Chimp\par
+ class calls the static method normally and prints swing and a space.\par
+ Line 6 also calls the static method. Java allows calling a static\par
+method through an instance variable, although it is not recommended.\par
+ Line 7 uses the static import on line 2 to reference LENGTH. For these\par
+ reasons, option B is correct.\par
+ 11. B, E. Line 10 does not compile because static methods are not\par
+ allowed to call instance methods. Even though we are calling play()\par
+ as if it were an instance method and an instance exists, Java knows\par
+ play() is really a static method and treats it as such. Since this is the\par
+ only line that does not compile, option B is correct. If line 10 is\par
+ removed, the code prints swing-swing, making option E correct. It\par
+ does not throw a NullPointerException on line 17 because play() is\par
+ a static method. Java looks at the type of the reference for rope2 and\par
+ translates the call to Rope.play().\par
+ 12. B. The test for effectively final is if the final modifier can be added to\par
+ the local variable and the code still compiles. The monkey variable\par
+ declared on line 11 is not effectively final because it is modified on\par
+ line 13. The giraffe and name variables declared on lines 13 and 14,\par
+ respectively, are effectively final and not modified after they are set.\par
+ The name variable declared on line 17 is not effectively final since it is\par
+ modified on line 22. Finally, the food variable on line 18 is not\par
+ effectively final since it is modified on line 20. Since there are two\par
+ effectively final variables, option B is correct.\par
+ 13. D. There are two details to notice in this code. First, note that\par
+ RopeSwing has an instance initializer and not a static initializer. Since\par
+ RopeSwing is never constructed, the instance initializer does not run.\par
+ The other detail is that length is static. Changes from any object\par
+ update this common static variable. The code prints 8, making option\par
+ D correct.\par
+ 14. E. If a variable is static final, it must be set exactly once, and it\par
+ must be in the declaration line or in a static initialization block. Line\par
+ 4 doesn\rquote t compile because bench is not set in either of these locations.\par
+ Line 15 doesn\rquote t compile because final variables are not allowed to be\par
+ set after that point. Line 11 doesn\rquote t compile because name is set twice:\par
+ once in the declaration and again in the static block. Line 12 doesn\rquote t\par
+ compile because rightRope is set twice as well. Both are in static\par
+initialization blocks. Since four lines do not compile, option E is\par
+ correct.\par
+ 15. B. The two valid ways to do this are import static\par
+ java.util.Collections.*; and import static\par
+ java.util.Collections.sort;, making option B correct. Option A is\par
+ incorrect because you can do a static import only on static members.\par
+ Classes such as Collections require a regular import. Option C is\par
+ nonsense as method parameters have no business in an import. Options\par
+ D, E, and F try to trick you into reversing the syntax of import\par
+ static.\par
+ 16. E. The argument on line 17 is a short. It can be promoted to an int, so\par
+ print() on line 5 is invoked. The argument on line 18 is a boolean. It\par
+ can be autoboxed to a Boolean, so print() on line 11 is invoked. The\par
+ argument on line 19 is a double. It can be autoboxed to a Double, so\par
+ print() on line 11 is invoked. Therefore, the output is int-Object\par
+Object-, and the correct answer is option E.\par
+ 17. B. Since Java is pass-by-value and the variable on line 8 never gets\par
+ reassigned, it stays as 9. In the method square, x starts as 9. The y\par
+ value becomes 81, and then x gets set to \f1\endash 1. Line 9 does set result to\par
+ 81. However, we are printing out value, and that is still 9, making\par
+ option B correct.\par
+ 18. B, D, E. Since Java is pass-by-value, assigning a new object to a does\par
+ not change the caller. Calling append() does affect the caller because\par
+ both the method parameter and the caller have a reference to the same\par
+ object. Finally, returning a value does pass the reference to the caller\par
+ for assignment to s3. For these reasons, options B, D, and E are\par
+ correct.\par
+ 19. B, C, E. The variable value1 is a final instance variable. It can be set\par
+ only once: in the variable declaration, an instance initializer, or a\par
+ constructor. Option A does not compile because the final variable\par
+ was already set in the declaration. The variable value2 is a static\par
+ variable. Both instance and static initializers are able to access\par
+ static variables, making options B and E correct. The variable\par
+ value3 is an instance variable, making option C correct. Options D\par
+and F do not compile because a static initializer does not have access\par
+ to instance variables.\par
+ 20. A, E. The 100 parameter is an int and so calls the matching int\par
+ method, making option A correct. When this method is removed, Java\par
+ looks for the next most specific constructor. Java prefers autoboxing to\par
+ varargs, so it chooses the Integer constructor. The 100L parameter is a\par
+ long. Since it can\rquote t be converted into a smaller type, it is autoboxed\par
+ into a Long, and then the method for Object is called, making option E\par
+ correct.\par
+ 21. B, D. Option A is incorrect because it has the same parameter list of\par
+ types and therefore the same signature as the original method. Options\par
+ B and D are the correct answers, as they are valid method overloads in\par
+ which the types of parameters change. When overloading methods, the\par
+ return type and access modifiers do not need to be the same. Options C\par
+ and E are incorrect because the method name is different. Options F\par
+ and G do not compile. There can be at most one varargs parameter, and\par
+ it must be the last element in the parameter list.\f0\par
+}
+ 

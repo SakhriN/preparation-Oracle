@@ -1,0 +1,194 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 1. D, F. There is no such class within the Java API called\par
+ ParallelStream, so options A and E are incorrect. The method\par
+ defined in the Stream class to create a parallel stream from an existing\par
+ stream is parallel(); therefore, option F is correct, and option C is\par
+ incorrect. The method defined in the Collection class to create a\par
+ parallel stream from a collection is parallelStream(); therefore,\par
+ option D is correct, and option B is incorrect.\par
+ 2. A, D. The tryLock() method returns immediately with a value of\par
+ false if the lock cannot be acquired. Unlike lock(), it does not wait\par
+ for a lock to become available. This code fails to check the return\par
+ value on line 8, resulting in the protected code being entered regardless\par
+ of whether the lock is obtained. In some executions (when tryLock()\par
+ returns true on every call), the code will complete successfully and\par
+ print 45 at runtime, making option A correct. On other executions\par
+ (when tryLock() returns false at least once), the unlock() method\par
+ on line 10 will throw an IllegalMonitorStateException at runtime,\par
+ making option D correct. Option B would be possible if line 10 did not\par
+ throw an exception.\par
+ 3. B, C, F. Runnable returns void and Callable returns a generic type,\par
+ making options A and D incorrect and option F correct. All methods\par
+ are capable of throwing unchecked exceptions, so option B is correct.\par
+ Only Callable is capable of throwing checked exceptions, so option E\par
+ is incorrect. Both Runnable and Callable are functional interfaces that\par
+ can be implemented with a lambda expression, so option C is also\par
+ correct.\par
+ 4. D. The first problem is that although a ScheduledExecutorService is\par
+ created, it is assigned to an ExecutorService. The type of the variable\par
+ on line w1 would have to be updated to ScheduledExecutorService\par
+ for the code to compile. The second problem is that\par
+ scheduleWithFixedDelay() supports only Runnable, not Callable,\par
+ and any attempt to return a value is invalid in a Runnable lambda\par
+ expression; therefore, line w2 will also not compile, and option D is\par
+ correct.\par
+5. C. The code compiles and runs without throwing an exception or\par
+ entering an infinite loop, so options D, E, and F are incorrect. The key\par
+ here is that the increment operator ++ is not atomic. While the first part\par
+ of the output will always be 100, the second part is nondeterministic. It\par
+ may output any value from 1 to 100, because the threads can overwrite\par
+ each other\rquote s work. Therefore, option C is the correct answer, and\par
+ options A and B are incorrect.\par
+ 6. C, E. The code compiles, so option G is incorrect. The peek() method\par
+ on a parallel stream will process the elements concurrently, so the\par
+ order cannot be determined ahead of time, and option C is correct. The\par
+ forEachOrdered() method will process the elements in the order in\par
+ which they are stored in the stream, making option E correct. None of\par
+ the methods sort the elements, so options A and D are incorrect.\par
+ 7. D. Livelock occurs when two or more threads are conceptually\par
+ blocked forever, although they are each still active and trying to\par
+ complete their task. A race condition is an undesirable result that\par
+ occurs when two tasks that should have been completed sequentially\par
+ are completed at the same time. For these reasons, option D is correct.\par
+ 8. B. Be wary of run() vs. start() on the exam! The method looks like\par
+ it executes a task concurrently, but it runs synchronously. In each\par
+ iteration of the forEach() loop, the process waits for the run()\par
+ method to complete before moving on. For this reason, the code is\par
+ thread-safe. Since the program consistently prints 500 at runtime,\par
+ option B is correct. Note that if start() had been used instead of\par
+ run() (or the stream was parallel), then the output would be\par
+ indeterminate, and option C would have been correct.\par
+ 9. B, D. If a task is submitted to a thread executor and the thread executor\par
+ does not have any available threads, the call to the task will return\par
+ immediately with the task being queued internally by the thread\par
+ executor. For this reason, option B is correct. Additionally, only\par
+ platform threads can be pooled, making option D correct as well.\par
+ Virtual threads are lightweight so they don\rquote t benefit from pooling.\par
+ 10. A. The code compiles without issue, so option D is incorrect. The\par
+ CopyOnWriteArrayList class is designed to preserve the original list\par
+ on iteration, so the first loop will be executed exactly three times and,\par
+in the process, will increase the size of tigers to six elements. The\par
+ ConcurrentSkipListSet class allows modifications, and since it\par
+ enforces the uniqueness of its elements, the value 5 is added only once,\par
+ leading to a total of four elements in bears. Finally, despite using the\par
+ elements of lions to populate the collections, tigers and bears are\par
+ not backed by the original list, so the size of lions is 3 throughout this\par
+ program. For these reasons, the program prints 3 6 4, and option A is\par
+ correct.\par
+ 11. F. The code compiles and runs without issue, so options C, D, E, and G\par
+ are incorrect. There are two important things to notice. First,\par
+ synchronizing on the first variable doesn\rquote t impact the results of the\par
+ code. Second, sorting on a parallel stream does not mean that\par
+ findAny() will return the first record. The findAny() method will\par
+ return the value from the first thread that retrieves a record. Therefore,\par
+ the output is not guaranteed, and option F is correct. Option A looks\par
+ correct, but even on serial streams, findAny() is free to select any\par
+ element.\par
+ 12. A, E. The shutdown() method submits three tasks to an\par
+ ExecutorService, shuts it down, and then waits for the results. The\par
+ awaitTermination() method waits a specified amount of time for all\par
+ tasks to complete and the service to finish shutting down. Since each\par
+ five-second task is still executing, the awaitTermination() method\par
+ will return with a value of false after two seconds but not throw an\par
+ exception making option A correct. The refactored() method uses a\par
+ try-with-resources, which allows the tasks to gracefully finish and\par
+ option E to be the other answer.\par
+ 13. C. The code does not compile, so options A and E are incorrect. The\par
+ problem here is that c1 is an Integer and c2 is a String, so the code\par
+ fails to combine on line q2, since calling length() on an Integer is\par
+ not allowed, and option C is correct. The rest of the lines compile\par
+ without issue. Note that calling parallel() on an already parallel\par
+ stream is allowed, and it may return the same object.\par
+ 14. C, E. The code compiles without issue, so option D is incorrect. Since\par
+ both tasks are submitted to the same thread executor pool, the order\par
+ cannot be determined, so options A and B are incorrect, and option C\par
+is correct. The key here is that the order in which the resources o1 and\par
+ o2 are synchronized could result in a deadlock. For example, if the first\par
+ thread gets a lock on o1 and the second thread gets a lock on o2 before\par
+ either thread can get their second lock, the code will hang at runtime,\par
+ making option E correct. The code cannot produce a livelock, since\par
+ both threads are waiting, so option F is incorrect. Finally, if a deadlock\par
+ does occur, an exception will not be thrown, so option G is incorrect.\par
+ 15. A. The code compiles and runs without issue, so options C, D, E, and\par
+ F are incorrect. The collect() operation groups the animals into those\par
+ that do and do not start with the letter p. Note that there are four\par
+ animals that do not start with the letter p and three animals that do.\par
+ Therefore, the output is 3 4, and option A is correct, making option B\par
+ incorrect.\par
+ 16. A, D, E. All the factory methods on Executors work with platform\par
+ threads except newVirtualThreadPerTaskExecutor(), making option\par
+ A correct. You can also create a platform thread using the constructor\par
+ or factory method Thread.ofPlatform(), making options D and E the\par
+ other answers.\par
+ 17. F. The lock() method will wait indefinitely for a lock, so option A is\par
+ incorrect. Options B and C are also incorrect, as the correct method\par
+ name to attempt to acquire a lock is tryLock(). Option D is incorrect,\par
+ as fairness is set to false by default and must be enabled by using an\par
+ overloaded constructor. Finally, option E is incorrect because a thread\par
+ that holds the lock may have called lock() or tryLock() multiple\par
+ times. A thread needs to call unlock() once for each call to lock()\par
+ and successful tryLock(). Option F is the correct answer since none\par
+ of the other options is a valid statement.\par
+ 18. C, E, G. A Callable lambda expression takes no values and returns a\par
+ generic type; therefore, options C, E, and G are correct. Options A and\par
+ F are incorrect because they both take an input parameter. Option B is\par
+ incorrect because it does not return a value. Option D is not a valid\par
+ lambda expression, because it is missing a semicolon at the end of the\par
+ return statement, which is required when inside braces, \{\}.\par
+ 19. E, G. The application compiles and does not throw an exception. Even\par
+ though the stream is processed in sequential order, the tasks are\par
+submitted to a thread executor, which may complete the tasks in any\par
+ order. Therefore, the output cannot be determined ahead of time, and\par
+ option E is correct. Finally, the thread executor is never shut down;\par
+ therefore, the code will run but never terminate, making option G also\par
+ correct.\par
+ 20. F. The key to solving this question is to remember that the execute()\par
+ method returns void, not a Future object. Therefore, line n1 does not\par
+ compile, and option F is the correct answer. If the submit() method\par
+ had been used instead of execute(), option C would have been the\par
+ correct answer, as the output of the submit(Runnable) task is a\par
+ Future<?> object that can only return null on its get() method.\par
+ 21. A, D. The findFirst() method guarantees the first element in the\par
+ stream will be returned, whether it is serial or parallel, making options\par
+ A and D correct. While option B may consistently print 1 at runtime,\par
+ the behavior of findAny() on a serial stream is not guaranteed, so\par
+ option B is incorrect. Option C is likewise incorrect, with the output\par
+ being random at runtime.\par
+ 22. B. The code compiles and runs without issue. The key aspect to notice\par
+ in the code is that a single-thread executor is used, meaning that no\par
+ task will be executed concurrently. Therefore, the results are valid and\par
+ predictable, with 100 100 being the output, and option B is the correct\par
+ answer. If a thread executor with more threads was used, then the s2++\par
+ operations could overwrite each other, making the second value\par
+ indeterminate at the end of the program. In this case, option C would\par
+ be the correct answer.\par
+ 23. F. The code compiles without issue, so options B, C, and D are\par
+ incorrect. The limit on the cyclic barrier is 10, but the stream can\par
+ generate only up to 9 threads that reach the barrier; therefore, the limit\par
+ can never be reached, and option F is the correct answer, making\par
+ options A and E incorrect. Even if the limit(9) statement was\par
+ changed to limit(10), the program could still hang since the JVM\par
+ might not allocate 10 threads to the parallel stream.\par
+ 24. A, F. The class compiles without issue, so option A is correct. Since\par
+ getInstance() is a static method and sellTickets() is an instance\par
+ method, lines k1 and k4 synchronize on different objects, making\par
+option D incorrect. The class is not thread-safe because the\par
+ addTickets() method is not synchronized, and option E is incorrect.\par
+ One thread could call sellTickets() while another thread calls\par
+ addTickets(), possibly resulting in bad data. Finally, option F is\par
+ correct because the getInstance() method is synchronized. Since the\par
+ constructor is private, this method is the only way to create an\par
+ instance of TicketManager outside the class. The first thread to enter\par
+ the method will set the instance variable, and all other threads will\par
+ use the existing value. This is a singleton pattern.\par
+ 25. C, D. The code compiles and runs without issue, so options F and G\par
+ are incorrect. The return type of performCount() is void, so submit()\par
+ is interpreted as being applied to a Runnable expression. While\par
+ submit(Runnable) does return a Future<?>, calling get() on it\par
+ always returns null. For this reason, options A and B are incorrect,\par
+ and option C is correct. The performCount() method can also throw a\par
+ runtime exception, which will then be thrown by the get() call as an\par
+ ExecutionException; therefore, option D is also a correct answer.\par
+}
+ 

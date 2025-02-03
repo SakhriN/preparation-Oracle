@@ -1,0 +1,161 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 1. A, D, G. Option A is the equality operator and can be used on\par
+ primitives and object references. Options B and C are both arithmetic\par
+ operators and cannot be applied to a boolean value. Option D is the\par
+ logical complement operator and is used exclusively with boolean\par
+ values. Option E is the modulus operator, which can be used only with\par
+ numeric primitives. Option F is a negation/subtraction operator and\par
+ can be applied only to numeric values. Finally, option G is correct, as\par
+ you can cast a boolean variable since boolean is a type.\par
+ 2. A, B, D. The expression apples + oranges is automatically promoted\par
+ to int, so int and data types that can be promoted automatically from\par
+ int will work, making options A, B, and D correct. Option C will not\par
+ work because boolean is not a numeric data type. Options E and F will\par
+ not work without an explicit cast to a smaller data type.\par
+ 3. B, C, D, F. The code will not compile as is, so option A is not correct.\par
+ The value 2 * ear is automatically promoted to long and cannot be\par
+ automatically stored in hearing, which is an int value. Options B, C,\par
+ and D solve this problem by reducing the long value to int. Option E\par
+ does not solve the problem and actually makes it worse by attempting\par
+ to place the value in a smaller data type. Option F solves the problem\par
+ by increasing the data type of the declaration so that long is allowed.\par
+ 4. B. The code compiles and runs without issue, so option E is not\par
+ correct. This example is tricky because of the second assignment\par
+ operator embedded in line 5. The expression (wolf=false) assigns the\par
+ value false to wolf and returns false for the entire expression. Since\par
+ teeth does not equal 10, the left side returns true; therefore, the\par
+ exclusive or (^) of the entire expression assigned to canine is true.\par
+ The output reflects these assignments, with no change to teeth, so\par
+ option B is the only correct answer.\par
+ 5. A, C. Options A and C are correct, as they show operators in\par
+ increasing or the same order of precedence. Options B and E are in\par
+ decreasing or the same order of precedence. Options D, F, and G are in\par
+ neither increasing nor decreasing order of precedence. In option D, the\par
+ assignment operator (=) is between two unary operators, with the\par
+multiplication operator (*) incorrectly being in place of highest\par
+ precedence. In option F, the logical complement operator (!) has the\par
+ highest order of precedence, so it should be last. In option G, the\par
+ assignment operators have the lowest order of precedence, not the\par
+ highest, so the last two operators should be first.\par
+ 6. F. The code does not compile because line 3 contains a compilation\par
+ error. The cast (int) is applied to fruit, not the expression\par
+ fruit+vegetables. Since the cast operator has a higher operator\par
+ precedence than the addition operator, it is applied to fruit, but the\par
+ expression is promoted to a float, due to vegetables being float.\par
+ The result cannot be returned as long in the addCandy() method\par
+ without a cast. For this reason, option F is correct. If parentheses were\par
+ added around fruit+vegetables, then the output would be 3, 5, 6,\par
+ and option B would be correct. Remember that casting floating-point\par
+ numbers to integral values results in truncation, not rounding.\par
+ 7. D. In the first boolean expression, vis is 2 and ph is 7, so this\par
+ expression evaluates to true & (true || false), which reduces to\par
+ true. The second boolean expression uses the conditional operator,\par
+ and since (vis > 2) is false, the right side is not evaluated, leaving\par
+ ph at 7. In the last assignment, ph is 7, and the pre-decrement operator\par
+ is applied first, reducing the expression to 7 <= 6 and resulting in an\par
+ assignment of false. For these reasons, option D is the correct answer.\par
+ 8. A. The code compiles and runs without issue, so option E is incorrect.\par
+ Line 7 does not produce a compilation error since the compound\par
+ operator applies casting automatically. Line 5 increments pig by 1, but\par
+ it returns the original value of 4 since it is using the post-increment\par
+ operator. The pig variable is then assigned this value, and the\par
+ increment operation is discarded. Line 7 just reduces the value of goat\par
+ by 1, resulting in an output of 4 - 1 and making option A the correct\par
+ answer.\par
+ 9. A, D, E. The code compiles without issue, so option G is incorrect. In\par
+ the first expression, a > 2 is false, so b is incremented to 5; but since\par
+ the post-increment operator is used, 4 is printed, making option D\par
+ correct. The --c was not applied, because only one of the right-hand\par
+ expressions was evaluated. In the second expression, a!=c is false\par
+since c was never modified. Since b is 5 due to the previous line and\par
+ the post-increment operator is used, b++ returns 5. The result is then\par
+ assigned to b using the assignment operator, overriding the\par
+ incremented value for b and printing 5, making option E correct. In the\par
+ last expression, parentheses are not required, but lack of parentheses\par
+ can make ternary expressions difficult to read. From the previous lines,\par
+ a is 2, b is 5, and c is 2. We can rewrite this expression with\par
+ parentheses as (2 > 5 ? (5 < 2 ? 5 : 2) : 1). The second ternary\par
+ expression is never evaluated since 2 > 5 is false, and the expression\par
+ returns 1, making option A correct.\par
+ 10. E. The code does not compile due to an error on the second line,\par
+ making option E correct. Even though both height and weight are cast\par
+ to byte, the multiplication operator automatically promotes them to\par
+ int, resulting in an attempt to store an int in a short variable.\par
+ 11. D. First, * and % have the same operator precedence, so the expression\par
+ is evaluated from left to right unless parentheses are present. The first\par
+ expression evaluates to 8 % 3, which leaves a remainder of 2. The\par
+ second expression is evaluated left to right since * and % have the same\par
+ operator precedence, and it reduces to 6 % -3, which is 0. The last\par
+ expression reduces to 5 * 1, which is 5. Therefore, the output on line\par
+ 14 is 2, 0, 5, making option D the correct answer.\par
+ 12. D. The pre- prefix indicates the operation is applied first, and the new\par
+ value is returned, while the post- prefix indicates the original value is\par
+ returned prior to the operation. Next, increment increases the value,\par
+ while decrement decreases the value. For these reasons, option D is the\par
+ correct answer.\par
+ 13. F. The first expression is evaluated from left to right, letting us reduce\par
+ it to false ^ sunday, which is true, because sunday is true. In the\par
+ second expression, we apply the negation operator (!) first, reducing\par
+ the expression to sunday && true, which evaluates to true. In the last\par
+ expression, both variables are true, so they reduce to !(true &&\par
+ true), which further reduces to !true, aka false. For these reasons,\par
+ option F is the correct answer.\par
+ 14. B, E, G. The return value of an assignment operation in the expression\par
+ is the same as the value of the newly assigned variable. For this reason,\par
+option A is incorrect, and option E is correct. Option B is correct, as\par
+ the equality (==) and inequality (!=) operators can both be used with\par
+ objects. Option C is incorrect, as boolean and numeric types are not\par
+ comparable. For example, you can\rquote t say true == 3 without a\par
+ compilation error. Option D is incorrect, as logical operators evaluate\par
+ both sides of the expression. Option F is incorrect, as Java does not\par
+ accept numbers for boolean values. Finally, option G is correct, as you\par
+ need to use the negation operator (-) to flip or negate numeric values,\par
+ not the logical complement operator (!).\par
+ 15. D. The ternary operator is the only operator that takes three values,\par
+ making option D the only correct choice. Options A, B, C, E, and G\par
+ are all binary operators. While they can be strung together in longer\par
+ expressions, each operation uses only two values at a time. Option F is\par
+ a unary operator and takes only one value.\par
+ 16. B. The first line contains a compilation error. The value 3 is cast to\par
+ long. The 1 * 2 value is evaluated as int but promoted to long when\par
+ added to the 3. Trying to store a long value in an int variable triggers\par
+ a compiler error. The other lines do not contain any compilation errors,\par
+ as they store smaller values in larger or same-size data types, with\par
+ lines 2 and 4 using casting to do so. Since only one line does not\par
+ compile, option B is correct.\par
+ 17. C, F. The starting values of ticketsTaken and ticketsSold are 1 and\par
+ 3, respectively. After the first compound assignment, ticketsTaken is\par
+ incremented to 2. The ticketsSold value is increased from 3 to 5;\par
+ since the post-increment operator was used, the value of\par
+ ticketsTaken++ returns 1. On the next line, ticketsTaken is doubled\par
+ to 4. On the final line, ticketsSold is increased by 1 to 6. The final\par
+ values of the variables are 4 and 6, for ticketsTaken and\par
+ ticketsSold, respectively, making options C and F the correct\par
+ answers. Note the last line does not trigger a compilation error as the\par
+ compound operator automatically casts the right-hand operand.\par
+ 18. C. Only parentheses, ( ), can be used to change the order of operation\par
+ in an expression, making option C correct. The other operators, such as\par
+ [ ], < >, and \{ \}, cannot be used to change the order of precedence in\par
+ Java.\par
+19. B, F. The code compiles and runs successfully, so options G and H are\par
+ incorrect. On line 5, the pre-increment operator is executed first, so\par
+ start is incremented to 8, and the new value is returned as the right\par
+ side of the expression. The value of end is computed by adding 8 to the\par
+ original value of 4, leaving a new value of 12 for end and making\par
+ option F a correct answer. On line 6, we are incrementing one past the\par
+ maximum byte value. Due to overflow, this will result in a negative\par
+ number, making option B the correct answer. Even if you didn\rquote t know\par
+ the maximum value of byte, you should have known the code\par
+ compiles and runs and looked for the answer for start with a negative\par
+ number.\par
+ 20. A, D, E. Unary operators have the highest order of precedence, making\par
+ option A correct. The negation operator (-) is used only for numeric\par
+ values, while the logical complement operator (!) is used exclusively\par
+ for boolean values. For these reasons, option B is incorrect, and option\par
+ E is correct. Finally, the pre-increment/pre-decrement operators return\par
+ the new value of the variable, while the post-increment/post-decrement\par
+ operators return the original variable. For these reasons, option C is\par
+ incorrect, and option D is correct.\par
+}
+ 

@@ -1,0 +1,122 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 1. E. Modules are required to have a module-info.java file at the root\par
+ directory of the module. Option E matches this requirement.\par
+ 2. B. Options A, C, and E are incorrect because they refer to directives\par
+ that don\rquote t exist. The exports directive is used when allowing a\par
+ package to be called by code outside of the module, making option B\par
+ the correct answer. Notice that options D and F are incorrect because\par
+ requires is the wrong keyword to use.\par
+ 3. G. The -p or --module-path option is used to specify the location of\par
+ the modules. The -m or --module option is used to specify the module\par
+ and class name. However, running a program requires the package\par
+ name to be specified with periods (.) instead of slashes. Since the\par
+ command is incorrect, option G is correct.\par
+ 4. D. A service consists of the service provider interface and logic to look\par
+ up implementations using a service locator. This makes option D\par
+ correct. Make sure you know that the service provider itself is the\par
+ implementation, which is not considered part of the service.\par
+ 5. E, F. Automatic modules are on the module path but do not have a\par
+ module-info.java file. Named modules are on the module path and\par
+ do have a module-info.java. Unnamed modules are on the classpath.\par
+ Therefore, options E and F are correct.\par
+ 6. A, F. Options C and D are incorrect because there is no use directive.\par
+ Options A and F are correct because opens is for reflection and uses\par
+ declares that an API consumes a service.\par
+ 7. A, B, E. Any version information at the end of the JAR filename is\par
+ removed, making options A and B correct. Underscores (_) are turned\par
+ into dots (.), making options C and D incorrect. Other special\par
+ characters like a dollar sign ($) are also turned into dots. However,\par
+ adjacent dots are merged, and leading/trailing dots are removed.\par
+ Therefore, option E is also correct.\par
+ 8. A, D. A cyclic dependency is when a module graph forms a circle.\par
+ Option A is correct because the Java Platform Module System does not\par
+ allow cyclic dependencies between modules. No such restriction exists\par
+for packages, making option B incorrect. A cyclic dependency can\par
+ involve two or more modules that require each other, making option D\par
+ correct, while option C is incorrect. Finally, option E is incorrect\par
+ because unnamed modules cannot be referenced from an automatic\par
+ module.\par
+ 9. F. The provides directive takes the interface name first and the\par
+ implementing class name second and also uses with. Only option F\par
+ meets these two criteria, making it the correct answer.\par
+ 10. B, C. Packages inside a module are not exported by default, making\par
+ option B correct and option A incorrect. Exporting is necessary for\par
+ other code to use the packages; it is not necessary to call the main()\par
+ method at the command line, making option C correct and option D\par
+ incorrect. The module-info.java file has the correct name and\par
+ compiles, making options E and F incorrect.\par
+ 11. D, G, H. Options A, B, E, and F are incorrect because they refer to\par
+ directives that don\rquote t exist. The requires transitive directive is used\par
+ when specifying a module to be used by the requesting module and\par
+ any other modules that use the requesting module. Therefore, dog\par
+ needs to specify the transitive relationship, and option G is correct.\par
+ The module puppy just needs requires dog, and it gets the transitive\par
+ dependencies, making option D correct. However, requires\par
+ transitive does everything requires does and more, which makes\par
+ option H the final correct answer.\par
+ 12. A, B, C, F. Option D is incorrect because it is a package name rather\par
+ than a module name. Option E is incorrect because java.base is the\par
+ module name, not jdk.base. Option G is wrong because we made it\par
+ up. Options A, B, C, and F are correct.\par
+ 13. D. There is no getStream() method on a ServiceLoader, making\par
+ options A and C incorrect. Option B does not compile because the\par
+ stream() method returns a list of Provider interfaces and needs to be\par
+ converted to the Unicorn interface we are interested in. Therefore,\par
+ option D is correct.\par
+ 14. C. The -p option is a shorter form of --module-path. Since the same\par
+ option cannot be specified twice, options B, D, and F are incorrect.\par
+The module name and class name are separated with a slash, making\par
+ option C the answer. Note that x-x is legal because the module path is\par
+ a folder name, so dashes are allowed.\par
+ 15. B. A top-down migration strategy first places all JARs on the module\par
+ path. Then it migrates the top-level module to be a named module,\par
+ leaving the other modules as automatic modules. Option B is correct as\par
+ it matches both of those characteristics.\par
+ 16. A. Since this is a new module, you need to compile it. However, none\par
+ of the existing modules needs to be recompiled, making option A\par
+ correct. The service locator will see the new service provider simply\par
+ by having that new service provider on the module path.\par
+ 17. E. Trick question! An unnamed module doesn\rquote t use a module\par
+info.java file. Therefore, option E is correct. An unnamed module\par
+ can access an automatic module. The unnamed module would simply\par
+ treat the automatic module as a regular JAR without involving the\par
+ module-info.java file.\par
+ 18. F. The jpackage command creates self-contained application such as\par
+ an .exe. The jlink command creates a directory with a smaller Java\par
+ runtime containing just what is needed. The jimage command is used\par
+ to inspect a Java image file. Therefore, option F is correct.\par
+ 19. E. There is a trick here. A module definition uses the keyword module\par
+ rather than class. Since the code does not compile, option E is correct.\par
+ If the code did compile, options A and D would be correct.\par
+ 20. A. When running java with the -d option, all the required modules are\par
+ listed. Additionally, the java.base module is listed since it is included\par
+ automatically. The line ends with mandated, making option A correct.\par
+ The java.lang is a trick since it is a package that is imported by\par
+ default in a class rather than a module.\par
+ 21. H. This question is tricky. The service locator must have a uses\par
+ directive, but that is on the service provider interface. No modules\par
+ need to specify requires on the service provider since that is the\par
+ implementation. Since none of the options are correct, option H is the\par
+ answer.\par
+22. A, F. An automatic module exports all packages, making option A\par
+ correct. An unnamed module is not available to any modules on the\par
+ module path. Therefore, it doesn\rquote t export any packages, and option F is\par
+ correct.\par
+ 23. E. The module name is valid, as are the exports statements. Lines 4\par
+ and 5 are tricky because each is valid independently. However, the\par
+ same module name is not allowed to be used in two requires\par
+ statements. The second one fails to compile on line 5, making option E\par
+ the answer.\par
+ 24. A. Since the JAR is on the classpath, it is treated as a regular unnamed\par
+ module even though it has a module-info.java file inside. Remember\par
+ from learning about top-down migration that modules on the module\par
+ path are not allowed to refer to the classpath, making options B and D\par
+ incorrect. The classpath does not have a facility to restrict packages,\par
+ making option A correct and options C and E incorrect.\par
+ 25. A, C, D. Options A and C are correct because both the consumer and\par
+ the service locator depend on the service provider interface.\par
+ Additionally, option D is correct because the service locator must\par
+ specify that it uses the service provider interface to look it up.\par
+}
+ 

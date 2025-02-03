@@ -1,0 +1,175 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 1. D, E. Option E is the canonical main() method signature. You need to\par
+ memorize it. Option D is an alternate form with the redundant final.\par
+ Option A is incorrect because the main() method must be public.\par
+ Options B and F are incorrect because the main() method must have a\par
+ void return type. Option C is incorrect because the main() method\par
+ must be static.\par
+ 2. C, D, E. The package and import statements are both optional. If both\par
+ are present, the order must be package, then import, and then class.\par
+ Option A is incorrect because class is before package and import.\par
+ Option B is incorrect because import is before package. Option F is\par
+ incorrect because class is before package.\par
+ 3. A, E. Bunny is a class, which can be seen from the declaration: public\par
+ class Bunny. The variable bun is a reference to an object. The method\par
+ main() is the standard entry point to a program. Option G is incorrect\par
+ because the parameter type matters, not the parameter name.\par
+ 4. B, E, G. Option A is invalid because a single underscore is not\par
+ allowed. Option C is not a valid identifier because true is a Java\par
+ reserved word. Option D is not valid because a period (.) is not\par
+ allowed in identifiers. Option F is not valid because the first character\par
+ is not a letter, dollar sign ($), or underscore (_). Options B, E, and G\par
+ are valid because they contain only valid characters.\par
+ 5. A, D, F. Garbage collection is never guaranteed to run, making option\par
+ F correct and option E incorrect. Next, the class compiles and runs\par
+ without issue, so option G is incorrect. The Bear object created on line\par
+ 9 is accessible until line 13 via the brownBear reference variable,\par
+ which is option A. The Bear object created on line 10 is accessible via\par
+ both the polarBear reference and the brownBear.pandaBear\par
+ reference. After line 12, the object is still accessible via\par
+ brownBear.pandaBear. After line 13, though, it is no longer accessible\par
+ since brownBear is no longer accessible, which makes option D the\par
+ final correct answer.\par
+ 6. F. To solve this problem, you need to trace the braces (\{\}) and see\par
+ when variables go in and out of scope. The variables on lines 2 and 7\par
+are only in scope for a single line block. The variable on line 12 is only\par
+ in scope for the for loop. None of these is in scope on line 14. By\par
+ contrast, the three instance variables on lines 3 and 4 are available in\par
+ all instance methods. Additionally, the variables on lines 6, 9, and 10\par
+ are available since the method and while loop are still in scope. This is\par
+ a total of 7 variables, which is option F.\par
+ 7. C, E. The first thing to recognize is that this is a text block and the\par
+ code inside the """ is just text. Options A and B are incorrect because\par
+ the numForks and numKnives variables are not used. This is convenient\par
+ since numKnives is not initialized and would not compile if it were\par
+ referenced. Option C is correct as it is matching text. Option D is\par
+ incorrect because the text block does not have a trailing blank line.\par
+ Finally, option E is also an answer since " # knives is indented.\par
+ 8. B, D, E, H. A var cannot be initialized with a null value without a\par
+ type, but it can be assigned a null value later if the underlying type is\par
+ not a primitive. For these reasons, option H is correct, but options A\par
+ and C are incorrect. Options B and D are correct as the underlying\par
+ types are String and Integer, respectively. Option E is correct as this\par
+ is a valid numeric expression. You might know that dividing by zero\par
+ produces a runtime exception, but the question was only about whether\par
+ the code compiled. Finally, options F and G are incorrect as var cannot\par
+ be used in a multiple-variable assignment.\par
+ 9. E. Options C and D are incorrect because local variables don\rquote t have\par
+ default values. Option A is incorrect because float should have a\par
+ decimal point. Option B is incorrect because primitives do not default\par
+ to null. Option E is correct and option F incorrect because reference\par
+ types in class variables default to null.\par
+ 10. A, E, F. An underscore (_) can be placed in any numeric literal, as long\par
+ as it is not at the beginning, at the end, or next to a decimal point (.).\par
+ Underscores can even be placed next to each other. For these reasons,\par
+ options A, E, and F are correct. Options B and D are incorrect as the\par
+ underscore (_) is next to a decimal point (.). Options C and G are\par
+ incorrect because an underscore (_) cannot be placed at the beginning\par
+ or end of the literal.\par
+11. E. The first two imports can be removed because java.lang is\par
+ automatically imported. The following two imports can be removed\par
+ because Tank and Water are in the same package, making the correct\par
+ option E. If Tank and Water were in different packages, exactly one of\par
+ these two imports could be removed. In that case, the answer would be\par
+ option D.\par
+ 12. A, C, D. Line 2 does not compile as only one type should be specified,\par
+ making option A correct. Line 3 compiles without issue as it declares a\par
+ local variable inside an instance initializer that is never used. Line 4\par
+ does not compile because Java does not support setting default method\par
+ parameter values, making option C correct. Finally, line 7 does not\par
+ compile because fins is in scope and accessible only inside the\par
+ instance initializer on line 3, making option D correct.\par
+ 13. A, B, C. Option A is correct because it imports all the classes in the\par
+ aquarium package including aquarium.Water. Options B and C are\par
+ correct because they import Water by class name. Since importing by\par
+ class name takes precedence over wildcards, these compile. Option D\par
+ is incorrect because Java doesn\rquote t know which of the two wildcard\par
+ Water classes to use. Option E is incorrect because you cannot specify\par
+ the same class name in two imports.\par
+ 14. A, B, D, E. Line 3 does not compile because the L suffix makes the\par
+ literal value a long, which cannot be stored inside a short directly,\par
+ making option A correct. Line 4 does not compile because int is an\par
+ integral type, but 2.0 is a double literal value, making option B\par
+ correct. Line 5 compiles without issue. Lines 6 and 7 do not compile\par
+ because numPets and numGrains are both primitives, and you can call\par
+ methods only on reference types, not primitive values, making options\par
+ D and E correct, respectively. Finally, line 8 compiles because there is\par
+ a length() method defined on String.\par
+ 15. C, E, F. In Java, there are no guarantees about when garbage collection\par
+ will run. The JVM is free to ignore calls to System.gc(). For this\par
+ reason, options A, B, and D are incorrect. Option C is correct as the\par
+ purpose of garbage collection is to reclaim used memory. Option E is\par
+ also correct that an object may never be garbage collected, such as if\par
+ the program ends before garbage collection runs. Option F is correct\par
+and is the primary means by which garbage collection algorithms\par
+ determine whether an object is eligible for garbage collection. Finally,\par
+ option G is incorrect as marking a variable final means it is constant\par
+ within its own scope. For example, a local variable marked final will\par
+ be eligible for garbage collection after the method ends, assuming\par
+ there are no other references to the object that exist outside the\par
+ method.\par
+ 16. A, D. Option A is correct. There are two lines. One starts with\par
+ squirrel, and the other starts with pigeon. Remember that a\par
+ backslash means to skip the line break. Option D is also correct as \\s\par
+ means to keep whitespace. In a text block, incidental indentation is\par
+ ignored, making option F incorrect.\par
+ 17. D, F, G. The code compiles and runs without issue, so options A and B\par
+ are incorrect. A boolean field initializes to false, making option D\par
+ correct with Empty = false being printed. Object references initialize\par
+ to null, not the empty String, so option F is correct with Brand =\par
+ null being printed. Finally, the default value of floating-point numbers\par
+ is 0.0. Although float values can be declared with an f suffix, they\par
+ are not printed with an f suffix. For these reasons, option G is correct\par
+ and Code = 0.0 is printed.\par
+ 18. B, C, F. A var cannot be used for a constructor or method parameter or\par
+ for an instance or class variable, making option A incorrect and option\par
+ C correct. The type of a var is known at compile time, and the type\par
+ cannot be changed at runtime, although its value can change at\par
+ runtime. For these reasons, options B and F are correct, and option E is\par
+ incorrect. Option D is incorrect, as var is not permitted in multiple\par
+variable declarations. Finally, option G is incorrect, as var is not a\par
+ reserved word in Java.\par
+ 19. A, D. The first two lines provide a way to convert a String into a\par
+ number. The first is a int primitive, and the second is a Integer\par
+ reference object, making option D one of the answers. Remember that\par
+ B is 11 in base 16. The code is correct, and the maximum is 11, which\par
+ is option A.\par
+ 20. C. The key thing to notice is that line 4 does not define a constructor\par
+ but instead a method named PoliceBox(), since it has a return type of\par
+void. This method is never executed during the program run, and\par
+ color and age are assigned the default values null and 0L,\par
+ respectively. Lines 11 and 12 change the values for an object\par
+ associated with p, but then, on line 13, the p variable is changed to\par
+ point to the object associated with q, which still has the default values.\par
+ For this reason, the program prints Q1=null, Q2=0, P1=null, and P2=0,\par
+ making option C the only correct answer.\par
+ 21. D. We start with the main() method, which prints 7- on line 10. Next,\par
+ a new Salmon instance is created on line 11. This causes the two\par
+ instance initializers on lines 3 and 4 to be executed in order. The\par
+ default value of an instance variable of type int is 0, so 0- is printed\par
+ next, and count is assigned a value of 1. Next, the constructor is\par
+ called. This assigns a value of 4 to count and prints 2-. Finally, line 12\par
+ prints 4-, since that is the value of count. Putting it all together, we\par
+ have 7-0-2-4-, making option D the correct answer.\par
+ 22. C, F, G. First, 0b is the prefix for a binary value, and 0x is the prefix\par
+ for a hexadecimal value. These values can be assigned to many\par
+ primitive types, including int and double, making options C and F\par
+ correct. Option A is incorrect because naming the variable Amount will\par
+ cause the System.out.print(amount) call on the next line to not\par
+ compile. Option B is incorrect because 9L is a long value. If the type\par
+ was changed to long amount = 9L, then it would compile. Option D is\par
+ incorrect because 1_2.0 is a double value. If the type was changed to\par
+ double amount = 1_2.0, then it would compile. Options E and H are\par
+ incorrect because the underscore (_) appears next to the decimal point\par
+ (.), which is not allowed. Finally, option G is correct, and the\par
+ underscore and assignment usage is valid.\par
+ 23. A, D. The first compiler error is on line 3. The variable temp is\par
+ declared as a float, but the assigned value is 50.0, which is a double\par
+ without the F/f postfix. Since a double doesn\rquote t fit inside a float, line\par
+ 3 does not compile. Next, depth is declared inside the for loop and\par
+ has scope only inside this loop. Therefore, reading the value on line 10\par
+ triggers a compiler error. For these reasons, options A and D are the\par
+ correct answers.\par
+}
+ 

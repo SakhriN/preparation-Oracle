@@ -1,0 +1,158 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 1. D. No terminal operation is called, so the stream never executes. The\par
+ first line creates an infinite stream reference. If the stream were\par
+ executed on the second line, it would get the first two elements from\par
+ that infinite stream, "" and "1", and add an extra character, resulting in\par
+ "2" and "12", respectively. Since the stream is not executed, the\par
+ reference is printed instead, giving us option D.\par
+ 2. F. Both streams created in this code snippet are infinite streams. The\par
+ variable b1 is set to true since anyMatch() terminates. Even though\par
+ the stream is infinite, Java finds a match on the first element and stops\par
+ looking. However, when allMatch() runs, it needs to keep going until\par
+ the end of the stream since it keeps finding matches. Since all elements\par
+ continue to match, the program hangs, making option F the answer.\par
+ 3. E. An infinite stream is generated where each element is twice as long\par
+ as the previous one. While this code uses the three-parameter\par
+ iterate() method, the condition is never false. The variable b1 is set\par
+ to false because Java finds an element that matches when it gets to\par
+ the element of length 4. However, the next line tries to operate on the\par
+ same stream. Since streams can be used only once, this throws an\par
+ exception that the \ldblquote stream has already been operated upon or closed,\rdblquote\par
+ making option E the answer. If two different streams were used, the\par
+ result would be option B.\par
+ 4. A, B. Terminal operations are the final step in a stream pipeline.\par
+ Exactly one is required, because it triggers the execution of the entire\par
+ stream pipeline. Therefore, options A and B are correct. Option C is\par
+ true of intermediate operations rather than terminal operations. Option\par
+ D is incorrect because peek() is an intermediate operation. Finally,\par
+ option E is incorrect because once a stream pipeline is run, the Stream\par
+ is marked invalid.\par
+ 5. C, F. Yes, we know this question is a lot of reading. Remember to look\par
+ for the differences between options rather than studying each line.\par
+ These options all have much in common. All of them start out with a\par
+ LongStream and attempt to convert it to an IntStream. However,\par
+options B and E are incorrect because they do not cast the long to an\par
+ int, resulting in a compiler error on the mapToInt() calls.\par
+ Next, we hit the second difference. Options A and D are incorrect\par
+ because they are missing boxed() before the collect() call. Since\par
+ groupingBy() is creating a Collection, we need a nonprimitive\par
+ Stream. The final difference is that option F specifies the type of\par
+ Collection. This is allowed, though, meaning both options C and F\par
+ are correct.\par
+ 6. A. The anyMatch() and noneMatch() methods run infinitely. The\par
+ stream has no way to know that a match won\rquote t show up later. Option A\par
+ is correct because only allMatch() makes it safe to return false as\par
+ soon as one element passes through the stream that doesn\rquote t match.\par
+ 7. F. There is no Stream<T> method called compare() or compareTo(), so\par
+ options A through D can be eliminated. The sorted() method is\par
+ correct to use in a stream pipeline to return a sorted Stream and fills in\par
+ the first blank. Either toList() or collect(Collectors.toList())\par
+ can fill in the second blank. Only one answer correctly fills in both\par
+ blanks, and therefore option F is correct.\par
+ 8. D, E. The average() method returns an OptionalDouble since\par
+ averages of any type can result in a fraction. Therefore, options A and\par
+ B are both incorrect. The findAny() method returns an OptionalInt\par
+ because there might not be any elements to find. Therefore, option D is\par
+ correct. The sum() method returns an int rather than an OptionalInt\par
+ because the sum of an empty stream is zero. Therefore, option E is\par
+ correct.\par
+ 9. B, D. Lines 4\f1\endash 6 compile and run without issue, making options E and\par
+ F incorrect. Line 4 creates a stream of elements [1, 2, 3]. Line 5\par
+ maps the stream to a new stream with values [10, 20, 30]. Line 6\par
+ filters out all items not less than 5, which in this case results in an\par
+ empty stream. For this reason, findFirst() returns an empty\par
+ Optional.\par
+ Option A does not compile. It would work for a Stream<T> object, but\par
+ we have a LongStream and therefore need to call getAsLong(). Option\par
+ C also does not compile, as it is missing the :: that would make it a\par
+method reference. Options B and D both compile and run without\par
+ error, although neither produces any output at runtime since the stream\par
+ is empty.\par
+ 10. F. Only one of the method calls, forEach(), is a terminal operation, so\par
+ any answer in which M is not the last line will not execute the pipeline.\par
+ This eliminates all but options C, E, and F. Option C is incorrect\par
+ because filter() is called before limit(). Since none of the elements\par
+ of the stream meets the requirement for the Predicate<String>, the\par
+ filter() operation will run infinitely, never passing any elements to\par
+ limit(). Option E is incorrect because there is no limit() operation,\par
+ which means that the code would run infinitely. Option F is correct. It\par
+ first limits the infinite stream to a finite stream of 10 elements and then\par
+ prints the result.\par
+ 11. B, C, E. As written, the code doesn\rquote t compile because the\par
+ Collectors.joining() expects to get a Stream<String>. Option B\par
+ fixes this, at which point nothing is output because the collector\par
+ creates a String without outputting the result. Option E fixes this and\par
+ causes the output to be 11111. Since the post-increment operator is\par
+ used, the stream contains an infinite number of the character 1. Option\par
+ C fixes this and causes the stream to contain increasing numbers.\par
+ 12. F. The code does not compile because Stream.concat() takes two\par
+ parameters, not the three provided. This makes the answer option F.\par
+ 13. F. If the map() and flatMap() calls were reversed, option B would be\par
+ correct. In this case, the Stream created from the source is of type\par
+ Stream<List>. Trying to use the addition operator (+) on a List is not\par
+ supported in Java. Therefore, the code does not compile, and option F\par
+ is correct.\par
+ 14. B, D. Line 4 creates a Stream and uses autoboxing to put the Integer\par
+ wrapper of 1 inside. Line 5 does not compile because boxed() is\par
+ available only on primitive streams like IntStream, not\par
+ Stream<Integer>. This makes option B one answer. Line 6 converts to\par
+ a double primitive, which works since Integer can be unboxed to a\par
+ value that can be implicitly cast to a double. Line 7 does not compile\par
+ for two reasons, making option D the second answer. First, converting\par
+ from a double to an int would require an explicit cast. Also,\par
+mapToInt() returns an IntStream, so the data type of s2 is incorrect.\par
+ The rest of the lines compile without issue.\par
+ 15. B, D. Options A and C do not compile because they are invalid generic\par
+ declarations. Primitives are not allowed as generics, and Map must have\par
+ two generic type parameters. Option E is incorrect because partitioning\par
+ only gives a Boolean key. Options B and D are correct because they\par
+ return a Map with a Boolean key and a value type that can be\par
+ customized to any Collection.\par
+ 16. B, C. First, this mess of code does compile. While it starts with an\par
+ infinite stream on line 23, it becomes finite on line 24 thanks to\par
+ limit(), making option F incorrect. The pipeline preserves only\par
+ nonempty elements on line 25. Since there aren\rquote t any of those, the\par
+ pipeline is empty. Line 26 converts this to an empty map.\par
+ Lines 27 and 28 create a Set with no elements and then another empty\par
+ stream. Lines 29 and 30 convert the generic type of the Stream to\par
+ List<String> and then String. Finally, line 31 gives us another\par
+ Map<Boolean, List<String>>.\par
+ The partitioningBy() operation always returns a map with two\par
+ Boolean keys, even if there are no corresponding values. Therefore,\par
+ option B is correct if the code is kept as is. By contrast, groupingBy()\par
+ returns only keys that are actually needed, making option C correct if\par
+ the code is modified on line 31.\par
+ 17. D. The terminal operation is count(). Since there is a terminal\par
+ operation, the intermediate operations run. The peek() operation\par
+ comes before the filter(), so both numbers are printed, making\par
+ option D the answer. After the filter(), the count() happens to be 1\par
+ since one of the numbers is filtered out. However, the result of the\par
+ stream pipeline isn\rquote t stored in a variable or printed, and it is ignored.\par
+ 18. D. This compiles, ruling out options E, F, and G. Since line 29 filters\par
+ by names starting with E, that rules out options A and B. Finally, line\par
+ 31 counts the entire list, which is of size 2, giving us option D as the\par
+ answer.\par
+ 19. B. Both lists and streams have forEach() methods. There is no reason\par
+ to collect into a list just to loop through it. Option A is incorrect\par
+because it does not contain a terminal operation or print anything.\par
+ Options B and C both work. However, the question asks about the\par
+ simplest way, which is option B.\par
+ 20. C, E, F. Options A and B compile and return an empty string without\par
+ throwing an exception, using a String and Supplier parameter,\par
+ respectively. Option G does not compile as the get() method does not\par
+ take a parameter. Options C and F throw a NoSuchElementException.\par
+ Option E throws a RuntimeException. Option D looks correct but will\par
+ compile only if the throw is removed. Remember, the orElseThrow()\par
+ should get a lambda expression or method reference that returns an\par
+ exception, not one that throws an exception.\par
+ 21. B. We start with an infinite stream where each element is x. The\par
+ spliterator() method is a terminal operation since it returns a\par
+ Spliterator rather than a Stream. The tryAdvance() method gets the\par
+ first element and prints a single x. The trySplit() method takes a\par
+ large number of elements from the stream. Since this is an infinite\par
+ stream, it doesn\rquote t attempt to take half. Then tryAdvance() is called on\par
+ the new split variable, and another x is printed. Since there are two\par
+ values printed, option B is correct.\f0\par
+}
+ 

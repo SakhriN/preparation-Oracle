@@ -1,0 +1,187 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12  1. A, C, D, E. A method that declares an exception isn\rquote t required to throw\par
+ one, making option A correct. Unchecked exceptions can be thrown in\par
+ any method, making options C and E correct. Option D matches the\par
+ exception type declared, so it\rquote s also correct. Option B is incorrect\par
+ because a broader exception is not allowed.\par
+ 2. F. The code does not compile because the throw and throws keywords\par
+ are incorrectly used on lines 6, 7, and 9. If the keywords were fixed,\par
+ the rest of the code would compile and print a stack trace with\par
+ YesProblem at runtime. For this reason, option F is correct.\par
+ 3. A, D, E. Localization refers to user-facing elements. Dates, currency,\par
+ and numbers are commonly used in different formats for different\par
+ countries, making options A, D, and E correct. Class and variable\par
+ names, along with lambda expressions, are internal to the application,\par
+ so there is no need to translate them for users.\par
+ 4. E. The order of catch blocks is important because they\rquote re checked in\par
+ the order they appear after the try block. Because\par
+ ArithmeticException is a child class of RuntimeException, the\par
+ catch block on line 7 is unreachable (if an ArithmeticException is\par
+ thrown in the try block, it will be caught on line 5). Line 7 generates a\par
+ compiler error because it is unreachable code, making option E\par
+ correct.\par
+ 5. C, F. The code compiles and runs without issue. When a\par
+ CompactNumberFormat instance is requested without a style, it uses the\par
+ SHORT style by default. This results in both of the first two statements\par
+ printing 100K, making option C correct. If the LONG style were used,\par
+ then 100 thousand would be printed. Option F is also correct, as the\par
+ full value is printed with a currency formatter.\par
+ 6. E. A LocalDate does not have a time element. Therefore, a date/time\par
+ formatter is not appropriate. The code compiles but throws an\par
+ exception at runtime, making option E correct. If ISO_LOCAL_DATE\par
+ were used, the code would print 2025 APRIL 30.\par
+7. E. The first compiler error is on line 12 because each resource in a try\par
+with-resources statement must have its own data type and be separated\par
+ by a semicolon (;). Line 15 does not compile because the variable s is\par
+ already declared in the method. Line 17 also does not compile. The\par
+ FileNotFoundException, which inherits from IOException and\par
+ Exception, is a checked exception, so it must be handled or declared\par
+ by the method. Because these three lines of code do not compile,\par
+ option E is the correct answer.\par
+ 8. C. Java will first look for the most specific matches it can find, starting\par
+ with Dolphins_en_US.properties. Since that is not an answer choice,\par
+ it drops the country and looks for Dolphins_en.properties, making\par
+ option C correct. Option B is incorrect because a country without a\par
+ language is not a valid locale.\par
+ 9. D. When working with a custom number formatter, the 0 symbol\par
+ displays the digit as 0, even if it\rquote s not present, while the # symbol\par
+ omits the digit from the start or end of the String if it is not present.\par
+ Based on the requested output, a format that displays at least three\par
+ digits before the decimal (including a comma) and at least one after the\par
+ decimal is required. It should display a second digit after the decimal if\par
+ one is available. For this reason, option D is the correct answer.\par
+ 10. B. An IllegalArgumentException is used when an unexpected\par
+ parameter is passed into a method, making option B correct. Option A\par
+ is incorrect because returning null or -1 is a common return value for\par
+ searching for data. Option D is incorrect because a for loop is\par
+ typically used for this scenario. Option E is incorrect because you\par
+ should find out how to code the method and not leave it for the\par
+ unsuspecting programmer who calls your method. Option C is\par
+ incorrect because you should run!\par
+ 11. B, E, F. An exception that must be handled or declared is a checked\par
+ exception. A checked exception inherits Exception but not\par
+ RuntimeException. The entire hierarchy counts, so options B and E\par
+ are both correct. Option F is also correct, as a class that inherits\par
+ Throwable but not RuntimeException or Error is also checked.\par
+ 12. B, C. The code does not compile as is because the exception declared\par
+ by the close() method must be handled or declared. Option A is\par
+incorrect because removing the exception from the declaration causes\par
+ a compilation error on line 4, as FileNotFoundException is a checked\par
+ exception that must be handled or declared. Option B is correct\par
+ because the unhandled exception within the main() method becomes\par
+ declared. Option C is also correct because the exception becomes\par
+ handled. Option D is incorrect because the exception remains\par
+ unhandled.\par
+ 13. A, B. A try-with-resources statement does not require a catch or\par
+ finally block. A traditional try statement requires at least one of the\par
+ two. Neither statement can be written without a body encased in\par
+ braces, \{\}. For these reasons, options A and B are correct.\par
+ 14. C. NullPointerException stack traces include the name of the\par
+ variable that is null by default, making option A incorrect. The first\par
+ NullPointerException encountered at runtime is when\par
+ dewey.intValue() is called, making option C correct. Options E and F\par
+ are incorrect as only one NullPointerException exception can be\par
+ thrown at a time.\par
+ 15. C, D. The code compiles with the appropriate locale, so option G is\par
+ incorrect. A locale consists of a required lowercase language code and\par
+ optional uppercase country code. In the Locale.of() method, the\par
+ language code is provided first. For these reasons, options C and D are\par
+ correct. Option E is incorrect because a Locale is created using the\par
+ Locale.of() method or Locale.Builder class. Option F is really\par
+ close but is missing build() at the end. Without that, option F does\par
+ not compile.\par
+ 16. F. When creating a custom formatter, any nonsymbol code must be\par
+ properly escaped using pairs of single quotes (\rquote ). In this case, it fails\par
+ because o is not a symbol. Even if you didn\rquote t know o wasn\rquote t a symbol,\par
+ the code contains an unmatched single quote. If the properly escaped\par
+ value of "hh\rquote  o\rquote\rquote clock\rquote " were used, then the correct answer would\par
+ be option D, LocalTime. Without this change, though, the code throws\par
+ an exception at runtime, making option F the correct answer. Option B\par
+ would not be correct because LocalDate values do not have an hour\par
+ part. Options A and C are incorrect because ZonedTime and\par
+ LocalTimestamp are not valid date/time classes.\par
+17. D, F. Option A is incorrect because Java will look at parent bundles if\par
+ a key is not found in a specified resource bundle. Option B is incorrect\par
+ because resource bundles are loaded from static factory methods.\par
+ Option C is incorrect, as resource bundle values are read from the\par
+ ResourceBundle object directly. Option D is correct because the locale\par
+ is changed only in memory. Option E is incorrect, as the resource\par
+ bundle for the default locale may be used if there is no resource bundle\par
+ for the specified locale (or its locale without a country code). Finally,\par
+ option F is correct. The JVM will set a default locale automatically.\par
+ 18. C. After both resources are declared and created in the try-with\par
+resources statement, T is printed as part of the body. Then the try-with\par
+resources completes and closes the resources in the reverse of the order\par
+ in which they were declared. After W is printed, an exception is thrown.\par
+ However, the remaining resource still needs to be closed, so D is\par
+ printed. Once all the resources are closed, the exception is thrown and\par
+ swallowed in the catch block, causing E to be printed. Last, the\par
+ finally block is run, printing F. Therefore, the answer is TWDEF and\par
+ option C is correct.\par
+ 19. D. Java will use Dolphins_fr.properties as the matching resource\par
+ bundle on line 7 because it is an exact match on the language of the\par
+ requested locale. Line 8 finds a matching key in this file. Line 9 does\par
+ not find a match in that file; therefore, it has to look higher up in the\par
+ hierarchy. Once a bundle is chosen, only resources in that hierarchy are\par
+ allowed. It cannot use the default locale anymore, but it can use the\par
+ default resource bundle specified by Dolphins.properties. For these\par
+ reasons, option D is correct.\par
+ 20. G. The main() method invokes go(), and A is printed on line 3. The\par
+ stop() method is invoked, and E is printed on line 14. Line 16 throws\par
+ a NullPointerException, so stop() immediately ends, and line 17\par
+ doesn\rquote t execute. The exception isn\rquote t caught in go(), so the go()\par
+ method ends as well, but not before its finally block executes and C\par
+ is printed on line 9. Because main() doesn\rquote t catch the exception, the\par
+ stack trace displays, and no further output occurs. For these reasons,\par
+ AEC is printed followed by a stack trace for a NullPointerException,\par
+ making option G correct.\par
+21. C. The code does not compile because the multi-catch block on line 7\par
+ cannot catch both a superclass and a related subclass. Options A and B\par
+ do not address this problem, so they are incorrect. Since the try body\par
+ throws SneezeException, it can be caught in a catch block, making\par
+ option C correct. Option D allows the catch block to compile but\par
+ causes a compiler error on line 6. Both of the custom exceptions are\par
+ checked and must be handled or declared in the main() method. A\par
+ SneezeException is not a SniffleException, so the exception is not\par
+ handled. Likewise, option E leads to an unhandled exception compiler\par
+ error on line 6.\par
+ 22. B. For this question, the date used is April 5, 2025, at 12:30:20 p.m.\par
+ The code compiles, and either form of the formatter is correct:\par
+ dateTime.format(formatter) or formatter.format(dateTime). The\par
+ custom format m returns the minute, so 30 is output first. The next line\par
+ throws an exception as z relates to time zone, and date/time does not\par
+ have a zone component. This exception is then swallowed by the\par
+ try/catch block. Since this is the only value printed, option B is\par
+ correct. If the code had not thrown an exception, the last line would\par
+ have printed 2025.\par
+ 23. A, E. Resources must inherit AutoCloseable to be used in a try-with\par
+resources block. Since Closeable, which is used for I/O classes,\par
+ extends AutoCloseable, both may be used, making options A and E\par
+ correct.\par
+ 24. G. The code does not compile because the resource walk1 is not final\par
+ or effectively final and cannot be used in the declaration of a try-with\par
+resources statement. For this reason, option G is correct. If the line that\par
+ set walk1 to null were removed, then the code would compile and\par
+ print blizzard 2 at runtime, with the exception inside the try block\par
+ being the primary exception since it is thrown first. Then two\par
+ suppressed exceptions would be added to it when trying to close the\par
+ AutoCloseable resources.\par
+ 25. A. The code compiles and prints the value for Germany, 2,40 \'80,\par
+ making option A the correct answer. Note that the default locale\par
+ category is ignored since an explicit currency locale is selected.\par
+26. B, F. The try block is not capable of throwing an IOException,\par
+ making the catch block unreachable code and option A incorrect.\par
+ Options B and F are correct, as both are unchecked exceptions that do\par
+ not extend or inherit from IllegalArgumentException. Remember, it\par
+ is not a good idea to catch Error in practice, although because it is\par
+ possible, it may come up on the exam. Option C is incorrect because\par
+ the variable c is declared already in the method declaration. Option D\par
+ is incorrect because the IllegalArgumentException inherits from\par
+ RuntimeException, making the first declaration unnecessary.\par
+ Similarly, option E is incorrect because NumberFormatException\par
+ inherits from IllegalArgumentException, making the second\par
+ declaration unnecessary. Since options B and F are correct, option G is\par
+ incorrect.\par
+}
+ 

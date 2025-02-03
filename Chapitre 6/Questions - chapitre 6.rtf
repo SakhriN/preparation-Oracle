@@ -1,0 +1,503 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12  1. Which code can be inserted to have the code print 2?\par
+ public class BirdSeed \{\par
+   private int numberBags;\par
+   boolean call;\par
+   public BirdSeed() \{\par
+      // LINE 1\par
+      call = false;\par
+      // LINE 2\par
+   \}\par
+   public BirdSeed(int numberBags) \{\par
+      this.numberBags = numberBags;\par
+   \}\par
+   public static void main(String[] args) \{\par
+      var seed = new BirdSeed();\par
+      System.out.print(seed.numberBags);\par
+   \} \}\par
+ 1. Replace line 1 with BirdSeed(2);\par
+ 2. Replace line 2 with BirdSeed(2);\par
+ 3. Replace line 1 with new BirdSeed(2);\par
+ 4. Replace line 2 with new BirdSeed(2);\par
+ 5. Replace line 1 with this(2);\par
+ 6. Replace line 2 with this(2);\par
+ 7. The code prints 2 without any changes.\par
+ 2. Which modifier pairs can be used together in a method declaration? (Choose all that\par
+ apply.)\par
+ 1. static and final\par
+ 2. private and static\par
+ 3. static and abstract\par
+ 4. private and abstract\par
+ 5. abstract and final\par
+ 6. private and final\par
+ 3. Which of the following statements about methods are true? (Choose all that apply.)\par
+ 1. Overloaded methods must have the same signature.\par
+2. Overridden methods must have the same signature.\par
+ 3. Hidden methods must have the same signature.\par
+ 4. Overloaded methods must have the same return type.\par
+ 5. Overridden methods must have the same return type.\par
+ 6. Hidden methods must have the same return type.\par
+ 4. What is the output of the following program?\par
+ 1:  class Mammal \{\par
+ 2:     private void sneeze() \{\}\par
+ 3:     public Mammal(int age) \{\par
+ 4:        System.out.print("Mammal");\par
+ 5:     \} \}\par
+ 6:  public class Platypus extends Mammal \{\par
+ 7:     int sneeze() \{ return 1; \}\par
+ 8:     public Platypus() \{\par
+ 9:        System.out.print("Platypus");\par
+ 10:    \}\par
+ 11:    public static void main(String[] args) \{\par
+ 12:       new Mammal(5);\par
+ 13:    \} \}\par
+ 1. Platypus\par
+ 2. Mammal\par
+ 3. PlatypusMammal\par
+ 4. MammalPlatypus\par
+ 5. The code will compile if line 7 is changed.\par
+ 6. The code will compile if line 9 is changed.\par
+ 5. Which of the following completes the constructor so that this code prints out 50?\par
+ class Speedster \{\par
+   int numSpots;\par
+ \}\par
+ public class Cheetah extends Speedster \{\par
+   int numSpots;\par
+   public Cheetah(int numSpots) \{\par
+      // INSERT CODE HERE\par
+   \}\par
+   public static void main(String[] args) \{\par
+      Speedster s = new Cheetah(50);\par
+      System.out.print(s.numSpots);\par
+   \}\par
+ \}\par
+ 1. numSpots = numSpots;\par
+ 2. numSpots = this.numSpots;\par
+ 3. this.numSpots = numSpots;\par
+ 4. numSpots = super.numSpots;\par
+ 5. super.numSpots = numSpots;\par
+ 6. The code does not compile regardless of the code inserted into the constructor.\par
+ 7. None of the above.\par
+ 6. Which of the following declare immutable classes? (Choose all that apply.)\par
+public final class Moose \{\par
+   private final int antlers; \par
+\}\par
+ public class Caribou \{\par
+   private int antlers = 10; \par
+\}\par
+ public class Reindeer \{\par
+   private final int antlers = 5; \par
+\}\par
+ public final class Elk \{\}\par
+ public final class Deer \{\par
+   private final Object o = new Object();\par
+ \}\par
+ 1. Moose\par
+ 2. Caribou\par
+ 3. Reindeer\par
+ 4. Elk\par
+ 5. Deer\par
+ 6. None of the above\par
+ 7. What is the output of the following code?\par
+ 1:  class Arthropod \{\par
+ 2:     protected void printName(long input) \{\par
+ 3:        System.out.print("Arthropod");\par
+ 4:     \}\par
+ 5:     void printName(int input) \{\par
+ 6:        System.out.print("Spooky");\par
+ 7:     \} \}\par
+ 8:  public class Spider extends Arthropod \{\par
+ 9:     protected void printName(int input) \{\par
+ 10:       System.out.print("Spider");\par
+ 11:    \}\par
+ 12:    public static void main(String[] args) \{\par
+ 13:       Arthropod a = new Spider();\par
+ 14:       a.printName((short)4);\par
+ 15:       a.printName(4);\par
+ 16:       a.printName(5L);\par
+ 17:    \} \}\par
+ 1. SpiderSpiderArthropod\par
+ 2. SpiderSpiderSpider\par
+ 3. SpiderSpookyArthropod\par
+ 4. SpookySpiderArthropod\par
+ 5. The code will not compile because of line 5.\par
+ 6. The code will not compile because of line 9.\par
+ 7. None of the above.\par
+ 8. What is the result of the following code?\par
+ 1:  abstract class Bird \{\par
+ 2:     private final void fly() \{ System.out.println("Bird"); \}\par
+3:     protected Bird() \{ System.out.print("Wow-"); \}\par
+ 4:  \}\par
+ 5:  public class Pelican extends Bird \{\par
+ 6:     public Pelican() \{ System.out.print("Oh-"); \}\par
+ 7:     protected void fly() \{ System.out.println("Pelican"); \}\par
+ 8:     public static void main(String[] args) \{\par
+ 9:        var chirp = new Pelican();\par
+ 10:       chirp.fly();\par
+ 11: \} \}\par
+ 1. Oh-Bird\par
+ 2. Oh-Pelican\par
+ 3. Wow-Oh-Bird\par
+ 4. Wow-Oh-Pelican\par
+ 5. The code contains a compilation error.\par
+ 6. None of the above.\par
+ 9. Which of the following statements about overridden methods are true? (Choose all that\par
+ apply.)\par
+ 1. An overridden method must contain method parameters that are the same or\par
+ covariant with the method parameters in the inherited method.\par
+ 2. An overridden method may declare a new exception, provided it is not checked.\par
+ 3. An overridden method must be more accessible than the method in the parent class.\par
+ 4. An overridden method may declare a broader checked exception than the method in\par
+ the parent class.\par
+ 5. If an inherited method returns void, then the overridden version of the method\par
+ must return void.\par
+ 6. None of the above.\par
+ 10. Which of the following pairs, when inserted into the blanks, allow the code to compile?\par
+ (Choose all that apply.)\par
+ 1:  public class Howler \{\par
+ 2:     public Howler(long shadow) \{\par
+ 3:        ____________;\par
+ 4:     \}\par
+ 5:     private Howler(int moon) \{\par
+ 6:        super();\par
+ 7:     \}\par
+ 8:  \}\par
+ 9:  class Wolf extends Howler \{\par
+ 10:    protected Wolf(String stars) \{\par
+ 11:       super(2L);\par
+ 12:    \}\par
+ 13:    public Wolf() \{\par
+ 14:       _____________;\par
+ 15:    \}\par
+ 16: \}\par
+ 1. this(3) at line 3, this("") at line 14.\par
+ 2. this() at line 3, super(1) at line 14.\par
+ 3. this((short)1) at line 3, this(null) at line 14.\par
+ 4. super() at line 3, super() at line 14.\par
+ 5. this(2L) at line 3, super((short)2) at line 14.\par
+6. this(5) at line 3, super(null) at line 14.\par
+ 7. Remove lines 3 and 14.\par
+ 11. What is the result of the following?\par
+ 1:  public class PolarBear \{\par
+ 2:     StringBuilder value = new StringBuilder("t");\par
+ 3:     \{ value.append("a"); \}\par
+ 4:     \{ value.append("c"); \}\par
+ 5:     private PolarBear() \{\par
+ 6:        value.append("b");\par
+ 7:     \}\par
+ 8:     public PolarBear(String s) \{\par
+ 9:        this();\par
+ 10:       value.append(s);\par
+ 11:    \}\par
+ 12:    public PolarBear(CharSequence p) \{\par
+ 13:       value.append(p);\par
+ 14:    \}\par
+ 15:    public static void main(String[] args) \{\par
+ 16:       Object bear = new PolarBear();\par
+ 17:       bear = new PolarBear("f");\par
+ 18:       System.out.println(((PolarBear)bear).value);\par
+ 19:    \} \}\par
+ 1. tacb\par
+ 2. tacf\par
+ 3. tacbf\par
+ 4. tcafb\par
+ 5. taftacb\par
+ 6. The code does not compile.\par
+ 7. An exception is thrown.\par
+ 12. How many lines of the following program contain a compilation error?\par
+ 1:  public class Rodent \{\par
+ 2:     public Rodent(Integer x) \{\}\par
+ 3:     protected static Integer chew() throws Exception \{\par
+ 4:        System.out.println("Rodent is chewing");\par
+ 5:        return 1;\par
+ 6:     \}\par
+ 7:  \}\par
+ 8:  class Beaver extends Rodent \{\par
+ 9:     public Number chew() throws RuntimeException \{\par
+ 10:       System.out.println("Beaver is chewing on wood");\par
+ 11:       return 2;\par
+ 12:    \} \}\par
+ 1. None\par
+ 2. 1\par
+ 3. 2\par
+ 4. 3\par
+ 5. 4\par
+ 6. 5\par
+ 13. Which of these classes compile and will include a default constructor created by the\par
+ compiler? (Choose all that apply.)\par
+1. public class Bird \{\}\par
+ 2. public class Bird \{\par
+   public bird() \{\}\par
+ \}\par
+ 3. public class Bird \{\par
+   public bird(String name) \{\}\par
+ \}\par
+ 4. public class Bird \{\par
+   public Bird() \{\}\par
+ \}\par
+ 5. public class Bird \{\par
+   Bird(String name) \{\}\par
+ \}\par
+ 6. public class Bird \{\par
+   private Bird(int age) \{\}\par
+ \}\par
+ 7. public class Bird \{\par
+   public Bird bird() \{ return null; \}\par
+ \}\par
+ 14. Which of the following statements about inheritance are correct? (Choose all that apply.)\par
+ 1. A class can directly extend any number of classes.\par
+ 2. A class can implement any number of interfaces.\par
+ 3. All variables inherit java.lang.Object.\par
+ 4. If class A is extended by B, then B is a superclass of A.\par
+ 5. If class C implements interface D, then C is a subtype of D.\par
+ 6. Multiple inheritance is the property of a class to have multiple direct superclasses.\par
+ 15. Which statement about the following program is correct?\par
+ 1: abstract class Nocturnal \{\par
+ 2:    boolean isBlind();\par
+ 3: \}\par
+ 4: public class Owl extends Nocturnal \{\par
+ 5:    public boolean isBlind() \{ return false; \}\par
+ 6:    public static void main(String[] args) \{\par
+ 7:       var nocturnal = (Nocturnal)new Owl();\par
+ 8:       System.out.println(nocturnal.isBlind());\par
+ 9: \} \}\par
+ 1. It compiles and prints true.\par
+ 2. It compiles and prints false.\par
+ 3. The code will not compile because of line 2.\par
+ 4. The code will not compile because of line 5.\par
+ 5. The code will not compile because of line 7.\par
+ 6. The code will not compile because of line 8.\par
+ 7. None of the above.\par
+ 16. What is the result of the following?\par
+1:  class Arachnid \{\par
+ 2:     static StringBuilder sb = new StringBuilder();\par
+ 3:     \{ sb.append("c"); \}\par
+ 4:     static\par
+ 5:     \{ sb.append("u"); \}\par
+ 6:     \{ sb.append("r"); \}\par
+ 7:  \}\par
+ 8:  public class Scorpion extends Arachnid \{\par
+ 9:     static\par
+ 10:    \{ sb.append("q"); \}\par
+ 11:    \{ sb.append("m"); \}\par
+ 12:    public static void main(String[] args) \{\par
+ 13:       System.out.print(Scorpion.sb + " ");\par
+ 14:       System.out.print(Scorpion.sb + " ");\par
+ 15:       new Arachnid();\par
+ 16:       new Scorpion();\par
+ 17:       System.out.print(Scorpion.sb);\par
+ 18:    \} \}\par
+ 1. qu qu qumrcrc\par
+ 2. u u ucrcrm\par
+ 3. uq uq uqmcrcr\par
+ 4. uq uq uqcrcrm\par
+ 5. qu qu qumcrcr\par
+ 6. qu qu qucrcrm\par
+ 7. The code does not compile.\par
+ 17. Which of the following are true? (Choose all that apply.)\par
+ 1. this() can be called from anywhere in a constructor.\par
+ 2. this() can be called from anywhere in an instance method.\par
+ 3. this.variableName can be called from any instance method in the class.\par
+ 4. this.variableName can be called from any static method in the class.\par
+ 5. You can call the default constructor written by the compiler using this().\par
+ 6. You can access a private constructor with the main() method in the same class.\par
+ 18. Which statements about the following classes are correct? (Choose all that apply.)\par
+ 1:  public class Mammal \{\par
+ 2:     private void eat() \{\}\par
+ 3:     protected static void drink() \{\}\par
+ 4:     public Integer dance(String p) \{ return null; \}\par
+ 5:  \}\par
+ 6:  class Primate extends Mammal \{\par
+ 7:     public void eat(String p) \{\}\par
+ 8:  \}\par
+ 9:  class Monkey extends Primate \{\par
+ 10:    public static void drink() throws RuntimeException \{\}\par
+ 11:    public Number dance(CharSequence p) \{ return null; \}\par
+ 12:    public int eat(String p) \{\}\par
+ 13: \}\par
+ 1. The eat() method in Mammal is correctly overridden on line 7.\par
+ 2. The eat() method in Mammal is correctly overloaded on line 7.\par
+ 3. The drink() method in Mammal is correctly overridden on line 10.\par
+ 4. The drink() method in Mammal is correctly hidden on line 10.\par
+5. The dance() method in Mammal is correctly overridden on line 11.\par
+ 6. The dance() method in Mammal is correctly overloaded on line 11.\par
+ 7. The eat() method in Primate is correctly hidden on line 12.\par
+ 8. The eat() method in Primate is correctly overloaded on line 12.\par
+ 19. What is the output of the following code?\par
+ 1:  class Reptile \{\par
+ 2:     \{System.out.print("A");\}\par
+ 3:     public Reptile(int hatch) \{\}\par
+ 4:     void layEggs() \{\par
+ 5:        System.out.print("Reptile");\par
+ 6:     \} \}\par
+ 7:  public class Lizard extends Reptile \{\par
+ 8:     static \{System.out.print("B");\}\par
+ 9:     public Lizard(int hatch) \{\}\par
+ 10:    public final void layEggs() \{\par
+ 11:       System.out.print("Lizard");\par
+ 12:    \}\par
+ 13:    public static void main(String[] args) \{\par
+ 14:       var reptile = new Lizard(1);\par
+ 15:       reptile.layEggs();\par
+ 16:    \} \}\par
+ 1. AALizard\par
+ 2. BALizard\par
+ 3. BLizardA\par
+ 4. ALizard\par
+ 5. The code will not compile because of line 3.\par
+ 6. None of the above.\par
+ 20. Which statement about the following program is correct?\par
+ 1:  class Bird \{\par
+ 2:     int feathers = 0;\par
+ 3:     Bird(int x) \{ this.feathers = x; \}\par
+ 4:     Bird fly() \{\par
+ 5:        return new Bird(1);\par
+ 6:     \} \}\par
+ 7:  class Parrot extends Bird \{\par
+ 8:     protected Parrot(int y) \{ super(y); \}\par
+ 9:     protected Parrot fly() \{\par
+ 10:       return new Parrot(2);\par
+ 11:    \} \}\par
+ 12: public class Macaw extends Parrot \{\par
+ 13:    public Macaw(int z) \{ super(z); \}\par
+ 14:    public Macaw fly() \{\par
+ 15:       return new Macaw(3);\par
+ 16:    \}\par
+ 17:    public static void main(String\'85 sing) \{\par
+ 18:       Bird p = new Macaw(4);\par
+ 19:       System.out.print(((Parrot)p.fly()).feathers);\par
+ 20:    \} \}\par
+ 1. One line contains a compiler error.\par
+ 2. Two lines contain compiler errors.\par
+ 3. Three lines contain compiler errors.\par
+4. The code compiles but throws a ClassCastException at runtime.\par
+ 5. The program compiles and prints 3.\par
+ 6. The program compiles and prints 0.\par
+ 21. Which of the following are properties of immutable classes? (Choose all that apply.)\par
+ 1. The class can contain setter methods, provided they are marked final.\par
+ 2. The class must not be able to be extended outside the class declaration.\par
+ 3. The class may not contain any instance variables.\par
+ 4. The class must be marked static.\par
+ 5. The class may not contain any static variables.\par
+ 6. The class may only contain private constructors.\par
+ 7. The data for mutable instance variables may be read, provided they cannot be\par
+ modified by the caller.\par
+ 22. What does the following program print?\par
+ 1:  class Person \{\par
+ 2:     static String name;\par
+ 3:     void setName(String q) \{ name = q; \} \}\par
+ 4:  public class Child extends Person \{\par
+ 5:     static String name;\par
+ 6:     void setName(String w) \{ name = w; \}\par
+ 7:     public static void main(String[] p) \{\par
+ 8:        final Child m = new Child();\par
+ 9:        final Person t = m;\par
+ 10:       m.name = "Elysia";\par
+ 11:       t.name = "Sophia";\par
+ 12:       m.setName("Webby");\par
+ 13:       t.setName("Olivia");\par
+ 14:       System.out.println(m.name + " " + t.name);\par
+ 15:    \} \}\par
+ 1. Elysia Sophia\par
+ 2. Webby Olivia\par
+ 3. Olivia Olivia\par
+ 4. Olivia Sophia\par
+ 5. The code does not compile.\par
+ 6. None of the above.\par
+ 23. What is the output of the following program?\par
+ 1:  class Canine \{\par
+ 2:     public Canine(boolean t) \{ logger.append("a"); \}\par
+ 3:     public Canine() \{ logger.append("q"); \}\par
+ 4:     \par
+5:     private StringBuilder logger = new StringBuilder();\par
+ 6:     protected void print(String v) \{ logger.append(v); \}\par
+ 7:     protected String view() \{ return logger.toString(); \}\par
+ 8:  \}\par
+ 9:  \par
+10: class Fox extends Canine \{\par
+ 11:    public Fox(long x) \{ print("p"); \}\par
+ 12:    public Fox(String name) \{\par
+ 13:       this(2);\par
+ 14:       print("z");\par
+ 15:    \}\par
+16: \}\par
+ 17:\par
+ 18: public class Fennec extends Fox \{\par
+ 19:    public Fennec(int e) \{\par
+ 20:       super("tails");\par
+ 21:       print("j");\par
+ 22:    \}\par
+ 23:    public Fennec(short f) \{\par
+ 24:       super("eevee");\par
+ 25:       print("m");\par
+ 26:    \}\par
+ 27: \par
+28:    public static void main(String\'85 unused) \{\par
+ 29:       System.out.println(new Fennec(1).view());\par
+ 30:    \} \}\par
+ 1. qpz\par
+ 2. qpzj\par
+ 3. jzpa\par
+ 4. apj\par
+ 5. apjm\par
+ 6. The code does not compile.\par
+ 7. None of the above.\par
+ 24. What is printed by the following program?\par
+ 1:  class Antelope \{\par
+ 2:     public Antelope(int p) \{\par
+ 3:        System.out.print("4");\par
+ 4:     \}\par
+ 5:     \{ System.out.print("2"); \}\par
+ 6:     static \{ System.out.print("1"); \}\par
+ 7:  \}\par
+ 8:  public class Gazelle extends Antelope \{\par
+ 9:     public Gazelle(int p) \{\par
+ 10:       super(6);\par
+ 11:       System.out.print("3");\par
+ 12:    \}\par
+ 13:    public static void main(String hopping[]) \{\par
+ 14:       new Gazelle(0);\par
+ 15:    \}\par
+ 16:    static \{ System.out.print("8"); \}\par
+ 17:    \{ System.out.print("9"); \}\par
+ 18: \}\par
+ 1. 182640\par
+ 2. 182943\par
+ 3. 182493\par
+ 4. 421389\par
+ 5. The code does not compile.\par
+ 6. The output cannot be determined until runtime.\par
+ 25. Which of the following are true about a concrete class? (Choose all that apply.)\par
+ 1. A concrete class can be declared as abstract.\par
+ 2. A concrete class must implement all inherited abstract methods.\par
+ 3. A concrete class can be marked as final.\par
+4. A concrete class must be immutable.\par
+ 5. A concrete method that implements an abstract method must match the method\par
+ declaration of the abstract method exactly.\par
+ 26. What is the output of the following code?\par
+ 4:  public abstract class Whale \{\par
+ 5:     public abstract void dive();\par
+ 6:     public static void main(String[] args) \{\par
+ 7:        Whale whale = new Orca();\par
+ 8:        whale.dive(3);\par
+ 9:     \}\par
+ 10: \}\par
+ 11: class Orca extends Whale \{\par
+ 12:    static public int MAX = 3;\par
+ 13:    public void dive() \{\par
+ 14:       System.out.println("Orca diving");\par
+ 15:    \}\par
+ 16:    public void dive(int\'85 depth) \{\par
+ 17:       System.out.println("Orca diving deeper "+MAX);\par
+ 18: \} \}\par
+ 1. Orca diving\par
+ 2. Orca diving deeper 3\par
+ 3. The code will not compile because of line 4.\par
+ 4. The code will not compile because of line 8.\par
+ 5. The code will not compile because of line 11.\par
+ 6. The code will not compile because of line 12.\par
+ 7. The code will not compile because of line 17.\par
+ 8. None of the above.\par
+}
+ 

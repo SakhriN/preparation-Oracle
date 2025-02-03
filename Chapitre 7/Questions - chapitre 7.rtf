@@ -1,0 +1,590 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12 1. Which of the following are valid record declarations? (Choose all that\par
+ apply.)\par
+ public record Iguana(int age) \{\par
+   private static final int age = 10; \}\par
+ public final record Gecko() \{\}\par
+ public abstract record Chameleon()  \{\par
+   private static String name; \}\par
+ public record BeardedDragon(boolean fun) \{\par
+   @Override public boolean fun() \{ return false; \} \}\par
+public record Reptile(long size) \{\par
+   public Reptile \{\par
+      if(size == 1) throw new IllegalArgumentException();\par
+   \} \}\par
+ public record Newt(double age) extends Reptile \{\par
+   public Newt(double age) \{\par
+      age = this.age % 2 == 0 ? 5 : 10;\par
+   \} \}\par
+ A. Iguana\par
+ B. Gecko\par
+ C. Chameleon\par
+ D. BeardedDragon\par
+ E. Reptile\par
+ F. Newt\par
+ G. None of the above\par
+ 2. Which of the following statements can be inserted in the blank line so\par
+ that the code will compile successfully? (Choose all that apply.)\par
+ interface CanHop \{\}\par
+ public class Frog implements CanHop \{\par
+   public static void main(String[] args) \{\par
+      ____________ frog = new TurtleFrog();\par
+   \}\par
+ \} \par
+class BrazilianHornedFrog extends Frog \{\}\par
+ class TurtleFrog extends Frog \{\}\par
+ A. Frog\par
+ B. TurtleFrog\par
+ C. BrazilianHornedFrog\par
+ D. CanHop\par
+ E. var\par
+ F. Long\par
+G. None of the above; the code contains a compilation error.\par
+ 3. What is the result of the following program?\par
+ 11: public class Favorites \{\par
+ 12:    enum Flavors \{\par
+ 13:       VANILLA, CHOCOLATE, STRAWBERRY\par
+ 14:       public Flavors() \{\}\par
+ 15:    \}\par
+ 16:    public static void main(String[] args) \{\par
+ 17:       for(final var e : Flavors.values())\par
+ 18:          System.out.print((e.ordinal() % 2) + " ");\par
+ 19:    \} \}\par
+ A. 0 1 0\par
+ B. 1 0 1\par
+ C. Exactly one line of code does not compile.\par
+ D. More than one line of code does not compile.\par
+ E. The code compiles but produces an exception at runtime.\par
+ F. None of the above.\par
+ 4. What is the output of the following program?\par
+ public sealed class ArmoredAnimal permits Armadillo \{\par
+   public ArmoredAnimal(int size) \{\}\par
+   @Override public String toString() \{ return "Strong"; \}\par
+   public static void main(String[] a) \{\par
+      var c = new Armadillo(10, null);\par
+      System.out.println(c);\par
+   \}\par
+ \}\par
+ class Armadillo extends ArmoredAnimal \{\par
+   @Override public String toString() \{ return "Cute"; \}\par
+   public Armadillo(int size, String name) \{\par
+      super(size);\par
+   \}   \par
+\}\par
+ A. Strong\par
+ B. Cute\par
+ C. The program does not compile.\par
+D. The code compiles but produces an exception at runtime.\par
+ E. None of the above.\par
+ 5. Which statement about the following program is correct?\par
+ 1:  interface HasExoskeleton \{\par
+ 2:     double size = 2.0f;\par
+ 3:     abstract int getNumberOfSections();\par
+ 4:  \}\par
+ 5:  abstract class Insect implements HasExoskeleton \{\par
+ 6:     abstract int getNumberOfLegs();\par
+ 7:  \}\par
+ 8:  public class Beetle extends Insect \{\par
+ 9:     int getNumberOfLegs() \{ return 6; \}\par
+ 10:    int getNumberOfSections(int count) \{ return 1; \}\par
+ 11: \}\par
+ A. It compiles without issue.\par
+ B. The code will produce a ClassCastException if called at\par
+ runtime.\par
+ C. The code will not compile because of line 2.\par
+ D. The code will not compile because of line 5.\par
+ E. The code will not compile because of line 8.\par
+ F. The code will not compile because of line 10.\par
+ 6. Which statements about the following program are correct? (Choose\par
+ all that apply.)\par
+ 1: public abstract interface Herbivore \{\par
+ 2:    int amount = 10;\par
+ 3:    public void eatGrass();\par
+ 4:    public abstract int chew() \{ return 13; \}\par
+ 5: \}\par
+ 6:\par
+ 7: abstract class IsAPlant extends Herbivore \{\par
+ 8:    Object eatGrass(int season) \{ return null; \}\par
+ 9: \}\par
+ A. It compiles and runs without issue.\par
+ B. The code will not compile because of line 1.\par
+C. The code will not compile because of line 2.\par
+ D. The code will not compile because of line 4.\par
+ E. The code will not compile because of line 7.\par
+ F. The code will not compile because line 8 contains an invalid\par
+ method override.\par
+ 7. What is the output of the following program?\par
+ 1: interface Aquatic \{\par
+ 2:    int getNumOfGills(int p);\par
+ 3: \}\par
+ 4: public class ClownFish implements Aquatic \{\par
+ 5:    String getNumOfGills() \{ return "14"; \}\par
+ 6:    int getNumOfGills(int input) \{ return 15; \}\par
+ 7:    public static void main(String[] args) \{\par
+ 8:       System.out.println(new \par
+ClownFish().getNumOfGills(-1));\par
+ 9: \} \}\par
+ A. 14\par
+ B. 15\par
+ C. The code will not compile because of line 4.\par
+ D. The code will not compile because of line 5.\par
+ E. The code will not compile because of line 6.\par
+ F. None of the above.\par
+ 8. Given the following, select the statements that can be inserted into the\par
+ blank line so that the code will compile and print true at runtime?\par
+ (Choose all that apply.)\par
+ record Walrus(List<String> diet) \{\}\par
+ record Exhibit(Walrus animal, String location) \{\}\par
+ var e = new Exhibit(new Walrus(List.of("Wally")), "Artic");\par
+ System.out.print(e instanceof _____________);\par
+ A. Exhibit(Walrus(List<Integer> z), Object a)\par
+ B. Exhibit(Walrus(List m), Object n)\par
+C. Object w && w.animal().diet().size() == 0\par
+ D. Exhibit(Walrus(var i), var i)\par
+ E. Exhibit(var p, var q)\par
+ F. Exhibit(List<?> g, var h)\par
+ G. Exhibit(var x, CharSequence y)\par
+ H. Exhibit(Walrus(null), var v)\par
+ I. None of the above\par
+ 9. Which of the following statements can be inserted in the blank so that\par
+ the code will compile successfully? (Choose all that apply.)\par
+ abstract class Snake \{\}\par
+ class Cobra extends Snake \{\}\par
+ class GardenSnake extends Cobra \{\}\par
+ public class SnakeHandler \{\par
+   private Snake snakey;\par
+   public void setSnake(Snake mySnake) \{ this.snakey = \par
+mySnake; \}\par
+   public static void main(String[] args) \{\par
+      new SnakeHandler().setSnake(_____________);\par
+   \} \}\par
+ A. new Cobra()\par
+ B. new Snake()\par
+ C. new Object()\par
+ D. new String("Snake")\par
+ E. new GardenSnake()\par
+ F. null\par
+ G. None of the above. The class does not compile, regardless of the\par
+ value inserted in the blank.\par
+ 10. What types can be inserted in the blanks on the lines marked X and Z\par
+ that allow the code to compile? (Choose all that apply.)\par
+ interface Walk \{ private static List move() \{ return null; \par
+\} \}\par
+ interface Run extends Walk \{ public ArrayList move(); \}\par
+class Leopard implements Walk \{\par
+   public ___________ move() \{  // X\par
+      return null;\par
+   \}\par
+ \}\par
+ class Panther implements Run \{\par
+   public  move(___________) \{  // Z\par
+      return null;\par
+   \}\par
+ \}\par
+ A. Integer on the line marked X\par
+ B. ArrayList on the line marked X\par
+ C. List on the line marked X\par
+ D. List on the line marked Z\par
+ E. ArrayList on the line marked Z\par
+ F. None of the above, since the Run interface does not compile.\par
+ G. Does not compile for a different reason.\par
+ 11. What is the result of compiling and executing the following code?\par
+ 1:  public class Movie \{\par
+ 2:     private int butter = 5;\par
+ 3:     private Movie() \{\}\par
+ 4:     protected class Popcorn \{\par
+ 5:        private Popcorn() \{\}\par
+ 6:        public static int butter = 10;\par
+ 7:        public void startMovie() \{\par
+ 8:           System.out.println(butter);\par
+ 9:        \}\par
+ 10:    \}\par
+ 11:    public static void main(String[] args) \{\par
+ 12:       var movie = new Movie();\par
+ 13:       Movie.Popcorn in = new Movie().new Popcorn();\par
+ 14:       in.startMovie();\par
+ 15:    \} \}\par
+ A. The output is 5.\par
+ B. The output is 10.\par
+ C. Line 6 generates a compiler error.\par
+D. Line 12 generates a compiler error.\par
+ E. Line 13 generates a compiler error.\par
+ F. The code compiles but produces an exception at runtime.\par
+ 12. Which variables or members are accessible from within the hiss()\par
+ method? (Choose all that apply.)\par
+ 13: public class BoaConstrictor \{\par
+ 14:    private Body body;\par
+ 15:    BoaConstrictor(Body b) \{ this.body = b; \}\par
+ 16:    private long tail = 10; \par
+17:    record Body(int stripes) \{\par
+ 18:       private static int counter = 0;\par
+ 19:       int counter() \{ return counter; \}\par
+ 20:       Body \{\par
+ 21:          stripes = stripes + counter++;\par
+ 22:       \}\par
+ 23:       private void hiss() \{\} \} \}\par
+ A. counter()\par
+ B. tail\par
+ C. body\par
+ D. stripes()\par
+ E. stripes\par
+ F. counter\par
+ G. Line 15 does not compile.\par
+ H. Line 17 does not compile.\par
+ I. Lines 20\f1\endash 22 do not compile.\par
+ 13. What is the result of the following program?\par
+ public class Weather \{\par
+   enum Seasons \{\par
+      WINTER, SPRING, SUMMER, FALL\par
+   \}\par
+   public static void main(String[] args) \{\par
+      Seasons v = null;\par
+      switch (v) \{\par
+         case Seasons.SPRING -> System.out.print("s");\par
+         case Seasons.WINTER -> System.out.print("w");\par
+         case Seasons.SUMMER -> System.out.print("m");\par
+         default -> System.out.println("missing data"); \}\par
+   \} \}\par
+ A. s\par
+ B. w\par
+ C. m\par
+ D. missing data\par
+ E. Exactly one line of code does not compile.\par
+ F. More than one line of code does not compile.\par
+ G. The code compiles but produces an exception at runtime.\par
+ 14. Which statements about sealed classes are correct? (Choose all that\par
+ apply.)\par
+ A. A sealed interface restricts which subinterfaces may extend it.\par
+ B. A sealed class cannot be indirectly extended by a class that is not\par
+ listed in its permits clause.\par
+ C. A sealed class can be extended by an abstract class.\par
+ D. A sealed class can be extended by a subclass that uses the\par
+ nonsealed modifier.\par
+ E. A sealed interface restricts which subclasses may implement it.\par
+ F. A sealed class cannot contain any nested subclasses.\par
+ G. None of the above.\par
+ 15. Which line allows the code to print Not scared at runtime?\par
+ public class Ghost \{\par
+   public static void boo() \{\par
+      System.out.println("Not scared");\par
+   \}\par
+   protected final class Spirit \{\par
+      public void boo() \{\par
+         System.out.println("Booo!!!");\par
+      \}\par
+   \}\par
+   public static void main(String\'85 haunt) \{\par
+      var g = new Ghost().new Spirit() \{\};\par
+      _______________________________;\par
+   \} \}\par
+ A. g.boo()\par
+ B. g.super.boo()\par
+ C. new Ghost().boo()\par
+ D. g.Ghost.boo()\par
+ E. new Spirit().boo()\par
+ F. None of the above\par
+ 16. The following code appears in a file named Ostrich.java. What is the\par
+ result of compiling the source file?\par
+ 1: public class Ostrich \{\par
+ 2:    private int count;\par
+ 3:    static class OstrichWrangler \{\par
+ 4:       public int stampede() \{\par
+ 5:          return count;\par
+ 6:       \} \} \}\par
+ A. The code compiles successfully, and one bytecode file is\par
+ generated: Ostrich.class.\par
+ B. The code compiles successfully, and two bytecode files are\par
+ generated: Ostrich.class and OstrichWrangler.class.\par
+ C. The code compiles successfully, and two bytecode files are\par
+ generated: Ostrich.class and\par
+ Ostrich$OstrichWrangler.class.\par
+ D. A compiler error occurs on line 3.\par
+ E. A compiler error occurs on line 5.\par
+ 17. Which lines of the following interface declarations do not compile?\par
+ (Choose all that apply.)\par
+ 1: public interface Omnivore \{\par
+ 2:    int amount = 10;\par
+ 3:    static boolean gather = true;\par
+4:    static void eatGrass() \{\}\par
+ 5:    int findMore() \{ return 2; \}\par
+ 6:    default float rest() \{ return 2; \}\par
+ 7:    protected int chew() \{ return 13; \}\par
+ 8:    private static void eatLeaves() \{\}\par
+ 9: \}\par
+ A. All of the lines compile without issue.\par
+ B. Line 2.\par
+ C. Line 3.\par
+ D. Line 4.\par
+ E. Line 5.\par
+ F. Line 6.\par
+ G. Line 7.\par
+ H. Line 8.\par
+ 18. What is printed by the following program?\par
+ public class Deer \{\par
+   enum Food \{APPLES, BERRIES, GRASS\}\par
+   protected class Diet \{\par
+      private Food getFavorite() \{\par
+         return Food.BERRIES;\par
+      \}\par
+   \}\par
+   public static void main(String[] seasons) \{\par
+      System.out.print(switch(new Diet().getFavorite()) \{\par
+         case APPLES -> "a";\par
+         case BERRIES -> "b";\par
+         default -> "c";\par
+      \});\par
+   \} \}\par
+ A. a\par
+ B. b\par
+ C. c\par
+ D. The code declaration of the Diet class does not compile.\par
+ E. The main() method does not compile.\par
+F. The code compiles but produces an exception at runtime.\par
+ G. None of the above.\par
+ 19. Which of the following is printed by the Bear program?\par
+ public class Bear \{\par
+   enum FOOD \{\par
+      BERRIES, INSECTS \{\par
+         public boolean isHealthy() \{ return true; \}\},\par
+      FISH, ROOTS, COOKIES, HONEY;\par
+      public abstract boolean isHealthy();\par
+   \}\par
+   public static void main(String[] args) \{\par
+      System.out.print(FOOD.INSECTS);\par
+      System.out.print(FOOD.INSECTS.ordinal());\par
+      System.out.print(FOOD.INSECTS.isHealthy());\par
+      System.out.print(FOOD.COOKIES.isHealthy());\par
+   \} \}\par
+ A. insects\par
+ B. Insects\par
+ C. 0\par
+ D. 1\par
+ E. false\par
+ F. The code does not compile.\par
+ 20. What is the output of this code?\par
+ 13: record Gorilla(int x, Double y) \{\par
+ 14:    Gorilla \{\}\par
+ 15:    Gorilla() \{ this(1,2.0); \}\par
+ 16: \}\par
+ 17: record Family(Gorilla parent1, Gorilla parent2) \{\}\par
+ 18:\par
+ 19: var family = new Family(\par
+ 20:    new Gorilla(1, null), new Gorilla(0, 1.2));\par
+ 21: System.out.print(switch (family) \{\par
+ 22:    case Family(var a, var b) -> "1";\par
+ 23:    case Family(Gorilla c, Gorilla (int d, double e)) -> \par
+"2"; \par
+24:    case Family(Gorilla (int f, Double g), var h) -> \par
+"3";\par
+ 25:    case Family(Gorilla i, Gorilla (int j, Double k)) -> \par
+"4";\par
+ 26:    case Family(Object m, Object n) -> "5";\par
+ 27:    case null -> "6"; \par
+28:    default -> "7";\par
+ 29: \});\par
+ A. 1\par
+ B. 2\par
+ C. 3\par
+ D. 4\par
+ E. 5\par
+ F. 6\par
+ G. 7\par
+ H. None of the above\par
+ 21. Given the following record declaration, which line of code can fill in\par
+ the blank and allow the code to compile?\par
+ public record RabbitFood(int size, String brand, LocalDate \par
+expires) \{\par
+   public static int MAX_STORAGE = 100;\par
+   public RabbitFood() \{\par
+      __________________________;\par
+   \}\par
+ \}\par
+ A. size = MAX_STORAGE\par
+ B. this.size = 10\par
+ C. if(expires.isAfter(LocalDate.now())) throw new\par
+ RuntimeException()\par
+ D. if(brand==null) super.brand = "Unknown"\par
+ E. throw new RuntimeException()\par
+ F. None of the above\par
+ 22. Which of the following can be inserted in the rest() method? (Choose\par
+ all that apply.)\par
+public class Lion \{\par
+   class Cub \{\}\par
+   static class Den \{\}\par
+   static void rest() \{\par
+      ________________;\par
+   \} \}\par
+ A. Cub a = Lion.new Cub()\par
+ B. Lion.Cub b = new Lion().Cub()\par
+ C. Lion.Cub c = new Lion().new Cub()\par
+ D. var d = new Den()\par
+ E. var e = Lion.new Cub()\par
+ F. Lion.Den f = Lion.new Den()\par
+ G. Lion.Den g = new Lion.Den()\par
+ H. var h = new Cub()\par
+ 23. Given the following program, what can be inserted into the blank line\par
+ that would allow it to print Swim! at runtime?\par
+ interface Swim \{\par
+   default void perform() \{ System.out.print("Swim!"); \}\par
+ \}\par
+ interface Dance \{\par
+   default void perform() \{ System.out.print("Dance!"); \}\par
+ \}\par
+ public class Penguin implements Swim, Dance \{\par
+   public void perform() \{ System.out.print("Smile!"); \}\par
+   private void doShow() \{\par
+      ____________________;\par
+   \}\par
+   public static void main(String[] eggs) \{\par
+      new Penguin().doShow();\par
+   \} \}\par
+ A. super.perform()\par
+ B. Swim.perform()\par
+ C. super.Swim.perform()\par
+ D. Swim.super.perform()\par
+E. The code does not compile regardless of what is inserted into the\par
+ blank.\par
+ F. The code compiles, but due to polymorphism, it is not possible to\par
+ produce the requested output without creating a new object.\par
+ 24. Which lines of the following interface do not compile? (Choose all that\par
+ apply.)\par
+ 1: public interface BigCat \{\par
+ 2:    abstract String getName();\par
+ 3:    static int hunt() \{ getName(); return 5; \}\par
+ 4:    default void climb() \{ rest(); \}\par
+ 5:    private void roar() \{ getName();  climb(); hunt(); \}\par
+ 6:    private static boolean sneak() \{ roar(); return true; \par
+\}\par
+ 7:    private int rest() \{ return 2; \};\par
+ 8: \}\par
+ A. Line 2\par
+ B. Line 3\par
+ C. Line 4\par
+ D. Line 5\par
+ E. Line 6\par
+ F. Line 7\par
+ G. None of the above\par
+ 25. What does the following program print?\par
+ 1:  public class Zebra \{\par
+ 2:     private int x = 24;\par
+ 3:     public int hunt() \{\par
+ 4:        String message = "x is ";\par
+ 5:        abstract class Stripes \{\par
+ 6:           private int x = 0;\par
+ 7:           public void print() \{\par
+ 8:              System.out.print(message + Zebra.this.x);\par
+ 9:           \}\par
+ 10:       \}\par
+ 11:       var s = new Stripes() \{\};\par
+ 12:       s.print();\par
+ 13:       return x;\par
+14:    \}\par
+ 15:    public static void main(String[] args) \{\par
+ 16:       new Zebra().hunt();\par
+ 17:    \} \}\par
+ A. x is 0\par
+ B. x is 24\par
+ C. Line 6 generates a compiler error.\par
+ D. Line 8 generates a compiler error.\par
+ E. Line 11 generates a compiler error.\par
+ F. None of the above.\par
+ 26. What is the output of the following program?\par
+ 20: public enum Animals \{\par
+ 21:    MAMMAL(List.of(2,4)), \par
+22:    INVERTEBRATE(List.of(2, 4, 6, 8, 100)), \par
+23:    BIRD(null) \{\par
+ 24:       public int stand() \{\par
+ 25:          return legs.get(0) + 4;\par
+ 26:       \}\par
+ 27:    \};\par
+ 28:    List<Integer> legs;\par
+ 29:    Animals(List<Integer> legs) \{\par
+ 30:       this.legs = legs;\par
+ 31:    \}\par
+ 32:    public int stand() \{ return legs.get(0); \}\par
+ 33:    public static void main(String[] a) \{\par
+ 34:       Animals.BIRD.legs = List.of(-1);\par
+ 35:       System.out.println(Animals.BIRD.stand());\par
+ 36:    \} \}\par
+ A. null\par
+ B. -1\par
+ C. 3\par
+ D. 4\par
+ E. Compiler error on lines 23.\par
+ F. Compiler error on lines 24.\par
+G. Compiler error on line 34.\par
+ H. The code compiles but produces a NullPointerException at\par
+ runtime.\par
+ I. None of the above.\par
+ 27. Assuming a record is defined with at least one field, which\par
+ components does the compiler always insert, each of which may be\par
+ overridden or redeclared? (Choose all that apply.)\par
+ A. A no-argument constructor\par
+ B. An accessor method for each field\par
+ C. The toString() method\par
+ D. The equals() method\par
+ E. A mutator method for each field\par
+ F. A sort method for each field\par
+ G. The hashCode() method\par
+ 28. Which of the following classes and interfaces do not compile? (Choose\par
+ all that apply.)\par
+ public abstract class Camel \{ void travel(); \}\par
+ public interface EatsGrass \{ private abstract int chew(); \}\par
+ public abstract class Elephant \{\par
+   abstract private class SleepsAlot \{\par
+      abstract int sleep();\par
+   \} \}\par
+ public class Eagle \{ abstract soar(); \}\par
+ public interface Spider \{ default void crawl() \{\} \}\par
+ A. Camel\par
+ B. EatsGrass\par
+ C. Elephant\par
+ D. Eagle\par
+E. Spider\par
+ 29. How many lines of the following program contain a compilation error?\par
+ 1:  class Primate \{\par
+ 2:     protected int age = 2;\par
+ 3:     \{ age = 1; \}\par
+ 4:     public Primate() \{\par
+ 5:        this().age = 3;\par
+ 6:     \}\par
+ 7:  \}\par
+ 8:  public class Orangutan \{\par
+ 9:     protected int age = 4;\par
+ 10:    \{ age = 5; \}\par
+ 11:    public Orangutan() \{\par
+ 12:       this().age = 6;\par
+ 13:    \}\par
+ 14:    public static void main(String[] bananas) \{\par
+ 15:       final Primate x = (Primate)new Orangutan();\par
+ 16:       System.out.println(x.age);\par
+ 17:    \}\par
+ 18: \}\par
+ A. None, and the program prints 1 at runtime.\par
+ B. None, and the program prints 3 at runtime.\par
+ C. None, but it causes a ClassCastException at runtime.\par
+ D. 1\par
+ E. 2\par
+ F. 3\par
+ G. 4\par
+ 30. Assuming the following classes are declared as top-level types in the\par
+ same file, which classes contain compiler errors? (Choose all that\par
+ apply.)\par
+ sealed class Bird \{\par
+   public final class Flamingo extends Bird \{\}   \par
+\}\par
+ sealed class Monkey \{\}\par
+ class EmperorTamarin extends Monkey \{\}\par
+non-sealed class Mandrill extends Monkey \{\}\par
+ sealed class Friendly extends Mandrill permits Silly \{\}\par
+ final class Silly \{\}\par
+ A. Bird\par
+ B. Monkey\par
+ C. EmperorTamarin\par
+ D. Mandrill\par
+ E. Friendly\par
+ F. Silly\par
+ G. All of the classes compile without issue.\f0\par
+}
+ 

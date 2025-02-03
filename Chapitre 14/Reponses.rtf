@@ -1,0 +1,204 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang12  1. C. Since the question asks about putting data into a structured object,\par
+ the best class would be one that deserializes the data. Therefore,\par
+ ObjectInputStream is the best choice, which is option C.\par
+ ObjectWriter, BufferedStream, and ObjectReader are not I/O stream\par
+ classes. ObjectOutputStream is an I/O class but is used to serialize\par
+ data, not deserialize it. FileReader can be used to read text file data\par
+ and construct an object, but the question asks what would be the best\par
+ class to use for binary data.\par
+ 2. A, F. Paths that begin with the root directory are absolute paths, so\par
+ option A is correct, and option C is incorrect. Option B is incorrect\par
+ because the path could be a file or directory within the file system.\par
+ There is no rule that files have to end with a file extension. Option D is\par
+ incorrect, as it is possible to create a File reference to files and\par
+ directories that do not exist. Option E is also incorrect. The delete()\par
+ method returns false if the file or directory cannot be deleted.\par
+ Character stream classes often include built-in convenience methods\par
+ for working with String data, so option F is correct. There is no such\par
+ optimization for multithreading, making option G incorrect.\par
+ 3. B, D. If the console is unavailable, System.console() will return\par
+ null, making option D correct and options E and F incorrect. The\par
+ writer methods throw a checked IOException, making option C\par
+ incorrect. The code works correctly, prompting for input and printing\par
+ it. Therefore, option A is incorrect and option B is correct.\par
+ 4. F. The code does not compile, as Files.deleteIfExists() declares\par
+ the checked IOException that must be handled or declared.\par
+ Remember, most Files methods declare IOException, especially the\par
+ ones that modify a file or directory. For this reason, option F is correct.\par
+ 5. C. The filter() operation applied to a Stream<Path> takes only one\par
+ parameter, not two, so the code does not compile, and option C is\par
+ correct. If the code were rewritten to use the Files.find() method\par
+ with the BiPredicate as input (along with a maxDepth value), the\par
+ output would be option B, Has Sub, since the directory is given to be\par
+empty. For fun, we reversed the expected output of the ternary\par
+ operation.\par
+ 6. C. The code compiles and runs without issue, so options F and G are\par
+ incorrect. The key here is that while Eagle is serializable, its parent\par
+ class, Bird, is not. Therefore, none of the members of Bird will be\par
+ serialized. Even if you didn\rquote t know that, you should know what\par
+ happens on deserialization. During deserialization, Java calls the\par
+ constructor of the first nonserializable parent. In this case, the Bird\par
+ constructor is called, with name being set to Matt, making option C\par
+ correct. Note that none of the constructors or instance initializers in\par
+ Eagle is executed as part of deserialization.\par
+ 7. B, C. The code snippet will attempt to create a directory if the target of\par
+ the symbolic link exists and is a directory. If the directory already\par
+ exists, though, it will throw an exception. For this reason, option A is\par
+ incorrect, and option B is correct. It will be created in\par
+ /mammal/kangaroo/joey and also reachable at /kang/joey because of\par
+ the symbolic link, making option C correct.\par
+ 8. B. The readAllLines() method returns a List, not a Stream.\par
+ Therefore, the call to flatMap() is invalid, and option B is correct. If\par
+ the Files.lines() method were used instead, it would print the\par
+ contents of the file one capitalized word at a time with the commas\par
+ removed.\par
+ 9. D, F, H. First, the method does compile, so options A and B are\par
+ incorrect. Methods to read/write byte[] values exist in the abstract\par
+ parent of all I/O stream classes. This implementation is not correct,\par
+ though, as the return value of read(buffer) is not used properly. It\par
+ will only correctly copy files whose character count is a multiple of 5,\par
+ making option D correct and options C and E incorrect. Option F is\par
+ also correct as the data may not have made it to disk yet. Option G\par
+ would be correct if the flush() method were called after every write.\par
+ Finally, option H is correct as the reader stream is never closed.\par
+ 10. C, D, E. Option A is incorrect because Path is an abstract type so there\par
+ is no constructor. Option B is incorrect because the static method in\par
+ the Path interface is of(), not get(). Options C, D, and E are correct\par
+ ways to obtain a Path instance.\par
+11. A, E. The code will compile if the correct classes are used, so option G\par
+ is incorrect. Remember, a try-with-resources statement can use\par
+ resources declared before the start of the statement. The reference type\par
+ of wrapper is InputStream, so we need a class that inherits\par
+ InputStream. We can eliminate BufferedWriter,\par
+ ObjectOutputStream, and BufferedReader since their names do not\par
+ end in InputStream. Next, we see the class must take another stream\par
+ as input, so we need to choose the remaining streams that are high\par
+level streams. BufferedInputStream is a high-level stream, so option\par
+ A is correct. Even though the instance is already a\par
+ BufferedInputStream, there\rquote s no rule that it can\rquote t be wrapped\par
+ multiple times by a high-level stream. Option D is incorrect, as\par
+ FileInputStream operates on a file, not another stream. Finally,\par
+ option E is correct\f1\emdash an ObjectInputStream is a high-level stream that\par
+ operates on other streams.\par
+ 12. C, E. The method to create a directory in the Files class is\par
+ createDirectory(), not mkdir(). For this reason, line 6 does not\par
+ compile, and option C is correct. In addition, the setTimes() method\par
+ is available only on BasicFileAttributeView, not the read-only\par
+ BasicFileAttributes, so line 8 will also not compile, making option\par
+ E correct.\par
+ 13. A, G. For a class to be serialized, it must implement the Serializable\par
+ interface and contain instance members that are serializable or marked\par
+ transient. For these reasons, options A and G are correct, and option\par
+ F is incorrect. Option B is incorrect because even records are required\par
+ to implement Serializable to be serialized. Option C is incorrect\par
+ because it describes deserialization. The Serializable interface is a\par
+ marker interface that does not contain any abstract methods, making\par
+ option D incorrect. While it is a good practice for a serializable class to\par
+ include a static serialVersionUID variable, it is not required.\par
+ Therefore, option E is incorrect as well.\par
+ 14. B, D, E. Path is immutable, so line 23 is ignored. If it were assigned to\par
+ p1, option A would be correct. Since it is not assigned, the original\par
+ value is still present, which is option B. Moving on to the second\par
+ section, the subpath() method on line 27 is applied to the absolute\par
+ path, which returns the relative path animals/bear. Next, the\par
+getName() method is applied to the relative path, and since this is\par
+ indexed from 0, it returns the relative path bear. Therefore, option D is\par
+ correct. Finally, remember calling resolve() with an absolute path as\par
+ a parameter returns the absolute path, so option E is correct.\par
+ 15. B, E, F. Option A does not compile, as there is no File constructor that\par
+ takes three parameters. Option B is correct and is the proper way to\par
+ create a File instance with a single String parameter. Option C is\par
+ incorrect, as there is no constructor that takes a String followed by a\par
+ File. There is a constructor that takes a File followed by a String,\par
+ making option E correct. Option D is incorrect because the first\par
+ parameter is missing a slash (/) to indicate it is an absolute path. Since\par
+ it\rquote s a relative path, it is correct only when the user\rquote s current directory is\par
+ the root directory. Finally, option F is correct as it creates a File from\par
+ a Path.\par
+ 16. A, D. The method compiles, so option E is incorrect. The method\par
+ creates a new-zoo.txt file and copies the first line from zoo-data.txt\par
+ into it, making option A correct. The try-with-resources statement\par
+ closes all of the declared resources, including the FileWriter o. For\par
+ this reason, the Writer is closed when the last o.write() is called,\par
+ resulting in an IOException at runtime and making option D correct.\par
+ Option F is incorrect because this implementation uses the character\par
+ stream classes, which inherit from Reader or Writer.\par
+ 17. B, C, E. Options B and C are properties of NIO.2 and are good reasons\par
+ to use it over the java.io.File class. Option A is incorrect as both\par
+ APIs can delete only empty directories, not a directory tree. Using a\par
+ view to read multiple attributes leads to fewer round-trips between the\par
+ process and the file system and better performance, making option E\par
+ correct. Views can be used to access file system\endash specific attributes that\par
+ are not available in Files methods; therefore, option D is incorrect.\par
+ Files is part of NIO.2, whereas File is part of java.io, which means\par
+ option F is incorrect.\par
+ 18. C. To begin with, P is added to the StringBuilder first. Next,\par
+ assuming mark() is supported, the position in the stream is marked\par
+ before E. The E is added to the StringBuilder, with AC being skipped,\par
+ and then the O is added to the StringBuilder, with CK being skipped.\par
+The stream is then reset() to the position before the E. The call to\par
+ skip(0) doesn\rquote t do anything since there are no characters to skip, so E\par
+ is added onto the StringBuilder in the next read() call. The value\par
+ PEOE is printed, and option C is correct. Option G is incorrect because\par
+ mark() may not be supported.\par
+ 19. C. The code compiles and runs without issue, so option G is incorrect.\par
+ If you simplify the redundant path symbols, p1 and p2 represent the\par
+ same path, /lizard/walking.txt. Therefore, isSameFile() returns\par
+ true. The second output is false, because equals() checks only if the\par
+ path values are the same, without reducing the path symbols. Finally,\par
+ mismatch() sees that the contents are the same and returns -1. For\par
+ these reasons, option C is correct.\par
+ 20. C. The target path of the file after the move() operation is /animals,\par
+ not /animals/monkey.txt, so options A and B are both incorrect.\par
+ Both will throw an exception at runtime since /animals already exists\par
+ and is a directory. The option ATOMIC_MOVE means that any process\par
+ monitoring the file system will not see an incomplete file during the\par
+ move, so option C is correct.\par
+ 21. C. The code compiles and runs without issue, so options D, E, and F\par
+ are incorrect. The most important thing to notice is that the depth\par
+ parameter specified as the second argument to find() is 0, meaning\par
+ the only record that will be searched is the top-level directory. Since\par
+ we know that the top directory is a directory and not a symbolic link,\par
+ no other paths will be visited, and nothing will be printed. For these\par
+ reasons, option C is the correct answer.\par
+ 22. G. The code compiles, so option F is incorrect. To be serializable, a\par
+ class must implement the Serializable interface, which Zebra does.\par
+ It must also contain instance members that either are marked\par
+ transient or are serializable. The instance member stripes is of type\par
+ Object, which is not serializable. If Object implemented\par
+ Serializable, all objects would be serializable by default, defeating\par
+ the purpose of having the Serializable interface. Therefore, the\par
+ Zebra class is not serializable, with the program throwing an exception\par
+ at runtime if serialized and making option G correct. If stripes were\par
+removed from the class, options A and D would be the correct\par
+ answers, as name and age are both marked transient.\par
+ 23. A, D. The code compiles without issue, so options E and F are\par
+ incorrect. The toRealPath() method will simplify the path to\par
+ /animals and throw an exception if it does not exist, making option D\par
+ correct. If the path does exist, calling getParent() on it returns the\par
+ root directory. Walking the root directory with the filter expression will\par
+ print all .java files in the root directory (along with all .java files in\par
+ the directory tree), making option A correct. Option B is incorrect\par
+ because it will skip files and directories that do not end in the .java\par
+ extension. Option C is also incorrect as Files.walk() does not follow\par
+ symbolic links by default. Only if the FOLLOW_LINKS option is provided\par
+ and a cycle is encountered will the exception be thrown.\par
+ 24. B. The method compiles without issue, so option E is incorrect. Option\par
+ F is also incorrect. Even though /flip exists, createDirectories()\par
+ does not throw an exception if the path already exists. If\par
+ createDirectory() were used instead, option F would be correct.\par
+ Next, the copy() command takes a target that is the path to the new\par
+ file location, not the directory to be copied into. Therefore, the target\par
+ path should be /flip/sounds.txt, not /flip. For this reason, options\par
+ A and C are incorrect. Since the question says the file already exists,\par
+ the REPLACE_EXISTING option must be specified or an exception will\par
+ be thrown at runtime, making option B the correct answer.\par
+ 25. B, D. Since you need to read characters, the Reader classes are\par
+ appropriate. Therefore, you can eliminate options A, C, and F.\par
+ Additionally, options E and G are incorrect, as they reference classes\par
+ that do not exist. Options B and D are correct since they read from a\par
+ file and buffer for performance\f0\lang1036 .\lang12\par
+}
+ 
