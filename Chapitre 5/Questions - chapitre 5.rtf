@@ -2,65 +2,83 @@
 {\*\generator Riched20 10.0.22621}\viewkind4\uc1 
 \pard\sa200\sl276\slmult1\f0\fs22\lang12  1. Which statements about the final modifier are correct? (Choose all\par
  that apply.)\par
+\par
  A. Instance and static variables can be marked final.\par
  B. A variable is effectively final only if it is marked final.\par
  C. An object that is marked final cannot be modified.\par
  D. Local variables cannot be declared with type var and the final\par
  modifier.\par
  E. A primitive that is marked final cannot be modified.\par
+\par
  2. Which of the following can fill in the blank in this code to make it\par
  compile? (Choose all that apply.)\par
+\par
  public class Ant \{\par
     _________ void method() \{\}\par
  \}\par
+\par
 A. default\par
  B. final\par
  C. private\par
  D. Public\par
  E. String\par
  F. zzz:\par
+\par
  3. Which of the following methods compile? (Choose all that apply.)\par
+\par
  A. final static void rain() \{\}\par
  B. public final int void snow() \{\}\par
  C. private void int hail() \{\}\par
  D. static final void sleet() \{\}\par
  E. void final ice() \{\}\par
  F. void public slush() \{\}\par
+\par
  4. Which of the following can fill in the blank and allow the code to\par
  compile? (Choose all that apply.)\par
+\par
  final ______ song = 6;\par
+\par
  A. int\par
  B. Integer\par
  C. long\par
  D. Long\par
  E. double\par
  F. Double\par
+\par
  5. Which of the following methods compile? (Choose all that apply.)\par
+\par
  A. public void january() \{ return; \}\par
  B. public int february() \{ return null;\}\par
  C. public void march() \{\}\par
 D. public int april() \{ return 9;\}\par
  E. public int may() \{ return 9.0;\}\par
  F. public int june() \{ return;\}\par
+\par
  6. Which of the following methods compile? (Choose all that apply.)\par
+\par
  A. public void violin(int\'85 nums) \{\}\par
  B. public void viola(String values, int\'85 nums) \{\}\par
  C. public void cello(int\'85 nums, String values) \{\}\par
  D. public void bass(String\'85 values, int\'85 nums) \{\}\par
  E. public void flute(String[] values, \'85int nums) \{\}\par
  F. public void oboe(String[] values, int[] nums) \{\}\par
+\par
  7. Given the following method, which of the method calls return 2?\par
  (Choose all that apply.)\par
+\par
  public int juggle(boolean b, boolean\'85 b2) \{\par
    return b2.length;\par
  \}\par
+\par
  A. juggle();\par
  B. juggle(true);\par
  C. juggle(true, true);\par
  D. juggle(true, true, true);\par
  E. juggle(true, \{true, true\});\par
  F. juggle(true, new boolean[2]);\par
+\par
  8. Which of the following statements is correct?\par
+\par
  A. Package access is more lenient than protected access.\par
  B. A public class that has private fields and package methods is not\par
  visible to classes outside the package.\par
@@ -70,8 +88,10 @@ D. You can use access modifiers to allow access to all methods and\par
  not any instance variables.\par
  E. You can use access modifiers to restrict access to all classes that\par
  begin with the word Test.\par
+\par
  9. Given the following class definitions, which lines in the main()\par
  method generate a compiler error? (Choose all that apply.)\par
+\par
  // Classroom.java \par
 package my.school;\par
  public class Classroom \{\par
@@ -93,13 +113,16 @@ Anderson");\par
  7:       System.out.println(room.roomNumber);\par
  8:       System.out.println(Classroom.floor);\par
  9:       System.out.println(Classroom.teacherName); \} \}\par
+\par
  A. None: the code compiles fine.\par
  B. Line 5.\par
  C. Line 6.\par
  D. Line 7.\par
  E. Line 8.\par
  F. Line 9.\par
+\par
  10. What is the output of executing the Chimp program?\par
+\par
  // Rope.java \par
 1: package rope;\par
 2: public class Rope \{\par
@@ -119,14 +142,17 @@ Anderson");\par
  6:       new Rope().swing();\par
  7:       System.out.println(LENGTH);\par
  8:    \} \}\par
+\par
  A. swing swing 5\par
  B. swing swing 10\par
  C. Compiler error on line 2 of Chimp\par
  D. Compiler error on line 5 of Chimp\par
  E. Compiler error on line 6 of Chimp\par
  F. Compiler error on line 7 of Chimp\par
+\par
  11. Which statements are true of the following code? (Choose all that\par
  apply.)\par
+\par
  1:  public class Rope \{\par
  2:     public static void swing() \{\par
  3:        System.out.print("swing");\par
@@ -145,6 +171,7 @@ Anderson");\par
  16:       System.out.print("-");\par
  17:       rope2.play();\par
  18:    \} \}\par
+\par
  A. The code compiles as is.\par
  B. There is exactly one compiler error in the code.\par
  C. There are exactly two compiler errors in the code.\par
@@ -154,7 +181,9 @@ Anderson");\par
  swing-swing.\par
  F. If the line(s) with compile errors are removed, the code throws a\par
  NullPointerException.\par
+\par
  12. How many variables in the following method are effectively final?\par
+\par
  10: public void feed() \{\par
  11:    int monkey = 0;\par
  12:    if(monkey> 0) \{\par
@@ -169,13 +198,16 @@ Anderson");\par
  21:    \}\par
  22:    name = null;\par
  23: \}\par
+\par
  A. 1.\par
  B. 2.\par
  C. 3.\par
  D. 4.\par
  E. 5.\par
  F. None of the above. The code does not compile.\par
+\par
 13. What is the output of the following code?\par
+\par
  // RopeSwing.java \par
 import rope.*;\par
  import static rope.Rope.*;\par
@@ -196,13 +228,16 @@ package rope;\par
  public class Rope \{\par
    public static int length = 0;\par
  \}\par
+\par
  A. 02\par
  B. 08\par
  C. 2\par
  D. 8\par
  E. The code does not compile.\par
  F. An exception is thrown.\par
+\par
  14. How many lines in the following code have compiler errors?\par
+\par
  1:  public class RopeSwing \{\par
  2:     private static final String leftRope;\par
  3:     private static final String rightRope;\par
@@ -220,13 +255,16 @@ package rope;\par
  15:       bench = "bench";\par
  16:    \}\par
  17: \}\par
+\par
  A. 0\par
  B. 1\par
  C. 2\par
  D. 3\par
  E. 4\par
  F. 5\par
+\par
  15. Which of the following can replace line 2 to make this code compile?\par
+\par
  1: import java.util.*;\par
  2: // INSERT CODE HERE\par
  3: public class Imports \{\par
@@ -234,6 +272,7 @@ package rope;\par
  5:       sort(list);\par
  6:    \}\par
  7: \}\par
+\par
  A. import static java.util.Collections;\par
  B. import static java.util.Collections.*;\par
  C. import static\par
@@ -242,7 +281,9 @@ package rope;\par
  E. static import java.util.Collections.*;\par
  F. static import\par
  java.util.Collections.sort(ArrayList<String>);\par
+\par
  16. What is the result of the following statements?\par
+\par
  1:  public class Test \{\par
  2:     public void print(byte x) \{\par
  3:        System.out.print("byte-");\par
@@ -264,13 +305,16 @@ package rope;\par
  19:       t.print(6.789);\par
  20:    \}\par
  21: \}\par
+\par
  A. byte-float-Object\par
 B. int-float-Object\par
 C. byte-Object-float\par
 D. int-Object-float\par
 E. int-Object-Object\par
 F. byte-Object-Object\par
+\par
 17. What is the result of the following program?\par
+\par
  1:  public class Squares \{\par
  2:     public static long square(int x) \{\par
  3:        var y = x * (long) x;\par
@@ -282,13 +326,16 @@ F. byte-Object-Object\par
  9:        var result = square(value);\par
  10:       System.out.println(value);\par
  11:    \} \}\par
+\par
  A. -1\par
  B. 9\par
 C. 81\par
  D. Compiler error on line 9\par
  E. Compiler error on a different line\par
+\par
  18. Which of the following are output by the following code? (Choose all\par
  that apply.)\par
+\par
  public class StringBuilders \{\par
    public static StringBuilder work(StringBuilder a, \par
       StringBuilder b) \{\par
@@ -305,14 +352,17 @@ C. 81\par
       System.out.println("s3 = " + s3);\par
    \}\par
  \}\par
+\par
  A. s1 = a\par
  B. s1 = s1\par
  C. s2 = s2\par
  D. s2 = s2b\par
  E. s3 = a\par
  F. The code does not compile.\par
+\par
  19. Which of the following will compile when independently inserted in\par
  the following code? (Choose all that apply.)\par
+\par
  1:  public class Order3 \{\par
  2:     final String value1 = "red";\par
  3:     static String value2 = "blue";\par
@@ -323,14 +373,17 @@ C. 81\par
 8:     static \{\par
  9:        // CODE SNIPPET 2\par
  10:    \} \}\par
+\par
  A. Insert at line 6: value1 = "green";\par
  B. Insert at line 6: value2 = "purple";\par
  C. Insert at line 6: value3 = "orange";\par
  D. Insert at line 9: value1 = "magenta";\par
  E. Insert at line 9: value2 = "cyan";\par
  F. Insert at line 9: value3 = "turquoise";\par
+\par
  20. Which of the following are true about the following code? (Choose all\par
  that apply.)\par
+\par
  public class Run \{\par
    static void execute() \{\par
       System.out.print("1-");\par
@@ -352,6 +405,7 @@ C. 81\par
       Run.execute(100L);\par
    \}\par
  \}\par
+\par
  A. The code prints out 2-4-.\par
  B. The code prints out 3-4-.\par
  C. The code prints out 4-2-.\par
@@ -360,9 +414,12 @@ E. The code prints 3-4- if you remove the method static void\par
  execute(int num).\par
  F. The code prints 4-4- if you remove the method static void\par
  execute(int num).\par
+\par
  21. Which method signatures are valid overloads of the following method\par
  signature? (Choose all that apply.)\par
+\par
  public void moo(int m, int\'85 n)\par
+\par
  A. public void moo(int a, int\'85 b)\par
  B. public int moo(char ch)\par
  C. public void moooo(int\'85 z)\par

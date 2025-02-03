@@ -1,6 +1,7 @@
 {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
 {\*\generator Riched20 10.0.22621}\viewkind4\uc1 
 \pard\sa200\sl276\slmult1\f0\fs22\lang12  1. What is output by the following code?\par
+\par
  1: public class Fish \{\par
  2:    public static void main(String[] args) \{\par
  3:       int numFish = 4;\par
@@ -9,36 +10,44 @@
  6:       System.out.println(anotherFish + " " + fishType);\par
  7:       System.out.println(numFish + " " + 1);\par
  8: \} \}\par
+\par
  A. 4 1\par
  B. 5\par
  C. 5 tuna\par
  D. 5tuna\par
 E. 51tuna\par
  F. The code does not compile.\par
+\par
  2. Which of these array declarations are not legal? (Choose all that\par
  apply.)\par
+\par
  A. int[][] scores = new int[5][];\par
  B. Object[][][] cubbies = new Object[3][0][5];\par
  C. String beans[] = new beans[6];\par
  D. java.util.Date[] dates[] = new java.util.Date[2][];\par
  E. int[][] types = new int[];\par
  F. int[][] java = new int[][];\par
+\par
  3. Note that March 12, 2028, is the weekend when we spring forward,\par
  and November 5, 2028, is when we fall back for daylight saving time.\par
  Which of the following can fill in the blank without the code throwing\par
  an exception? (Choose all that apply.)\par
+\par
  var zone = ZoneId.of("US/Eastern");\par
  var date = ______________________;\par
  var time = LocalTime.of(2, 15);\par
  var z = ZonedDateTime.of(date, time, zone);\par
+\par
  A. LocalDate.of(2028, 3, 12)\par
  B. LocalDate.of(2028, 3, 40)\par
  C. LocalDate.of(2028, 11, 5)\par
  D. LocalDate.of(2028, 11, 6)\par
  E. LocalDate.of(2029, 2, 29)\par
  F. LocalDate.of(2028, MonthEnum.MARCH, 12);\par
+\par
  4. Which of the following are output by this code? (Choose all that\par
  apply.)\par
+\par
  3: var s = "Hello";\par
  4: var t = new String(s);\par
  5: if ("Hello".equals(s)) System.out.println("one");\par
@@ -46,6 +55,7 @@ E. 51tuna\par
 7: if (t.intern() == s) System.out.println("three");\par
  8: if ("Hello" == s) System.out.println("four");\par
  9: if ("Hello".intern() == t) System.out.println("five");\par
+\par
  A. one\par
  B. two\par
  C. three\par
@@ -53,40 +63,52 @@ E. 51tuna\par
  E. five\par
  F. The code does not compile.\par
  G. None of the above.\par
+\par
  5. What is the result of the following code?\par
+\par
  7: var sb = new StringBuilder();\par
  8: sb.append("aaa").insert(1, "bb").insert(4, "ccc");\par
  9: System.out.println(sb);\par
+\par
  A. abbaaccc\par
  B. abbaccca\par
  C. bbaaaccc\par
  D. bbaaccca\par
  E. An empty line.\par
  F. The code does not compile.\par
+\par
  6. How many of these lines contain a compiler error?\par
+\par
  23: double one = Math.pow(1, 2);\par
  24: int two = Math.round(1.0);\par
  25: float three = Math.random();\par
  26: var doubles = new double[] \{one, two, three\};\par
+\par
  A. 0\par
  B. 1\par
  C. 2\par
  D. 3\par
 E. 4\par
+\par
  7. Which of these statements is true of the two values? (Choose all that\par
  apply.)\par
+\par
  2025\f1\endash 08\endash 28T05:00 GMT-04:00\par
  2025\endash 08\endash 28T09:00 GMT-06:00\par
+\par
  A. The first date/time is earlier.\par
  B. The second date/time is earlier.\par
  C. Both date/times are the same.\par
  D. The date/times are two hours apart.\par
  E. The date/times are six hours apart.\par
  F. The date/times are 10 hours apart.\par
+\par
  8. Which of the following return 5 when run independently? (Choose all\par
  that apply.)\par
+\par
  var string = "12345";\par
  var builder = new StringBuilder("12345");\par
+\par
  A. builder.charAt(4)\par
  B. builder.replace(2, 4, "6").charAt(3)\par
  C. builder.replace(2, 5, "6").charAt(2)\par
@@ -94,7 +116,9 @@ E. 4\par
  E. string.length\par
  F. string.replace("123", "1").charAt(2)\par
  G. None of the above\par
+\par
  9. Which of the following are true about arrays? (Choose all that apply.)\par
+\par
  A. The first element is index 0.\par
  B. The first element is index 1.\par
  C. Arrays are fixed size.\par
@@ -105,42 +129,53 @@ E. Calling equals() on two different arrays containing the same\par
  primitive values always returns false.\par
  G. Calling equals() on two different arrays containing the same\par
  primitive values can return true or false.\par
+\par
  10. How many of these lines contain a compiler error?\par
+\par
  23: int one = Math.min(5, 3);\par
  24: long two = Math.round(5.5);\par
  25: double three = Math.floor(6.6);\par
  26: var doubles = new double[] \{one, two, three\};\par
+\par
  A. 0\par
  B. 1\par
  C. 2\par
  D. 3\par
  E. 4\par
+\par
  11. What is the output of the following code?\par
+\par
  var date = LocalDate.of(2025, 4, 3);\par
  date.plusDays(2);\par
  date.plusHours(3);\par
  System.out.println(date.getYear() + " " + date.getMonth()\par
     + " " + date.getDayOfMonth());\par
+\par
  A. 2025 MARCH 4\par
  B. 2025 MARCH 6\par
  C. 2025 APRIL 3\par
  D. 2025 APRIL 5\par
  E. The code does not compile.\par
  F. A runtime exception is thrown.\par
+\par
  12. What is output by the following code ignoring any new lines in the\par
  ouput? (Choose all that apply.)\par
+\par
 var numbers = "012345678".indent(1);\par
  numbers = numbers.stripLeading();\par
  System.out.println(numbers.substring(1, 3));\par
  System.out.println(numbers.substring(7, 7));\par
  System.out.println(numbers.substring(7));\par
+\par
  A. 12\par
  B. 123\par
  C. 7\par
  D. 78\par
  E. A blank line.\par
  F. An exception is thrown.\par
+\par
  13. What is the result of the following code?\par
+\par
  public class Lion \{\par
    public void roar(String roar1, StringBuilder roar2) \{\par
       roar1.concat("!!!");\par
@@ -152,31 +187,38 @@ var numbers = "012345678".indent(1);\par
       new Lion().roar(roar1, roar2);\par
       System.out.println(roar1 + " " + roar2);\par
  \} \}\par
+\par
  A. roar roar\par
  B. roar roar!!!\par
  C. roar!!! Roar\par
  D. roar!!! Roar!!!\par
  E. An exception is thrown.\par
  F. The code does not compile.\par
+\par
  14. Given the following, which can correctly fill in the blank allowing the\par
  code to compile? (Choose all that apply.)\par
+\par
  var date = LocalDate.now();\par
  var time = LocalTime.now();\par
 var dateTime = date.______(time);\par
  var zoneId = ZoneId.systemDefault();\par
  var zonedDateTime = ZonedDateTime.of(dateTime, zoneId);\par
  Instant instant = ___________________________;\par
+\par
  A. asTime()\par
  B. atTime()\par
  C. withTime()\par
  D. dateTime.toInstant()\par
  E. new Instant()\par
  F. zonedDateTime.toInstant()\par
+\par
  15. What is the output of the following? (Choose all that apply.)\par
+\par
  var arr = new String[] \{ "PIG", "pig", "123"\};\par
  Arrays.sort(arr);\par
  System.out.println(Arrays.toString(arr));\par
  System.out.println(Arrays.binarySearch(arr, "Pippa"));\par
+\par
  A. [pig, PIG, 123]\par
  B. [PIG, pig, 123]\par
  C. [123, PIG, pig]\par
@@ -184,8 +226,11 @@ var dateTime = date.______(time);\par
  E. -3\par
  F. -2\par
  G. The results of binarySearch() are undefined in this example.\par
+\par
  16. Which of these statements are true? (Choose all that apply.)\par
+\par
  var letters = new StringBuilder("abcdefg");\par
+\par
  A. letters.substring(1, 2) returns a single-character String.\par
  B. letters.substring(2, 2) returns a single-character String.\par
  C. letters.substring(6, 5) returns a single-character String.\par
@@ -194,7 +239,9 @@ E. letters.substring(1, 2) throws an exception.\par
  F. letters.substring(2, 2) throws an exception.\par
  G. letters.substring(6, 5) throws an exception.\par
  H. letters.substring(6, 6) throws an exception.\par
+\par
  17. What is the result of the following code? (Choose all that apply.)\par
+\par
  13: String s1 = """\par
  14:    purr""";\par
  15: String s2 = "";\par
@@ -212,6 +259,7 @@ E. letters.substring(1, 2) throws an exception.\par
  27: if ( s2.equals("2cfalse")) \par
 System.out.println("equals");\par
  28: System.out.println(s1.length());\par
+\par
  A. 2\par
  B. 4\par
  C. 7\par
@@ -220,22 +268,27 @@ System.out.println("equals");\par
  F. equals\par
  G. An exception is thrown.\par
  H. The code does not compile.\par
+\par
  18. Which of the following fill in the blank to print a positive integer?\par
  (Choose all that apply.)\par
+\par
  String[] s1 = \{ "Camel", "Peacock", "Llama"\};\par
  String[] s2 = \{ "Camel", "Llama", "Peacock"\};\par
 String[] s3 = \{ "Camel"\};\par
  String[] s4 = \{ "Camel", null\};\par
  System.out.println(Arrays.)____________________________;\par
+\par
  A. compare(s1, s2)\par
  B. mismatch(s1, s2)\par
  C. compare(s3, s4)\par
  D. mismatch (s3, s4)\par
  E. compare(s4, s4)\par
  F. mismatch (s4, s4)\par
+\par
  19. Note that March 12, 2028 is the weekend that clocks spring ahead for\par
  daylight saving time. What is the output of the following? (Choose all\par
  that apply.)\par
+\par
  var date = LocalDate.of(2028, Month.MARCH, 12);\par
  var time = LocalTime.of(1, 30);\par
  var zone = ZoneId.of("US/Eastern");\par
@@ -248,6 +301,7 @@ String[] s3 = \{ "Camel"\};\par
  System.out.println("diff = " + diff);\par
  System.out.println("hour = " + hour);\par
  System.out.println("offset = " + offset);\par
+\par
  A. diff = 1\par
  B. diff = 2\par
  C. hour = 2\par
@@ -255,11 +309,14 @@ String[] s3 = \{ "Camel"\};\par
  E. offset = true\par
  F. The code does not compile.\par
  G. A runtime exception is thrown.\par
+\par
 20. Which of the following can fill in the blank to print avaJ? (Choose all\par
  that apply.)\par
+\par
  3: var puzzle = new StringBuilder("Java");\par
  4: puzzle._________________________;\par
  5: System.out.println(puzzle);\par
+\par
  A. reverse()\par
  B. append("vaJ$").substring(0, 4)\par
  C. append("vaJ$").delete(0,\par
@@ -267,12 +324,15 @@ String[] s3 = \{ "Camel"\};\par
  D. append("vaJ$").delete(0,\par
  3).deleteCharAt(puzzle.length())\par
  E. None of the above\par
+\par
  21. What is the output of the following code?\par
+\par
  var date = LocalDate.of(2025, Month.APRIL, 30);\par
  date.plusDays(2);\par
  date.plusYears(3);\par
  System.out.println(date.getYear() + " " + date.getMonth() \par
    + " " + date.getDayOfMonth());\par
+\par
  A. 2025 APRIL 30\par
  B. 2025 MAY 2\par
  C. 2028 APRIL 2\par
@@ -280,7 +340,9 @@ String[] s3 = \{ "Camel"\};\par
  E. 2028 MAY 2\par
  F. The code does not compile.\par
  G. A runtime exception is thrown.\par
+\par
  22. What is the output of the following?\par
+\par
  var result = LocalDate.of(2025, Month.OCTOBER, 31)\par
    .plusYears(1)\par
    .plusMonths(-5)\par
@@ -288,6 +350,7 @@ String[] s3 = \{ "Camel"\};\par
    .withYear(2026)\par
    .atTime(LocalTime.of(13, 4));\par
  System.out.println(result);\par
+\par
  A. 2025-06-30T13:04\par
  B. 2026-04-304\par
  C. 2026-04-30T13:04\par
